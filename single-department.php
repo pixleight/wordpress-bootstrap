@@ -11,24 +11,59 @@
 						<header>
 						
 							<?php the_post_thumbnail( 'wpbs-featured' ); ?>
+
+							<?php $address = get_field('address'); ?>
 							
-							<div class="page-header"><h1 class="single-title" itemprop="headline"><?php the_title(); ?></h1></div>
-							
-							<p class="meta"><?php _e("Posted", "wpbootstrap"); ?> <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time(); ?></time> <?php _e("by", "wpbootstrap"); ?> <?php the_author_posts_link(); ?> <span class="amp">&</span> <?php _e("filed under", "wpbootstrap"); ?> <?php the_category(', '); ?>.</p>
+							<div class="page-header"><h1 class="single-title" itemprop="headline">
+								<?php the_title(); ?>
+								<?php echo $address['address'] ? '<br><small>'.$address['address'].'</small>' : ''; ?>
+							</h1></div>
 						
 						</header> <!-- end article header -->
 					
 						<section class="post_content clearfix" itemprop="articleBody">
-							<?php the_content(); ?>
-							
-							<?php $address = get_field('address');
-			 
-							if( !empty($address) ):
-							?>
-							<div class="acf-map">
-								<div class="marker" data-lat="<?php echo $address['lat']; ?>" data-lng="<?php echo $address['lng']; ?>"></div>
+							<div class="row">
+								<div class="col-md-8">
+									<?php the_content(); ?>
+
+									<?php if( get_field('department_phone_number') ) field_panel('Phone Number', get_field('department_phone_number') ); ?>
+
+									<?php if( get_field('hours') ) field_panel('Hours', wpmarkdown_markdown_to_html( get_field('hours') ) ); ?>
+									
+									<?php if( !empty($address) ): ?>
+										<div class="acf-map">
+											<div class="marker" data-lat="<?php echo $address['lat']; ?>" data-lng="<?php echo $address['lng']; ?>"></div>
+										</div>
+									<?php endif; ?>
+								</div>
+
+								<div class="col-md-4">
+									<?php $staff_members = get_posts(array(
+										'posts_per_page' => -1,
+										'post_type' => 'staff',
+										'meta_query' => array(
+											array(
+												'key' => 'staff_department', // name of custom field
+												'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
+												'compare' => 'LIKE'
+											)
+										)
+									)); ?>
+
+									<?php if( $staff_members) {
+										$staff_content = '<ul class="list-unstyled">';
+											foreach( $staff_members as $staff ) { 
+												$staff_content .= '<li>';
+													$staff_content .= '<a href="'.get_permalink( $staff->ID ).'">';
+														$staff_content .=  get_the_title( $staff->ID );
+													$staff_content .= '</a>';
+												$staff_content .= '</li>';
+											}
+										$staff_content .= '</ul>';
+										field_panel('Staff Members', $staff_content);
+									} ?>
+								</div>
 							</div>
-							<?php endif; ?>
 
 							<?php wp_link_pages(); ?>
 					
@@ -48,8 +83,6 @@
 						</footer> <!-- end article footer -->
 					
 					</article> <!-- end article -->
-					
-					<?php comments_template('',true); ?>
 					
 					<?php endwhile; ?>			
 					

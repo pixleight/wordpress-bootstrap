@@ -525,4 +525,15 @@ function intranet_pre_get_posts( $query )
 }
 add_action('pre_get_posts', 'intranet_pre_get_posts');
 
+function field_panel($title, $content) { // Displays a custom field in a nice pretty panel ?>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+     <h3 class="panel-title"><?php echo $title; ?></h3>
+    </div>
+    <div class="panel-body">
+     <?php echo $content; ?>
+    </div>
+  </div>
+<?php }
+
 ?>

@@ -25,20 +25,23 @@
 			</td>
 			<td>
 				<?php // Departments
-				$args = array(
-					'post__in' => get_field('staff_department'),
-					'post_type' => 'department',
-					'posts_per_page' => -1,
-					'orderby' => 'title',
-					'order' => 'ASC'
-				);
-				$departments = new WP_Query($args);
-				if( $departments->have_posts() ) : ?>
-					<ul class="list-inline">
-					<?php while( $departments->have_posts() ) : $departments->the_post(); ?>
-						<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-					<?php endwhile; ?>
-					</ul>
-				<?php endif; wp_reset_query(); ?>
+				if( get_field('staff_department') ) {
+					$args = array(
+						'post__in' => get_field('staff_department'),
+						'post_type' => 'department',
+						'posts_per_page' => -1,
+						'orderby' => 'title',
+						'order' => 'ASC'
+					);
+					$departments = new WP_Query($args);
+					if( $departments->have_posts() ) : ?>
+						<ul class="list-inline">
+						<?php while( $departments->have_posts() ) : $departments->the_post(); ?>
+							<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+						<?php endwhile; ?>
+						</ul>
+					<?php endif; 
+					wp_reset_query();
+				} ?>
 			</td>
 		</tr>

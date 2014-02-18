@@ -453,6 +453,10 @@ if( !function_exists("theme_styles") ) {
         // For child themes
         wp_register_style( 'wpbs-style', get_stylesheet_directory_uri() . '/style.css', array(), '1.0', 'all' );
         wp_enqueue_style( 'wpbs-style' );
+
+        wp_register_style( 'bootstrap-ie7', get_template_directory_uri() . '/library/css/bootstrap-ie7.css', array(), '1.0', 'all' );
+        $GLOBALS['wp_styles']->add_data( 'bootstrap-ie7', 'conditional', 'lt IE 8' );
+        wp_enqueue_style( 'bootstrap-ie7' );
     }
 }
 add_action( 'wp_enqueue_scripts', 'theme_styles' );

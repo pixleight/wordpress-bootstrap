@@ -16,6 +16,22 @@
 								<?php the_title(); ?><?php echo get_field('suffix') ? ', ' . get_field('suffix') : ''; ?>
 								<?php echo get_field('title') ? '<small>'.get_field('title').'</small>' : ''; ?>
 							</h1>
+								<?php // Departments
+								$args = array(
+									'post__in' => get_field('staff_department'),
+									'post_type' => 'department',
+									'posts_per_page' => -1,
+									'orderby' => 'title',
+									'order' => 'ASC'
+								);
+								$departments = new WP_Query($args);
+								if( $departments->have_posts() ) : ?>
+									<ul class="list-inline">
+									<?php while( $departments->have_posts() ) : $departments->the_post(); ?>
+										<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+									<?php endwhile; ?>
+									</ul>
+								<?php endif; wp_reset_query(); ?>
 							</div>
 						
 						</header> <!-- end article header -->
@@ -34,36 +50,12 @@
 								</div>
 							<?php } ?>
 
-							<?php if( get_field('email') )  field_panel('Email', get_field('email')); ?>
+							<?php if( get_field('email') )  field_panel('Email', '<a href="mailto:'.get_field('email').'">' . get_field('email') . '</a>'); ?>
 
 							<?php if( get_field('phone_number') ) {
 								$ext = get_field('extension') ? " ext. " . get_field('extension') : '';
 								field_panel('Phone Number', get_field('phone_number') . $ext);
 							} ?>
-							
-							<?php // Departments
-							$args = array(
-								'post__in' => get_field('staff_department'),
-								'post_type' => 'department',
-								'posts_per_page' => -1,
-								'orderby' => 'title',
-								'order' => 'ASC'
-							);
-							$departments = new WP_Query($args);
-							if( $departments->have_posts() ) : ?>
-								<div class="panel panel-default">
-									<div class="panel-heading">
-										<h3 class="panel-title">Departments</h3>
-									</div>
-									<div class="panel-body">
-										<ul class="list-inline">
-										<?php while( $departments->have_posts() ) : $departments->the_post(); ?>
-											<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-										<?php endwhile; ?>
-										</ul>
-									</div>
-								</div>
-							<?php endif; wp_reset_query(); ?>
 
 							<?php wp_link_pages(); ?>
 					

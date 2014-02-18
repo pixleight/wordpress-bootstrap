@@ -475,13 +475,50 @@ if( !function_exists( "theme_js" ) ) {
       get_template_directory_uri() . '/library/js/modernizr.full.min.js', 
       array('jquery'), 
       '1.2' );
+
+    wp_register_script( 'google-maps-js',
+    	'https://maps.googleapis.com/maps/api/js?v=3.14&sensor=false',
+    	array( 'jquery' ), 
+    	'',
+    	true );
+
+    wp_register_script( 'intranet-scripts', 
+      get_template_directory_uri() . '/library/js/intranet.js', 
+      array('jquery'), 
+      '1.0' );
   
     wp_enqueue_script('bootstrap');
     wp_enqueue_script('wpbs-scripts');
     wp_enqueue_script('modernizr');
+    wp_enqueue_script('google-maps-js');
+    wp_enqueue_script('intranet-scripts');
     
   }
 }
 add_action( 'wp_enqueue_scripts', 'theme_js' );
+
+function intranet_pre_get_posts( $query )
+{
+  // validate
+  if( is_admin() )
+  {
+    return $query;
+  }
+ 
+    // project example
+    if( isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'staff' )
+    {
+      $order = $_GET['order'] ? $_GET['order'] : 'ASC';
+      $sortby = $_GET['sortby'] ? $_GET['sortby'] : 'last_name';
+      $query->set('orderby', 'meta_value');  
+      $query->set('meta_key', $sortby);  
+      $query->set('order', $order);
+    }   
+ 
+  // always return
+  return $query;
+ 
+}
+add_action('pre_get_posts', 'intranet_pre_get_posts');
 
 ?>

@@ -26,7 +26,7 @@
 									<strong>Phone Number</strong>
 								</th>
 								<th>
-									<strong>Extension</strong>
+									<strong>Departments</strong>
 								</th>
 							</tr>
 						</thead>

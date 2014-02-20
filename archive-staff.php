@@ -32,7 +32,7 @@
 						</thead>
 						<tbody>
 					<?php while (have_posts()) : the_post(); ?>
-						<?php get_template_part( 'content/archive', get_post_type() ); ?>
+						<?php get_template_part( 'content-archive', get_post_type() ); ?>
 					<?php endwhile; ?>	
 						</tbody>
 					</table>

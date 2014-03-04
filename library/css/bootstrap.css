@@ -7299,3 +7299,11 @@ blockquote.pull-left {
   bottom: auto;
   top: -25px;
 }
+
+.treeview img {
+  height: 18px;
+}
+
+.wp-filebase-table td img {
+  height: 18px !important;
+}

@@ -125,6 +125,9 @@ function wp_bootstrap_register_sidebars() {
     */
 } // don't remove this bracket!
 
+// Enable shortcodes in text widgets
+add_filter('widget_text', 'do_shortcode');
+
 /************* COMMENT LAYOUT *********************/
 		
 // Comment Layout

@@ -9,8 +9,6 @@
 					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 						
 						<header>
-						
-							<?php the_post_thumbnail( 'wpbs-featured' ); ?>
 							
 							<div class="page-header"><h1 class="single-title" itemprop="headline">
 								<?php the_title(); ?><?php echo get_field('suffix') ? ', ' . get_field('suffix') : ''; ?>
@@ -40,16 +38,35 @@
 						</header> <!-- end article header -->
 					
 						<section class="post_content clearfix" itemprop="articleBody">
-							<?php the_content(); ?>
+							<div class="row">
 
-							<?php if( get_field('email') )  field_panel('Email', '<a href="mailto:'.get_field('email').'">' . get_field('email') . '</a>'); ?>
+								<?php if( has_post_thumbnail() ) : ?>
 
-							<?php if( get_field('phone_number') ) {
-								$ext = get_field('extension') ? " ext. " . get_field('extension') : '';
-								field_panel('Phone Number', get_field('phone_number') . $ext);
-							} ?>
+									<div class="col-sm-4 col-sm-push-8">
+										<?php the_post_thumbnail( 'medium', array(
+											'class' => 'pull-right img-thumbnail',
+										) ); ?>
+									</div>
+									<div class="col-sm-8 col-sm-pull-4">
 
-							<?php wp_link_pages(); ?>
+								<?php else : ?>
+
+								<div class="col-sm-12">
+
+								<?php endif; ?>
+
+									<?php the_content(); ?>
+
+									<?php if( get_field('email') )  field_panel('Email', '<a href="mailto:'.get_field('email').'">' . get_field('email') . '</a>'); ?>
+
+									<?php if( get_field('phone_number') ) {
+										$ext = get_field('extension') ? " ext. " . get_field('extension') : '';
+										field_panel('Phone Number', get_field('phone_number') . $ext);
+									} ?>
+
+									<?php wp_link_pages(); ?>
+								</div>
+							</div>
 					
 						</section> <!-- end article section -->
 						

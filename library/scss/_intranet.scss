@@ -9,3 +9,52 @@
 		max-width: none;
 	}
 }
+
+#main {
+	.carousel {
+		margin-top: 1em;
+
+		article {
+			padding: 0 7%;
+		}
+
+		.carousel-inner {
+			@include border-radius(4px);
+		}
+
+		.carousel-control {
+			@include border-radius(4px);
+
+			&.left {
+				@include gradient-horizontal($start-color: rgba(0,0,0,.1), $end-color: rgba(0,0,0,.0001));
+				&:hover {
+					// @include gradient-horizontal($start-color: rgba(0,0,0,.2), $end-color: rgba(0,0,0,.0001));
+				}
+			}
+			&.right {
+				@include gradient-horizontal($start-color: rgba(0,0,0,.0001), $end-color: rgba(0,0,0,.1));
+				&:hover {
+					// @include gradient-horizontal($start-color: rgba(0,0,0,.0001), $end-color: rgba(0,0,0,.2));
+				}
+			}
+
+			.glyphicon-chevron-left,
+			.glyphicon-chevron-right {
+				top: -25px;
+			}
+
+			.glyphicon-chevron-left {
+				left: 25%;
+			}
+
+			.glyphicon-chevron-right {
+				right: 25%;
+			}
+		}
+
+		.carousel-indicators {
+			bottom: auto;
+			top: -25px;
+		}
+	}
+}

@@ -17,11 +17,12 @@ $gray:                   lighten(#000, 33.5%) !default; // #555
 $gray-light:             lighten(#000, 60%) !default;   // #999
 $gray-lighter:           lighten(#000, 93.5%) !default; // #eee
 
-$brand-primary:         #428bca !default;
+$brand-primary:         #2F3485 !default;
 $brand-success:         #5cb85c !default;
 $brand-info:            #5bc0de !default;
 $brand-warning:         #f0ad4e !default;
-$brand-danger:          #d9534f !default;
+$brand-danger:          #BE1E2D !default;
+$brand-secondary:		#8D7167 !default;
 
 
 //== Scaffolding
@@ -746,13 +747,13 @@ $breadcrumb-separator:          "/" !default;
 
 $carousel-text-shadow:                        0 1px 2px rgba(0,0,0,.6) !default;
 
-$carousel-control-color:                      #fff !default;
-$carousel-control-width:                      15% !default;
+$carousel-control-color:                      $brand-primary !default;
+$carousel-control-width:                      10% !default;
 $carousel-control-opacity:                    .5 !default;
 $carousel-control-font-size:                  20px !default;
 
-$carousel-indicator-active-bg:                #fff !default;
-$carousel-indicator-border-color:             #fff !default;
+$carousel-indicator-active-bg:                $brand-secondary !default;
+$carousel-indicator-border-color:             $brand-primary !default;
 
 $carousel-caption-color:                      #fff !default;
 

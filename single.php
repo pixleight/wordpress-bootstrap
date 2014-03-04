@@ -9,8 +9,23 @@
 					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 						
 						<header>
-						
-							<?php the_post_thumbnail( 'wpbs-featured' ); ?>
+							<?php if( has_post_thumbnail() ) {
+								$post_thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
+
+								$max_thumbnail_ratio = .35;
+
+								$post_thumbnail_ratio = $post_thumbnail_src['1'] / $post_thumbnail_src['2'];
+
+								if( $post_thumbnail_ratio < $max_thumbnail_ratio ) {
+									the_post_thumbnail( 'wpbs-featured', array(
+										'class' => 'center-block img-thumbnail',
+									) );
+								} else {
+									the_post_thumbnail( 'medium', array(
+										'class' => 'pull-right img-thumbnail',
+									) );
+								}
+							} ?>
 							
 							<div class="page-header"><h1 class="single-title" itemprop="headline"><?php the_title(); ?></h1></div>
 							

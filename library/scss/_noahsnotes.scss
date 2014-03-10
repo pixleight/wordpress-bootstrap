@@ -1,0 +1,16 @@
+#sidebar1 {
+	.sidebar-logo {
+		a {
+			display: block;
+			width: 100%;
+			height: 230px;
+			overflow: hidden;
+			white-space: nowrap;
+			text-indent: 200%;
+			background-image: url(../img/noahsnotes-logo.svg), none;
+			background-repeat: no-repeat;
+			background-position: 50% 0;
+			background-size: contain;
+		}
+	}
+}

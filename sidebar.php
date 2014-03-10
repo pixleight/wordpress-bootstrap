@@ -1,4 +1,8 @@
 				<div id="sidebar1" class="col-sm-4" role="complementary">
+
+					 <div>
+
+					<h1 class="hidden-xs sidebar-logo"><a title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
 				
 					<?php if ( is_active_sidebar( 'sidebar1' ) ) : ?>
 
@@ -15,5 +19,6 @@
 						</div>
 
 					<?php endif; ?>
+					</div>
 
 				</div>

@@ -7249,8 +7249,45 @@ blockquote.pull-left {
   overflow: hidden;
   white-space: nowrap;
   text-indent: 200%;
+  background-image: url(../img/noahsnotes-logo.png);
   background-image: url(../img/noahsnotes-logo.svg), none;
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: contain;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  #sidebar1 .sidebar-logo a {
+    height: 140px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  #sidebar1 .sidebar-logo a {
+    height: 190px;
+  }
+}
+@media (min-width: 1200px) {
+  #sidebar1 .sidebar-logo a {
+    height: 230px;
+  }
+}
+#sidebar1 .nnesin .avatar-thumbnail {
+  max-width: 25%;
+  margin-bottom: 3%;
+}
+#sidebar1 .nnesin .avatar-thumbnail.pull-left {
+  margin-right: 5%;
+}
+#sidebar1 .nnesin .avatar-thumbnail.pull-right {
+  margin-left: 5%;
+}
+
+.navbar-brand {
+  background: url(../img/noahsnotes-logo_sm.svg), none;
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  background-size: contain;
+  padding: 0 0 0 75px;
+  margin: 10px;
+  height: 30px;
+  line-height: 30px;
 }

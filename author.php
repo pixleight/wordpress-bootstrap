@@ -18,7 +18,11 @@
 								echo get_the_author_meta('display_name', $curauth->ID);
 							}
 						?>
-					</h1></div>
+					</h1>
+
+					<?php get_template_part( 'author', 'profile' ); ?>
+
+					</div>
 					
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					

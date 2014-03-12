@@ -35,6 +35,9 @@
 							?>
 							<a href="<?php echo get_edit_post_link(); ?>" class="btn btn-success edit-post"><i class="icon-pencil icon-white"></i> <?php _e("Edit post","wpbootstrap"); ?></a>
 							<?php } ?>
+
+							<?php $curauth = get_userdata( get_the_author_meta( 'ID' ) ); ?>
+							<?php get_template_part( 'author', 'profile' ); ?>
 							
 						</footer> <!-- end article footer -->
 					

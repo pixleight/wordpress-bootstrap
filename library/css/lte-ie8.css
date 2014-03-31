@@ -429,6 +429,10 @@
   margin-left: 100%;
 }
 
+#sidebar1 .sidebar-logo a {
+  background-image: url(../img/noahsnotes-logo_lte-ie8.png);
+}
+
 .navbar-header {
   float: left;
 }

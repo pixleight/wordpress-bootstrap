@@ -19,6 +19,14 @@
 @include make-grid($grid-columns, md, push);
 @include make-grid($grid-columns, md, offset);
 
+#sidebar1 {
+	.sidebar-logo {
+		a {
+			background-image: url(../img/noahsnotes-logo_lte-ie8.png);
+		}
+	}
+}
+
 .navbar-header {
   @include clearfix();
   float: left;

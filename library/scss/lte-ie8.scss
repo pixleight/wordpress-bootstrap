@@ -7,6 +7,12 @@
 	width: $container-md;
 }
 
+@include make-grid-columns-float(sm);
+@include make-grid($grid-columns, sm, width);
+@include make-grid($grid-columns, sm, pull);
+@include make-grid($grid-columns, sm, push);
+@include make-grid($grid-columns, sm, offset);
+
 @include make-grid-columns-float(md);
 @include make-grid($grid-columns, md, width);
 @include make-grid($grid-columns, md, pull);

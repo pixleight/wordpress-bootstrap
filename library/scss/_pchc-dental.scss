@@ -1,0 +1,78 @@
+#maincontent {
+	background: #fff;
+	margin-top: 56px;
+	position: relative;
+	z-index: 1;
+
+	&:before {
+		display: block;
+		position: absolute;
+		left: 0;
+		right: 0;
+		height: 56px;
+		top: -56px;
+		background: url(../img/content-swoosh.png) 50% 0 no-repeat;
+
+		.backgroundsize & {
+			background: url(../img/content-swoosh_2x.png) 50% 0 no-repeat;
+			background-size: cover;
+		}
+	}
+
+	@media (min-width: $screen-lg-min) {
+		margin-top: 67px;
+		&:before {
+			height: 67px;
+			top: -67px;
+		}
+	}
+
+	@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+		margin-top: 44px;
+		&:before {
+			height: 44px;
+			top: -44px;
+		}
+	}
+}
+
+#main {
+	top: -55px;
+}
+
+.navbar {
+	.navbar-brand {
+		padding-left: 85px;
+		background:url(../img/logo.png) 0 50% no-repeat;
+		font-family: $font-family-serif;
+		font-weight: 400;
+		text-align: center;
+		line-height: 0.9em;
+		max-width: 13em;
+		color: $brand-danger;
+		max-height: $navbar-height;
+		padding-top: 0.5em;
+		text-shadow: 0 1px 0 #FFF;
+
+		&:hover {
+			color: $brand-primary;
+		}
+
+		.backgroundsize & {
+			background-image: url(../img/logo_2x.png);
+			background-size: contain;
+		}
+	}
+}
+
+.navbar-default {
+	.navbar-nav {
+		> li {
+			> a {
+				color: $brand-primary;
+				font-family: $font-family-serif;
+				font-weight: 400;
+			}
+		}
+	}
+}

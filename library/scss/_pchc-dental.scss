@@ -1,3 +1,4 @@
+@import "compass/css3"; 
 #maincontent {
 	background: #fff;
 	margin-top: 56px;
@@ -37,7 +38,22 @@
 }
 
 #main {
-	top: -55px;
+	top: -35px;
+
+	.home & {
+		top: 0;
+	}
+}
+
+#breadcrumbs {
+	font-family: $font-family-serif;
+	color: $gray-light;
+	font-weight: 300;
+	font-size: 0.9em;
+
+	.glyphicon {
+		font-size: 0.8em;
+	}
 }
 
 .navbar {
@@ -49,13 +65,13 @@
 		text-align: center;
 		line-height: 0.9em;
 		max-width: 13em;
-		color: $brand-danger;
+		color: $pchc-red;
 		max-height: $navbar-height;
 		padding-top: 0.5em;
 		text-shadow: 0 1px 0 #FFF;
 
 		&:hover {
-			color: $brand-primary;
+			color: $pchc-blue;
 		}
 
 		.backgroundsize & {
@@ -69,10 +85,37 @@
 	.navbar-nav {
 		> li {
 			> a {
-				color: $brand-primary;
 				font-family: $font-family-serif;
 				font-weight: 400;
 			}
 		}
+	}
+}
+
+#front-page-slides {
+	padding-bottom: 2em;
+	margin-bottom: 4em;
+	border-bottom: 1px solid $body-bg;
+
+	.item {
+		margin-bottom: 2em;
+	}
+
+	.wp-post-image {
+		max-width: 100%;
+		height: auto;
+		@include border-radius(50%);
+		@include box-shadow(0 5px 15px rgba(#000, 0.3));
+	}
+
+}
+
+.carousel-control {
+	background: none;
+	&.left, &.right {
+		@extend .carousel-control;
+	}
+	&:hover {
+		color: $pchc-blue;
 	}
 }

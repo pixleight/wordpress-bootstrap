@@ -37,7 +37,20 @@
 }
 
 #main {
-  top: -55px;
+  top: -35px;
+}
+.home #main {
+  top: 0;
+}
+
+#breadcrumbs {
+  font-family: "Roboto Slab", serif;
+  color: #999999;
+  font-weight: 300;
+  font-size: 0.9em;
+}
+#breadcrumbs .glyphicon {
+  font-size: 0.8em;
 }
 
 .navbar .navbar-brand {
@@ -62,7 +75,34 @@
 }
 
 .navbar-default .navbar-nav > li > a {
-  color: #2f3485;
   font-family: "Roboto Slab", serif;
   font-weight: 400;
+}
+
+#front-page-slides {
+  padding-bottom: 2em;
+  margin-bottom: 4em;
+  border-bottom: 1px solid #c7c9eb;
+}
+#front-page-slides .item {
+  margin-bottom: 2em;
+}
+#front-page-slides .wp-post-image {
+  max-width: 100%;
+  height: auto;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-control, .carousel-control.left, .carousel-control.right {
+  background: none;
+}
+.carousel-control:hover {
+  color: #2f3485;
 }

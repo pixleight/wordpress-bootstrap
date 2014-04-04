@@ -51,7 +51,22 @@
 						<?php wp_bootstrap_main_nav(); // Adjust using Menus in Wordpress Admin ?>
 
 						<?php //if(of_get_option('search_bar', '1')) {?>
-						<form class="navbar-form navbar-right" role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+							<li class="dropdown">
+								<a href="#"><span class="glyphicon glyphicon-search"></span></a>
+								<ul class="dropdown-menu">
+									<li>
+										<form class="navbar-form" role="search" method="get" action="<?php echo home_url( '/' ); ?>">
+											<div class="form-group">
+												<input name="s" id="s" type="text" class="search-query form-control" autocomplete="off" placeholder="<?php _e('Search','wpbootstrap'); ?>" data-provide="typeahead" data-items="4" data-source='<?php echo $typeahead_data; ?>'>
+											</div>
+										</form>
+									</li>
+								</ul>
+							</li>
+						</ul>
+
+						<form class="navbar-form navbar-right visible-xs" role="search" method="get" action="<?php echo home_url( '/' ); ?>">
 							<div class="form-group">
 								<input name="s" id="s" type="text" class="search-query form-control" autocomplete="off" placeholder="<?php _e('Search','wpbootstrap'); ?>" data-provide="typeahead" data-items="4" data-source='<?php echo $typeahead_data; ?>'>
 							</div>

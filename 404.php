@@ -4,6 +4,10 @@
 			
 				<div id="main" class="col-sm-12 clearfix" role="main">
 
+					<?php if ( function_exists('yoast_breadcrumb') ) {
+					yoast_breadcrumb('<p id="breadcrumbs">','</p>');
+					} ?>
+
 					<article id="post-not-found" class="clearfix">
 						
 						<header>

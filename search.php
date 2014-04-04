@@ -3,6 +3,10 @@
 			<div id="content" class="clearfix row">
 			
 				<div id="main" class="col col-lg-8 clearfix" role="main">
+
+					<?php if ( function_exists('yoast_breadcrumb') ) {
+					yoast_breadcrumb('<p id="breadcrumbs">','</p>');
+					} ?>
 				
 					<div class="page-header"><h1><span><?php _e("Search Results for","wpbootstrap"); ?>:</span> <?php echo esc_attr(get_search_query()); ?></h1></div>
 

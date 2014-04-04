@@ -3,6 +3,10 @@
 			<div id="content" class="clearfix row">
 			
 				<div id="main" class="col-sm-8 clearfix" role="main">
+
+					<?php if ( function_exists('yoast_breadcrumb') ) {
+					yoast_breadcrumb('<p id="breadcrumbs">','</p>');
+					} ?>
 				
 					<div class="page-header"><h1 class="archive_title h2">
 						<span><?php _e("Posts By:", "wpbootstrap"); ?></span> 

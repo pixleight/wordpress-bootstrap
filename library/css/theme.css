@@ -42,6 +42,9 @@
 .home #main {
   top: 0;
 }
+.post-type-archive-provider #main article {
+  border-bottom: none;
+}
 
 #breadcrumbs {
   font-family: "Roboto Slab", serif;

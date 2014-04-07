@@ -43,6 +43,12 @@
 	.home & {
 		top: 0;
 	}
+
+	article {
+		.post-type-archive-provider & {
+			border-bottom: none;
+		}
+	}
 }
 
 #breadcrumbs {

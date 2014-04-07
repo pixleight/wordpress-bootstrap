@@ -102,9 +102,6 @@
 	}
 
 	.wp-post-image {
-		max-width: 100%;
-		height: auto;
-		@include border-radius(50%);
 		@include box-shadow(0 5px 15px rgba(#000, 0.3));
 	}
 
@@ -134,9 +131,6 @@
 	}
 
 	img {
-		max-width: 100%;
-		height: auto;
-		@include border-radius(50%);
 		@include box-shadow(0 7px 15px rgba(#000,0.15));
 	}
 

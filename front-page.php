@@ -33,7 +33,9 @@
 						<div class="item <?php echo $active; ?>">
 							<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 								<div class="col-sm-4 col-sm-push-1">
-									<?php the_post_thumbnail( 'pchc-front-page-slide' ); ?>
+									<?php the_post_thumbnail( 'pchc-front-page-slide', array(
+										'class' => 'img-responsive img-circle',
+									) ); ?>
 								</div>
 								<div class="col-sm-6 col-sm-push-1">
 									<header>

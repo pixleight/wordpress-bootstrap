@@ -100,7 +100,9 @@ class Providers_Widget extends WP_Widget {
 
 				<li id="provider-<?php the_ID(); ?>" <?php post_class('clearfix'); ?>>
 					<div class="col-xs-4">
-						<?php the_post_thumbnail( 'thumbnail' ); ?>
+						<?php the_post_thumbnail( 'thumbnail', array(
+							'class' => 'img-circle img-responsive'
+						) ); ?>
 					</div>
 					<div class="col-xs-8">
 						<h4 class="provider-name"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>

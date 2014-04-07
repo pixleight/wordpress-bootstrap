@@ -486,10 +486,16 @@ if( !function_exists( "theme_js" ) ) {
       get_template_directory_uri() . '/library/js/modernizr.full.min.js', 
       array('jquery'), 
       '1.2' );
+
+    wp_register_script(  'google-maps', 
+      'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false', 
+      array('jquery'), 
+      '3.0' );
   
     wp_enqueue_script('bootstrap');
     wp_enqueue_script('wpbs-scripts');
     wp_enqueue_script('modernizr');
+    wp_enqueue_script('google-maps');
     
   }
 }

@@ -26,6 +26,17 @@
 							<?php the_content(); ?>
 							
 							<?php wp_link_pages(); ?>
+
+							<?php 
+ 
+							$address = get_field('address');
+							 
+							if( !empty($address) ):
+							?>
+							<div class="acf-map">
+								<div class="marker" data-lat="<?php echo $address['lat']; ?>" data-lng="<?php echo $address['lng']; ?>"></div>
+							</div>
+							<?php endif; ?>
 					
 						</section> <!-- end article section -->
 						

@@ -10,46 +10,39 @@
 				
 					<div class="page-header">
 						<h1 class="archive_title">
-							<span>Our</span> Providers
-						</h1>
+					    	<span><?php _e("Our", "wpbootstrap"); ?></span> Locations
+					    </h1>
 					</div>
 
-					<?php if (have_posts()) : $n=1; while (have_posts()) : the_post(); ?>
+					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
-					<div class="clearfix col-xs-6 col-sm-4">
-						<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
-							
-							<header>
-
-								<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-									<?php the_post_thumbnail( 'thumbnail', array(
-										'class' => 'img-responsive img-circle center-block',
-									) ); ?>
-								</a>
-								
-								<h3 class="h4"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-							
-							</header> <!-- end article header -->
+					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 						
-							<section class="post_content">
+						<header>
 							
-								<?php the_excerpt(); ?>
+							<h3 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 						
-							</section> <!-- end article section -->
-							
-							<footer>
-								
-							</footer> <!-- end article footer -->
-						
-						</article> <!-- end article -->
-					</div>
-					<?php if( $n % 3 == 0 ) : ?>
-						<div class="clearfix hidden-xs"></div>
-					<?php elseif( $n % 2 == 0 ) : ?>
-						<div class="clearfix visible-xs"></div>
-					<?php endif; ?>
+						</header> <!-- end article header -->
 					
-					<?php $n++; endwhile; ?>	
+						<section class="post_content">
+						
+							<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+								<?php the_post_thumbnail( 'wpbs-featured', array(
+									'class' => 'img-rounded img-responsive'
+								) ); ?>
+							</a>
+						
+							<?php the_excerpt(); ?>
+					
+						</section> <!-- end article section -->
+						
+						<footer>
+							
+						</footer> <!-- end article footer -->
+					
+					</article> <!-- end article -->
+					
+					<?php endwhile; ?>	
 					
 					<?php if (function_exists('page_navi')) { // if expirimental feature is active ?>
 						

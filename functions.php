@@ -363,7 +363,7 @@ function first_paragraph( $content ){
     global $post;
 
     // if we're on the homepage, don't add the lead class to the first paragraph of text
-    if( is_page_template( 'page-homepage.php' ) )
+    if( is_page_template( 'page-homepage.php' ) || get_post_type() == 'provider' )
         return $content;
     else
         return preg_replace('/<p([^>]+)?>/', '<p$1 class="lead">', $content, 1);

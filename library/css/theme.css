@@ -106,3 +106,41 @@
 .carousel-control:hover {
   color: #2f3485;
 }
+
+.widget_providers_widget ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.widget_providers_widget li {
+  margin: 0 0 2em;
+  padding: 0;
+  list-style-type: none;
+}
+.widget_providers_widget img {
+  max-width: 100%;
+  height: auto;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 7px 15px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 7px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.15);
+}
+.widget_providers_widget .provider-name {
+  margin-bottom: 0;
+}
+.widget_providers_widget p.provider-details {
+  margin: 0;
+  color: #555555;
+  font-weight: 300;
+}
+
+#footer {
+  background: #d1c6c2;
+  margin-bottom: 3em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}

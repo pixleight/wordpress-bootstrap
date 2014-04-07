@@ -119,3 +119,41 @@
 		color: $pchc-blue;
 	}
 }
+
+.widget_providers_widget {
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
+
+	li {
+		margin: 0 0 2em;
+		padding: 0;
+		list-style-type: none;
+	}
+
+	img {
+		max-width: 100%;
+		height: auto;
+		@include border-radius(50%);
+		@include box-shadow(0 7px 15px rgba(#000,0.15));
+	}
+
+	.provider-name {
+		margin-bottom: 0;
+	}
+
+	p.provider-details {
+		margin: 0;
+		color: $gray;
+		font-weight: 300;
+	}
+}
+
+#footer {
+	background: mix(#fff, $pchc-brown, 60%);
+	margin-bottom: 3em;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}

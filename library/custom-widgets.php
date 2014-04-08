@@ -106,8 +106,12 @@ class Providers_Widget extends WP_Widget {
 					</div>
 					<div class="col-xs-8">
 						<h4 class="provider-name"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-						<p class="provider-details">Pediatric Dentist</p>
-						<p class="provider-details">PCHC Dental Center</p>
+						<p class="provider-details"><?php the_field( 'title' ); ?></p>
+						<?php $locations = get_field( 'locations' ); 
+
+						foreach( $locations as $location ) : ?>
+							<p class="provider-details"><a href="<?php echo get_permalink( $location->ID ); ?>"><?php echo get_the_title( $location->ID ); ?></a></p>
+						<?php endforeach; ?>
 					</div>
 				</li>
 

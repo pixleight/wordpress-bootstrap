@@ -27,7 +27,12 @@
 									) ); ?>
 								</a>
 								
-								<h3 class="h4"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+								<h3 class="h4"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+									<?php if( get_field( 'title' ) ) : ?>
+									<br />
+									<small><?php the_field( 'title' ); ?></small>
+									<?php endif; ?>
+								</h3>
 							
 							</header> <!-- end article header -->
 						

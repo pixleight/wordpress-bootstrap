@@ -45,6 +45,9 @@
 									</header>
 									<section class="post_content clearfix">
 										<?php the_content(); ?>
+										<?php if( get_field( 'learn_more_link') ) : ?>
+											<a class="btn btn-primary btn-lg pull-right clearfix" href="<?php the_field( 'learn_more_link' ); ?>" role="button">Learn More <i class="glyphicon glyphicon-chevron-right"></i></a>
+										<?php endif; ?>
 									</section>
 								</div>
 							</article>

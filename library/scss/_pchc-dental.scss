@@ -119,6 +119,13 @@
 		@include box-shadow(0 5px 15px rgba(#000, 0.3));
 	}
 
+	.post_content {
+		p {
+			font-weight: 200;
+			font-size: 1.75em;
+		}
+	}
+
 }
 
 .carousel-control {

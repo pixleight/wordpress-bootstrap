@@ -98,6 +98,10 @@
   -moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
+#front-page-slides .post_content p {
+  font-weight: 200;
+  font-size: 1.75em;
+}
 
 .carousel-control, .carousel-control.left, .carousel-control.right {
   background: none;

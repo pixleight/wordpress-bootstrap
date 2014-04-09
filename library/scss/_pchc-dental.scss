@@ -48,6 +48,10 @@
 		.post-type-archive-provider & {
 			border-bottom: none;
 		}
+
+		img {
+
+		}
 	}
 }
 
@@ -167,6 +171,16 @@
 	img {
 		#main article & {
 			max-width: none;
+		}
+	}
+}
+
+.panel-providers {
+	img {
+		#main article & {
+			max-width: 25%;
+			height: auto;
+			margin-right: 1em;
 		}
 	}
 }

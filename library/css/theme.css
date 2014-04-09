@@ -143,3 +143,9 @@
 #main article .acf-map img {
   max-width: none;
 }
+
+#main article .panel-providers img {
+  max-width: 25%;
+  height: auto;
+  margin-right: 1em;
+}

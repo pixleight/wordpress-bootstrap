@@ -41,6 +41,28 @@
 								
 								<?php wp_link_pages(); ?>
 
+								<?php if( get_field( 'phone_number' ) ) : ?>
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h3 class="panel-title">Phone Number</h3>
+										</div>
+										<div class="panel-body">
+											<?php the_field( 'phone_number' ); ?>
+										</div>
+									</div>
+								<?php endif; ?>
+
+								<?php if( get_field( 'hours' ) ) : ?>
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h3 class="panel-title">Hours</h3>
+										</div>
+										<div class="panel-body">
+											<?php the_field( 'hours' ); ?>
+										</div>
+									</div>
+								<?php endif; ?>
+
 								<?php 
 								$providers = get_posts(array(
 									'post_type' => 'provider',
@@ -54,13 +76,24 @@
 								));
 								
 								if( $providers ) : ?>
-									<div class="panel panel-primary">
+									<div class="panel panel-primary panel-providers">
 										<div class="panel-heading">
 											<h3 class="panel-title">Providers</h3>
 										</div>
 										<div class="list-group">
 											<?php foreach( $providers as $provider ) : ?>
-												<a class="list-group-item" href="<?php echo get_permalink( $provider->ID ); ?>"><?php echo get_the_title( $provider->ID ); ?></a>
+												<a class="list-group-item clearfix" href="<?php echo get_permalink( $provider->ID ); ?>">
+													<?php echo get_the_post_thumbnail( $provider->ID, 'thumbnail', array(
+														'class' => 'img-circle pull-left'
+													) ); ?>
+													<h4>
+														<?php echo get_the_title( $provider->ID ); ?>
+														<?php if( get_field( 'title', $provider->ID ) ) : ?>
+														<br />
+														<small><?php the_field( 'title', $provider->ID ); ?></small>
+														<?php endif; ?>
+													</h4>
+												</a>
 											<?php endforeach; ?>
 										</div>
 									</div>

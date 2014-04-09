@@ -57,17 +57,20 @@
 }
 
 .navbar .navbar-brand {
-  padding-left: 85px;
+  padding-left: 90px;
   background: url(../img/logo.png) 0 50% no-repeat;
   font-family: "Roboto Slab", serif;
   font-weight: 400;
   text-align: center;
   line-height: 0.9em;
-  max-width: 13em;
+  max-width: 10em;
   color: #be1e2d;
   max-height: 50px;
   padding-top: 0.5em;
   text-shadow: 0 1px 0 #FFF;
+}
+.navbar .navbar-brand span {
+  display: none;
 }
 .navbar .navbar-brand:hover {
   color: #2f3485;

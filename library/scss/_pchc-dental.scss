@@ -68,17 +68,21 @@
 
 .navbar {
 	.navbar-brand {
-		padding-left: 85px;
+		padding-left: 90px;
 		background:url(../img/logo.png) 0 50% no-repeat;
 		font-family: $font-family-serif;
 		font-weight: 400;
 		text-align: center;
 		line-height: 0.9em;
-		max-width: 13em;
+		max-width: 10em;
 		color: $pchc-red;
 		max-height: $navbar-height;
 		padding-top: 0.5em;
 		text-shadow: 0 1px 0 #FFF;
+
+		span {
+			display: none;
+		}
 
 		&:hover {
 			color: $pchc-blue;

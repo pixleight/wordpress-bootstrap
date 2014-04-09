@@ -501,4 +501,42 @@ if( !function_exists( "theme_js" ) ) {
 }
 add_action( 'wp_enqueue_scripts', 'theme_js' );
 
+function order_by_lastname( $orderby, $query ) {
+
+    // first you should check to make sure sure you're only filtering the particular query
+    // you want to hack. return $orderby if its not the correct query;
+    global $wpdb;
+
+    $orderby_statement = "SUBSTR( LTRIM({$wpdb->posts}.post_title), LOCATE(' ',LTRIM({$wpdb->posts}.post_title)))";
+    return $orderby_statement;
+
+}
+
+function dental_pre_get_posts( $query ) {
+  // validate
+  if( is_admin() ){
+    return $query;
+  }
+
+  if( isset( $query->query_vars['post_type'] ) ) {
+    if( $query->query_vars['post_type'] == 'provider' ) { // Order providers by last name custom field
+      $query->set('meta_key', 'last_name');
+      $query->set('orderby', 'meta_value');
+      $query->set('order', 'ASC');
+      // add_filter( 'posts_orderby', 'order_by_lastname' ); //Order posts by 2nd word in title
+    }
+  }
+
+  return $query;
+}
+add_action('pre_get_posts', 'dental_pre_get_posts');
+
+function edit_site_title( $text, $show ) {
+  if( $show == 'name' ) {
+    $text = preg_replace("/(PCHC)/i", "<span>$1</span>", $text);
+  }
+  return $text;
+}
+add_filter( 'bloginfo', 'edit_site_title', 10, 2 );
+
 ?>

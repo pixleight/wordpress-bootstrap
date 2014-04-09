@@ -14,9 +14,23 @@
 						
 						<div class="row">
 							<div class="col-xs-3 col-sm-4 col-sm-push-8">
-								<?php the_post_thumbnail( 'medium', array(
+								<p><?php the_post_thumbnail( 'medium', array(
 									'class' => 'img-thumbnail img-responsive center-block',
-								) ); ?>
+								) ); ?></p>
+
+								<?php $locations = get_field( 'locations' );
+								if( $locations ) : ?>
+									<div class="panel panel-primary">
+										<div class="panel-heading">
+											<h3 class="panel-title">Locations</h3>
+										</div>
+										<div class="list-group">
+											<?php foreach( $locations as $location ) : ?>
+												<a class="list-group-item" href="<?php echo get_permalink( $location->ID ); ?>"><?php echo get_the_title( $location->ID ); ?></a>
+											<?php endforeach; ?>
+										</div>
+									</div>
+								<?php endif; ?>
 							</div>
 							<div class="col-xs-9 col-sm-8 col-sm-pull-4">
 								<header>
@@ -34,19 +48,40 @@
 								<section class="post_content clearfix" itemprop="articleBody">
 									<?php the_content(); ?>
 
-									<?php $locations = get_field( 'locations' );
-									if( $locations ) : ?>
-										<div class="panel panel-primary">
+									<?php if( get_field( 'education' ) ) : ?>
+										<div class="panel panel-default">
 											<div class="panel-heading">
-												<h3 class="panel-title">Locations</h3>
+												<h3 class="panel-title">Education</h3>
 											</div>
-											<div class="list-group">
-												<?php foreach( $locations as $location ) : ?>
-													<a class="list-group-item" href="<?php echo get_permalink( $location->ID ); ?>"><?php echo get_the_title( $location->ID ); ?></a>
-												<?php endforeach; ?>
+											<div class="panel-body">
+												<?php the_field( 'education' ); ?>
 											</div>
 										</div>
 									<?php endif; ?>
+
+									<?php if( get_field( 'certifications' ) ) : ?>
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												<h3 class="panel-title">Certifications</h3>
+											</div>
+											<div class="panel-body">
+												<?php the_field( 'certifications' ); ?>
+											</div>
+										</div>
+									<?php endif; ?>
+
+									<?php if( get_field( 'affiliations' ) ) : ?>
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												<h3 class="panel-title">Affiliations</h3>
+											</div>
+											<div class="panel-body">
+												<?php the_field( 'affiliations' ); ?>
+											</div>
+										</div>
+									<?php endif; ?>
+
+									
 									
 									<?php wp_link_pages(); ?>
 							

@@ -539,4 +539,11 @@ function edit_site_title( $text, $show ) {
 }
 add_filter( 'bloginfo', 'edit_site_title', 10, 2 );
 
+function dental_address_edit( $value, $post_id, $field ){
+  // Remove 'United States' from end of ACF addresses
+  $value = preg_replace("/((,?\s)?United States)/i", "", $value);
+  return $value;
+}
+add_filter('acf/load_value/name=address', 'dental_address_edit', 10, 3);
+
 ?>

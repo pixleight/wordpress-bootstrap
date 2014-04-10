@@ -171,6 +171,17 @@
 	margin-bottom: 3em;
 	padding-top: 0.5em;
 	padding-bottom: 0.5em;
+
+	.locations {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+
+		li {
+			margin: 0;
+			padding: 0;
+		}
+	}
 }
 
 .acf-map {

@@ -17,10 +17,50 @@
 					<nav class="clearfix">
 						<?php wp_bootstrap_footer_links(); // Adjust using Menus in Wordpress Admin ?>
 					</nav>
+
+					<div class="pull-left attribution">&copy; <?php bloginfo('name'); ?><br>
+						<a href="http://pchc.com/" target="_blank" title="Penobscot Community Health Center">PCHC.com <i class="glyphicon glyphicon-chevron-right"></i></a></div>
 					
-					<p class="pull-right"><a href="http://320press.com" id="credit320" title="By the dudes of 320press">320press</a></p>
-			
-					<p class="attribution">&copy; <?php bloginfo('name'); ?></p>
+					<div class="pull-right">
+						<?php
+						/**
+						 * The WordPress Query class.
+						 * @link http://codex.wordpress.org/Function_Reference/WP_Query
+						 *
+						 */
+						$loc_args = array(
+							
+							//Type & Status Parameters
+							'post_type'   => 'location',
+							'post_status' => 'publish',
+
+							//Order & Orderby Parameters
+							'order'               => 'ASC',
+							'orderby'             => 'title',
+							
+							//Pagination Parameters
+							'nopaging'               => true,
+							
+						);
+						
+						$loc_query = new WP_Query( $loc_args );
+
+						if( $loc_query->have_posts() ) : ?>
+						<ul class="locations">
+							<?php while( $loc_query->have_posts() ) : $loc_query->the_post(); ?>
+							<li>
+								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+								<?php if( get_field( 'address' ) ) : ?>
+								 | <?php $address = get_field('address'); echo $address['address']; ?>
+								<?php endif; ?>
+								<?php if( get_field( 'phone_number' ) ) : ?>
+									 | <?php the_field( 'phone_number' ); ?>
+								<?php endif; ?>
+							</li>
+							<?php endwhile; ?>
+						</ul>
+						<?php endif; wp_reset_query(); ?>
+					</div>
 				
 				</div> <!-- end #inner-footer -->
 				

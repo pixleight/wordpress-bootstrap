@@ -521,8 +521,14 @@ function dental_pre_get_posts( $query ) {
   if( isset( $query->query_vars['post_type'] ) ) {
     if( $query->query_vars['post_type'] == 'provider' ) { // Order providers by last name custom field
       $query->set('meta_key', 'last_name');
-      $query->set('orderby', 'meta_value');
-      $query->set('order', 'ASC');
+      
+      if( !isset( $query->query_vars['orderby']) ) {
+        $query->set('orderby', 'meta_value');
+      }
+
+      if( !isset( $query->query_vars['order']) ) {
+        $query->set('order', 'ASC');
+      }
       // add_filter( 'posts_orderby', 'order_by_lastname' ); //Order posts by 2nd word in title
     }
   }

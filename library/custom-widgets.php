@@ -31,10 +31,21 @@ class Providers_Widget extends WP_Widget {
 		else {
 			$title = __( 'Our Providers', 'wpbootstrap' );
 		}
+
+		if ( isset( $instance[ 'num_show' ] ) ) {
+			$num_show = $instance[ 'num_show' ];
+		}
+		else {
+			$num_show = 3;
+		}
 		?>
 		<p>
 		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
 		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
+		</p>
+		<p>
+		<label for="<?php echo $this->get_field_id( 'num_show' ); ?>"><?php _e( 'Number of Providers to Show:' ); ?></label> 
+		<input class="widefat" id="<?php echo $this->get_field_id( 'num_show' ); ?>" name="<?php echo $this->get_field_name( 'num_show' ); ?>" type="number" value="<?php echo esc_attr( $num_show ); ?>">
 		</p>
 		<?php 
 	}
@@ -53,6 +64,7 @@ class Providers_Widget extends WP_Widget {
 		// processes widget options to be saved
 		$instance = array();
 		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+		$instance['num_show'] = ( ! empty( $new_instance['num_show'] ) ) ? strip_tags( $new_instance['num_show'] ) : '';
 
 		return $instance;
 	}
@@ -67,8 +79,9 @@ class Providers_Widget extends WP_Widget {
 		// outputs the content of the widget
 		$title = apply_filters( 'widget_title', $instance['title'] );
 
-		echo $args['before_widget'];
-		if ( ! empty( $title ) )
+		echo $args['before_widget']; ?>
+		<a href="<?php echo home_url(); ?>/?post_type=provider" class="btn pull-right btn-sm">View All Providers <i class="glyphicon glyphicon-chevron-right"></i></a>
+		<?php if ( ! empty( $title ) )
 			echo $args['before_title'] . $title . $args['after_title'];
 
 		/**
@@ -84,11 +97,11 @@ class Providers_Widget extends WP_Widget {
 
 			//Order & Orderby Parameters
 			'order'               => 'DESC',
-			'orderby'             => 'date',
+			'orderby'             => 'rand',
 			
 			//Pagination Parameters
-			'posts_per_page'         => -1,
-			'nopaging'               => true,
+			'posts_per_page'         => $instance['num_show'],
+			'nopaging'               => false,
 			
 		);
 	

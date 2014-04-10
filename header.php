@@ -21,6 +21,16 @@
 		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
+
+		<!-- icons & favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) -->
+		<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/library/img/apple-icon-touch.png">
+		<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
+		<!--[if IE]>
+			<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
+		<![endif]-->
+		<!-- or, set /favicon.ico for IE10 win -->
+		<meta name="msapplication-TileColor" content="#f01d4f">
+		<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/img/win8-tile-icon.png">
 		
   		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 

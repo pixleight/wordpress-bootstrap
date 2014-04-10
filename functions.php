@@ -17,6 +17,9 @@ require_once('library/shortcodes.php');
 // Custom Widgets
 require_once('library/custom-widgets.php');
 
+// Custom post types
+require_once('library/custom-post-types.php');
+
 // Admin Functions (commented out by default)
 // require_once('library/admin.php');         // custom admin functions
 

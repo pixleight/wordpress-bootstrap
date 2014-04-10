@@ -1,4 +1,9 @@
 @import "compass/css3"; 
+
+.img-circle {
+	@include box-shadow(0 7px 15px rgba(#000,0.15));
+}
+
 #maincontent {
 	background: #fff;
 	margin-top: 56px;
@@ -149,10 +154,6 @@
 		margin: 0 0 2em;
 		padding: 0;
 		list-style-type: none;
-	}
-
-	img {
-		@include box-shadow(0 7px 15px rgba(#000,0.15));
 	}
 
 	.provider-name {

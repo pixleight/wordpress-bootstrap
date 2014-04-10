@@ -1,3 +1,9 @@
+.img-circle {
+  -webkit-box-shadow: 0 7px 15px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 7px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.15);
+}
+
 #maincontent {
   background: #fff;
   margin-top: 56px;
@@ -119,11 +125,6 @@
   margin: 0 0 2em;
   padding: 0;
   list-style-type: none;
-}
-.widget_providers_widget img {
-  -webkit-box-shadow: 0 7px 15px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 7px 15px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.15);
 }
 .widget_providers_widget .provider-name {
   margin-bottom: 0;

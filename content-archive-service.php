@@ -17,7 +17,7 @@
 	<footer>
 		<?php $children_args = array(
 			'post_parent' => get_the_ID(),
-			'post_type' => 'department',
+			'post_type' => 'service',
 			'post_status' => 'publish',
 			'posts_per_page' => -1,
 		);

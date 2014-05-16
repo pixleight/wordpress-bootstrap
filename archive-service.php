@@ -13,7 +13,7 @@
 						'orderby' => 'title',
 						'order' => 'ASC',
 						'post_parent' => 0,
-						'post_type' => 'department',
+						'post_type' => 'service',
 						'post_status' => 'publish',
 						'posts_per_page' => 999,
 						'nopaging' => true
@@ -63,7 +63,7 @@
 						<div class="acf-map">
 							<?php while ( have_posts() ) : the_post();
 							$address = get_field('address');
-								if( !empty( $address ) ) :?>
+								if( !empty( $address['lat'] ) && !empty( $address['lng'] ) ) :?>
 									<div class="marker" data-lat="<?php echo $address['lat']; ?>" data-lng="<?php echo $address['lng']; ?>"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
 								<?php endif; ?>
 							<?php endwhile; ?>

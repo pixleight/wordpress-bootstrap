@@ -26,7 +26,7 @@
 								<div class="col-md-8">
 									<?php the_content(); ?>
 
-									<?php if( get_field('department_phone_number') ) field_panel('Phone Number', get_field('department_phone_number') ); ?>
+									<?php if( get_field('service_phone_number') ) field_panel('Phone Number', get_field('service_phone_number') ); ?>
 
 									<?php if( get_field('hours') ) field_panel('Hours', wpmarkdown_markdown_to_html( get_field('hours') ) ); ?>
 									

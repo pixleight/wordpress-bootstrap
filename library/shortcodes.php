@@ -128,7 +128,34 @@ function blockquotes( $atts, $content = null ) {
 
 add_shortcode('blockquote', 'blockquotes'); 
  
+/**
+ *  Panels
+ *  [panel type="info"]...content...[/panel]
+ *  <h4> tags get turned into panel titles.
+ */
+function panels( $atts, $content ) {
+	$a = shortcode_atts( array(
+		'type' => 'default'
+	), $atts );
 
+	$title_pattern = '/(?:<h4(?:.*?)>)(.*?)(?:<\/h4>)/i';
 
+	preg_match( $title_pattern, $content, $title );
+
+	$content = preg_replace( $title_pattern, '', $content, 1 );
+
+	ob_start();
+	?> <div class="panel panel-<?php echo $a['type']; ?>">
+	<?php if( !empty( $title ) ) : ?>
+		<div class="panel-heading">
+			<h4 class="panel-title"><?php echo $title[1]; ?></h4>
+		</div>
+	<?php endif; ?>
+	<div class="panel-body"><?php echo $content; ?></div>
+	</div> <?php
+	return ob_get_clean();
+}
+
+add_shortcode('panel', 'panels'); 
 
 ?>

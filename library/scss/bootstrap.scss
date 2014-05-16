@@ -4,9 +4,10 @@
 @import "variables";
 @import "mixins";
 
-// Reset
+// Reset and dependencies
 @import "normalize";
 @import "print";
+@import "glyphicons";
 
 // Core CSS
 @import "scaffolding";
@@ -19,7 +20,6 @@
 
 // Components
 @import "component-animations";
-@import "glyphicons";
 @import "dropdowns";
 @import "button-groups";
 @import "input-groups";
@@ -37,6 +37,7 @@
 @import "media";
 @import "list-group";
 @import "panels";
+@import "responsive-embed";
 @import "wells";
 @import "close";
 

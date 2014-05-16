@@ -4296,6 +4296,9 @@ tbody.collapse.in {
 .btn-group-justified > .btn-group .btn, .btn-group-justified > .btn-group a.comment-reply-link, .btn-group-justified > .btn-group #cancel-comment-reply-link, .btn-group-justified > .btn-group .form-submit input[type='submit'], .form-submit .btn-group-justified > .btn-group input[type='submit'] {
   width: 100%;
 }
+.btn-group-justified > .btn-group .dropdown-menu {
+  left: auto;
+}
 
 [data-toggle="buttons"] > .btn > input[type="radio"], [data-toggle="buttons"] > a.comment-reply-link > input[type="radio"], [data-toggle="buttons"] > #cancel-comment-reply-link > input[type="radio"], .form-submit [data-toggle="buttons"] > input[type='submit'] > input[type="radio"],
 [data-toggle="buttons"] > .btn > input[type="checkbox"],
@@ -4305,6 +4308,7 @@ tbody.collapse.in {
   position: absolute;
   z-index: -1;
   opacity: 0;
+  filter: alpha(opacity=0);
 }
 
 .input-group {

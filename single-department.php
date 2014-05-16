@@ -62,6 +62,31 @@
 										$staff_content .= '</ul>';
 										field_panel('Staff Members', $staff_content);
 									} ?>
+
+									<?php // Primary contact
+									if( get_field('primary_contact') ) {
+										$args = array(
+											'post__in' => get_field('primary_contact'),
+											'post_type' => 'staff',
+											'posts_per_page' => -1,
+											'orderby' => 'title',
+											'order' => 'ASC'
+										);
+										$primary_contact = new WP_Query($args);
+										if( $primary_contact->have_posts() ) {
+											$primary_contact_content = '<ul class="list-unstyled">';
+											while( $primary_contact->have_posts() ) { $primary_contact->the_post();
+												$primary_contact_content .= '<li>';
+													$primary_contact_content .= '<a href="'.get_permalink().'">';
+														$primary_contact_content .= get_the_title();
+													$primary_contact_content .= '</a>';
+												$primary_contact_content .= '</li>';
+											}
+											$primary_contact_content .= '</ul>';
+											field_panel('Primary Contact', $primary_contact_content);
+										}
+										wp_reset_query();
+									} ?>
 								</div>
 							</div>
 

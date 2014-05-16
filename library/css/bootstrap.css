@@ -7250,7 +7250,7 @@ blockquote.pull-left {
   margin: 20px 0;
 }
 .acf-map img {
-  max-width: none;
+  max-width: none !important;
 }
 
 #main .carousel {

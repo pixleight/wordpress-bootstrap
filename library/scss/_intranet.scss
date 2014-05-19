@@ -72,3 +72,55 @@
 		}
 	}
 }
+
+.wpfilebase-file-default {
+	width: auto;
+	margin: 1em;
+	@include border-radius($border-radius-base);
+	background: $gray-lighter;
+	border: 1px solid $gray-light;
+
+	&:hover {
+		background: #FFF;
+		border-color: $brand-primary;
+		@include box-shadow(1px 1px 1px #CCC);
+	}
+}
+
+.widget_hier_page, .widget_nav_menu {
+	ul {
+		@extend .nav;
+		@extend .nav-pills;
+		@extend .nav-stacked;
+
+		.children {
+			font-size: 0.9em;
+			margin-left: 1.5em;
+			padding-left: .5em;
+		}
+
+
+		.current_page_item, .current_page_parent {
+			.children {
+				border-left: 1px solid $nav-disabled-link-color;
+			}
+		}
+
+		.current_page_item {
+			> a, > a:hover, > a:focus {
+				color: $nav-pills-active-link-hover-color;
+        		background-color: $nav-pills-active-link-hover-bg;
+			}
+
+			.children {
+				border-left: 2px solid $nav-pills-active-link-hover-bg;
+			}
+		}
+
+		.current_page_ancestor {
+			> a {
+				color: $nav-disabled-link-color;
+			}
+		}
+	}
+}

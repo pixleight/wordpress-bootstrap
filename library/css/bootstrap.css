@@ -7703,7 +7703,7 @@ blockquote.pull-left {
   height: 18px !important;
 }
 
-.wpfilebase-file-default {
+.wpfilebase-file-intranet {
   width: auto;
   margin: 1em;
   -webkit-border-radius: 4px;
@@ -7714,11 +7714,29 @@ blockquote.pull-left {
   background: #eeeeee;
   border: 1px solid #999999;
 }
-.wpfilebase-file-default:hover {
+.wpfilebase-file-intranet .icon img {
+  max-height: 40px;
+}
+.wpfilebase-file-intranet .info {
+  background: none;
+  padding-right: 0;
+  height: auto;
+  text-align: center;
+  margin-top: 0;
+}
+.wpfilebase-file-intranet .info .glyphicon {
+  color: #2f3485;
+  font-size: 3em;
+  text-shadow: 0 2px 1px white;
+}
+.wpfilebase-file-intranet:hover {
   background: #FFF;
   border-color: #2f3485;
   -webkit-box-shadow: 1px 1px 1px #cccccc;
   box-shadow: 1px 1px 1px #cccccc;
+}
+.wpfilebase-file-intranet:hover .glyphicon {
+  color: #be1e2d;
 }
 
 .widget_hier_page ul .children, .widget_nav_menu ul .children {

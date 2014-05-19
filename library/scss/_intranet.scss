@@ -73,17 +73,41 @@
 	}
 }
 
-.wpfilebase-file-default {
+.wpfilebase-file-intranet {
 	width: auto;
 	margin: 1em;
 	@include border-radius($border-radius-base);
 	background: $gray-lighter;
 	border: 1px solid $gray-light;
 
+	.icon {
+		img {
+			max-height: 40px;
+		}
+	}
+
+	.info {
+		background: none;
+		padding-right: 0;
+		height: auto;
+		text-align: center;
+		margin-top: 0;
+
+		.glyphicon {
+			color: $brand-primary;
+			font-size: 3em;
+			@include text-shadow(0 2px 1px #FFF);
+		}
+	}
+
 	&:hover {
 		background: #FFF;
 		border-color: $brand-primary;
 		@include box-shadow(1px 1px 1px #CCC);
+
+		.glyphicon {
+			color: $brand-danger;
+		}
 	}
 }
 

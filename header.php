@@ -57,3 +57,10 @@
 		</header> <!-- end header -->
 		
 		<div class="container">
+
+		<?php if ( function_exists('yoast_breadcrumb') ) { ?>
+			<div class="row clearfix"><div class="col-sm-12 clearfix">
+				<?php $breadcrumbs = yoast_breadcrumb('<ol class="breadcrumb"><li>','</li></ol>',false);
+				echo str_replace( '|', '</li><li>', $breadcrumbs ); ?>
+			</div></div>
+		<?php } ?>

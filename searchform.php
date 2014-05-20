@@ -1,10 +1,12 @@
 <form action="<?php echo home_url( '/' ); ?>" method="get" class="form-inline">
     <fieldset>
-		<div class="input-group">
-			<input type="text" name="s" id="search" placeholder="<?php _e("Search","wpbootstrap"); ?>" value="<?php the_search_query(); ?>" class="form-control" />
-			<span class="input-group-btn">
-				<button type="submit" class="btn btn-default"><?php _e("Search","wpbootstrap"); ?></button>
-			</span>
+    	<div class="row">
+			<div class="input-group col-sm-12">
+				<input type="text" name="s" id="search" placeholder="<?php _e("Search","wpbootstrap"); ?>" value="<?php the_search_query(); ?>" class="form-control input-sm" />
+				<span class="input-group-btn">
+					<button class="btn btn-primary btn-sm" type="button"><span class="glyphicon glyphicon-search"></span></button>
+				</span>
+			</div>
 		</div>
     </fieldset>
 </form>

@@ -37,13 +37,13 @@
 /* layout */
 
 body{
-	padding-top: 60px;
+	padding-top: 80px;
 }
 
 /* Admin Top Navigation fixes */
 
 body.admin-bar .navbar-fixed-top{ 
-	top: 28px; 
+	top: 32px; 
 }
 
 .navbar .brand{
@@ -543,7 +543,7 @@ blockquote.pull-left{
 
 @media only screen and (min-width: 980px) {
 	body{
-		padding-top: 60px;
+		padding-top: 80px;
 	}
 	
 	.container-fluid{

@@ -46,6 +46,52 @@
 					</article> <!-- end article -->
 					
 					<?php // comments_template('',true); ?>
+
+					<?php $attached_category = get_field('blog_category');
+						if( $attached_category ) {
+							/**
+							 * The WordPress Query class.
+							 * @link http://codex.wordpress.org/Function_Reference/WP_Query
+							 *
+							 */
+							$args = array(
+								
+								//Category Parameters
+								'cat'     => $attached_category->term_id,
+								
+								//Type & Status Parameters
+								'post_type'   => 'post',
+								'post_status' => 'publish',
+								
+								//Order & Orderby Parameters
+								'order'               => 'DESC',
+								'orderby'             => 'date',
+								
+								//Pagination Parameters
+								'posts_per_archive_page' => 5,
+								'nopaging'               => false,
+								'paged'                  => get_query_var('paged'),
+								
+							);
+						
+						$cat_query = new WP_Query( $args );
+
+						if ($cat_query->have_posts()) : ?>
+
+							<h1><a href="<?php echo esc_url( get_category_link( $attached_category ) ); ?>" title="<?php $attached_category->name; ?>"><?php echo $attached_category->name; ?></a></h1>
+
+							<?php while ($cat_query->have_posts()) : $cat_query->the_post(); ?>
+
+							<div class="row clearfix">
+								<div class="col-xs-10 col-xs-offset-1 clearfix">
+									<?php get_template_part( 'content-archive', get_post_type() ); ?>
+								</div>
+							</div>
+
+						<?php endwhile; endif; wp_reset_postdata();
+							
+						} // End check for attached blog category
+					?>
 					
 					<?php endwhile; ?>		
 					

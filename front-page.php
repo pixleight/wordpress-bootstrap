@@ -13,8 +13,8 @@
 						global $wp_query;
 						$args = array_merge( $wp_query->query_vars, array(
 							//Category Parameters
-							// 'cat'              => 1,
-							'category_name'    => 'front-page',
+							'tag_id'              => 10,
+							//'category_name'    => 'front-page',
 							
 							//Type & Status Parameters
 							'post_type'   => 'post',

@@ -6,27 +6,27 @@
 				
 					<div class="page-header">
 					<?php if (is_category()) { ?>
-						<h1 class="archive_title h2">
-							<span><?php _e("Posts Categorized:", "wpbootstrap"); ?></span> <?php single_cat_title(); ?>
+						<h1 class="archive_title h1">
+							<span><?php _e("Category:", "wpbootstrap"); ?></span> <?php single_cat_title(); ?>
 						</h1>
 					<?php } elseif (is_tag()) { ?> 
-						<h1 class="archive_title h2">
-							<span><?php _e("Posts Tagged:", "wpbootstrap"); ?></span> <?php single_tag_title(); ?>
+						<h1 class="archive_title h1">
+							<span><?php _e("Tagged:", "wpbootstrap"); ?></span> <?php single_tag_title(); ?>
 						</h1>
 					<?php } elseif (is_author()) { ?>
-						<h1 class="archive_title h2">
+						<h1 class="archive_title h1">
 							<span><?php _e("Posts By:", "wpbootstrap"); ?></span> <?php get_the_author_meta('display_name'); ?>
 						</h1>
 					<?php } elseif (is_day()) { ?>
-						<h1 class="archive_title h2">
+						<h1 class="archive_title h1">
 							<span><?php _e("Daily Archives:", "wpbootstrap"); ?></span> <?php the_time('l, F j, Y'); ?>
 						</h1>
 					<?php } elseif (is_month()) { ?>
-					    <h1 class="archive_title h2">
+					    <h1 class="archive_title h1">
 					    	<span><?php _e("Monthly Archives:", "wpbootstrap"); ?>:</span> <?php the_time('F Y'); ?>
 					    </h1>
 					<?php } elseif (is_year()) { ?>
-					    <h1 class="archive_title h2">
+					    <h1 class="archive_title h1">
 					    	<span><?php _e("Yearly Archives:", "wpbootstrap"); ?>:</span> <?php the_time('Y'); ?>
 					    </h1>
 					<?php } ?>
@@ -34,29 +34,7 @@
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
-					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
-						
-						<header>
-							
-							<h3 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-							
-							<p class="meta"><?php _e("Posted", "wpbootstrap"); ?> <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time(); ?></time> <?php _e("by", "wpbootstrap"); ?> <?php the_author_posts_link(); ?> <span class="amp">&</span> <?php _e("filed under", "wpbootstrap"); ?> <?php the_category(', '); ?>.</p>
-						
-						</header> <!-- end article header -->
-					
-						<section class="post_content">
-						
-							<?php the_post_thumbnail( 'wpbs-featured' ); ?>
-						
-							<?php the_excerpt(); ?>
-					
-						</section> <!-- end article section -->
-						
-						<footer>
-							
-						</footer> <!-- end article footer -->
-					
-					</article> <!-- end article -->
+						<?php get_template_part( 'content-archive', get_post_type() ); ?>
 					
 					<?php endwhile; ?>	
 					

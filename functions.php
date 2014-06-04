@@ -367,6 +367,13 @@ function first_paragraph( $content ){
 }
 // add_filter( 'the_content', 'first_paragraph' );
 
+function first_subhead( $content ){
+  global $post;
+
+  return preg_replace('/<h4([^>]+)?>/', '<h4$1 class="lead">', $content, 1);
+}
+add_filter( 'the_content', 'first_subhead' );
+
 // Menu output mods
 class Bootstrap_walker extends Walker_Nav_Menu{
 
@@ -491,12 +498,18 @@ if( !function_exists( "theme_js" ) ) {
       get_template_directory_uri() . '/library/js/intranet.js', 
       array('jquery'), 
       '1.0' );
+
+    wp_register_script( 'respond-js', 
+      get_template_directory_uri() . '/library/js/libs/respond.min.js', 
+      array('jquery'), 
+      '1.4.2' );
   
     wp_enqueue_script('bootstrap');
     wp_enqueue_script('wpbs-scripts');
     wp_enqueue_script('modernizr');
     wp_enqueue_script('google-maps-js');
     wp_enqueue_script('intranet-scripts');
+    wp_enqueue_script('respond-js');
     
   }
 }
@@ -536,5 +549,13 @@ function field_panel($title, $content) { // Displays a custom field in a nice pr
     </div>
   </div>
 <?php }
+
+function add_attachments_shortcode( $content ){
+  if( shortcode_exists( 'wpfilebase') ) {
+    $content .= do_shortcode( '[wpfilebase tag=attachments /]' );
+  }
+  return $content;
+}
+add_filter('the_content', 'add_attachments_shortcode');
 
 ?>

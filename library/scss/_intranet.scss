@@ -1,5 +1,21 @@
 /* Custom styles for the intranet */
 
+h1, h3, h5,
+.h1, .h3, .h5, {
+
+}
+
+h2, h4, h6,
+.h2, .h4, .h6 {
+	color: $brand-secondary;
+}
+
+h4 {
+	&.lead {
+		font-style: italic;
+	}
+}
+
 .navbar {
 	> .container {
 		.navbar-header {
@@ -33,6 +49,14 @@
 	h1, .h1, h2, .h2, h3, .h3 {
 		margin-top: 0;
 	}
+}
+
+#sidebar1 {
+	padding: 1em;
+	background: lighten($brand-secondary, 45%);
+	border-bottom: 1px solid #FFF;
+	@include border-radius($border-radius-base);
+	@include box-shadow(1px 1px 1px 1px rgba(#000,0.1));
 }
 
 header{
@@ -199,3 +223,31 @@ header{
 		}
 	}
 }
+
+ul.thumbnails {
+	margin: 1em;
+	padding: 0;
+	list-style-type: none;
+
+	li {
+		width: 33%;
+		padding: 1%;
+		margin: 0;
+		display: inline-block;
+		text-align: center;
+
+		a {
+			margin: 0;
+			display: inline-block;
+		}
+	}
+}
+
+.gallery {
+	.thumbnail {
+		display: inline-block;
+		margin: 0;
+	}
+}
+
+

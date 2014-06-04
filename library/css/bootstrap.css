@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Asul:400,700);
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -1241,10 +1242,10 @@ hr {
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: inherit;
-  font-weight: 500;
+  font-family: Optima, "Asul", Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+  font-weight: bold;
   line-height: 1.1;
-  color: inherit;
+  color: #2f3485;
 }
 h1 small,
 h1 .small, h2 small,
@@ -7636,6 +7637,15 @@ blockquote.pull-left {
   }
 }
 /* Custom styles for the intranet */
+h2, h4, h6,
+.h2, .h4, .h6 {
+  color: #8d7167;
+}
+
+h4.lead {
+  font-style: italic;
+}
+
 .navbar > .container .navbar-header {
   width: 135px;
   height: 50px;
@@ -7664,6 +7674,19 @@ blockquote.pull-left {
 }
 .page-header h1, .page-header .h1, .page-header h2, .page-header .h2, .page-header h3, .page-header .h3 {
   margin-top: 0;
+}
+
+#sidebar1 {
+  padding: 1em;
+  background: #f0ebea;
+  border-bottom: 1px solid #FFF;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 #main header .img-thumbnail.pull-right {
@@ -7797,4 +7820,26 @@ blockquote.pull-left {
 }
 .widget_hier_page ul .current_page_ancestor > a, .widget_nav_menu ul .current_page_ancestor > a {
   color: #999999;
+}
+
+ul.thumbnails {
+  margin: 1em;
+  padding: 0;
+  list-style-type: none;
+}
+ul.thumbnails li {
+  width: 33%;
+  padding: 1%;
+  margin: 0;
+  display: inline-block;
+  text-align: center;
+}
+ul.thumbnails li a {
+  margin: 0;
+  display: inline-block;
+}
+
+.gallery .thumbnail {
+  display: inline-block;
+  margin: 0;
 }

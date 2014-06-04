@@ -1,4 +1,6 @@
 				<div id="sidebar1" class="col-sm-4" role="complementary">
+
+					<?php get_template_part( 'searchform' ); ?>
 				
 					<?php if ( is_active_sidebar( 'sidebar1' ) ) : ?>
 

@@ -88,7 +88,11 @@
 								</div>
 							</div>
 
-						<?php endwhile; endif; wp_reset_postdata();
+							<?php endwhile; ?>
+
+							<a href="<?php echo esc_url( get_category_link( $attached_category ) ); ?>" title="<?php $attached_category->name; ?>" class="btn btn-primary btn-lg btn-block">Read More: <?php echo $attached_category->name; ?></a>
+
+						<?php endif; wp_reset_postdata();
 							
 						} // End check for attached blog category
 					?>

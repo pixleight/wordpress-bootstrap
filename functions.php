@@ -14,6 +14,9 @@ require_once('library/bones.php');            // core functions (don't remove)
 // Shortcodes
 require_once('library/shortcodes.php');
 
+// Custom Widgets
+require_once('library/widgets.php');
+
 // Admin Functions (commented out by default)
 // require_once('library/admin.php');         // custom admin functions
 

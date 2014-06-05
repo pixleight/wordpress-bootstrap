@@ -23,72 +23,28 @@
 					
 						<section class="post_content clearfix" itemprop="articleBody">
 							<div class="row">
-								<div class="col-md-8">
-									<?php the_content(); ?>
+								<?php $colwidth = (get_field('service_phone_number') && get_field('hours')) ? 'col-md-6' : 'col-md-12'; ?>
 
-									<?php if( get_field('service_phone_number') ) field_panel('Phone Number', get_field('service_phone_number') ); ?>
+								<?php if(get_field('service_phone_number')) : ?>
+									<div class="<?php echo $colwidth; ?>">
+									<?php field_panel('Hours', wpmarkdown_markdown_to_html( get_field('hours') ) ); ?>
+									</div>
+								<?php endif; ?>
 
-									<?php if( get_field('hours') ) field_panel('Hours', wpmarkdown_markdown_to_html( get_field('hours') ) ); ?>
-									
-									<?php if( !empty($address) ): ?>
-										<div class="acf-map">
-											<div class="marker" data-lat="<?php echo $address['lat']; ?>" data-lng="<?php echo $address['lng']; ?>"></div>
-										</div>
-									<?php endif; ?>
-								</div>
-
-								<div class="col-md-4">
-									<?php $staff_members = get_posts(array(
-										'posts_per_page' => -1,
-										'post_type' => 'staff',
-										'meta_query' => array(
-											array(
-												'key' => 'staff_department', // name of custom field
-												'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
-												'compare' => 'LIKE'
-											)
-										)
-									)); ?>
-
-									<?php if( $staff_members) {
-										$staff_content = '<ul class="list-unstyled">';
-											foreach( $staff_members as $staff ) { 
-												$staff_content .= '<li>';
-													$staff_content .= '<a href="'.get_permalink( $staff->ID ).'">';
-														$staff_content .=  get_the_title( $staff->ID );
-													$staff_content .= '</a>';
-												$staff_content .= '</li>';
-											}
-										$staff_content .= '</ul>';
-										field_panel('Staff Members', $staff_content);
-									} ?>
-
-									<?php // Primary contact
-									if( get_field('primary_contact') ) {
-										$args = array(
-											'post__in' => get_field('primary_contact'),
-											'post_type' => 'staff',
-											'posts_per_page' => -1,
-											'orderby' => 'title',
-											'order' => 'ASC'
-										);
-										$primary_contact = new WP_Query($args);
-										if( $primary_contact->have_posts() ) {
-											$primary_contact_content = '<ul class="list-unstyled">';
-											while( $primary_contact->have_posts() ) { $primary_contact->the_post();
-												$primary_contact_content .= '<li>';
-													$primary_contact_content .= '<a href="'.get_permalink().'">';
-														$primary_contact_content .= get_the_title();
-													$primary_contact_content .= '</a>';
-												$primary_contact_content .= '</li>';
-											}
-											$primary_contact_content .= '</ul>';
-											field_panel('Primary Contact', $primary_contact_content);
-										}
-										wp_reset_query();
-									} ?>
-								</div>
+								<?php if(get_field('service_phone_number')) : ?>
+									<div class="<?php echo $colwidth; ?>">
+									<?php field_panel('Phone Number', get_field('service_phone_number') ); ?>
+									</div>
+								<?php endif; ?>
 							</div>
+
+							<?php the_content(); ?>
+							
+							<?php if( !empty($address) ): ?>
+								<div class="acf-map">
+									<div class="marker" data-lat="<?php echo $address['lat']; ?>" data-lng="<?php echo $address['lng']; ?>"></div>
+								</div>
+							<?php endif; ?>
 
 							<?php wp_link_pages(); ?>
 					

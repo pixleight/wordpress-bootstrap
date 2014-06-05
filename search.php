@@ -4,7 +4,10 @@
 			
 				<div id="main" class="col col-lg-8 clearfix" role="main">
 				
-					<div class="page-header"><h1><span><?php _e("Search Results for","wpbootstrap"); ?>:</span> <?php echo esc_attr(get_search_query()); ?></h1></div>
+					<div class="page-header">
+						<h1><span><?php _e("Search Results for","wpbootstrap"); ?>:</span> <?php echo esc_attr(get_search_query()); ?></h1>
+						<?php get_template_part( 'searchform' ); ?>
+					</div>
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -30,8 +33,7 @@
 								</section> <!-- end article section -->
 								
 								<footer>
-							
-									
+									<?php do_shortcode( '[wpfilebase tag=attachments /]' ); ?>
 								</footer> <!-- end article footer -->
 
 							</div>

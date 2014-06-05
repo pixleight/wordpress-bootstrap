@@ -2,8 +2,15 @@
 						
 	<header>
 		
-		<h3 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-	
+		<h3 class="h2">
+			<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+
+			<?php $address = get_field('address'); ?>
+			<?php if( $address['address'] ) : ?>
+				<br><small><?php echo $address['address']; ?></small>
+			<?php endif; ?>
+		</h3>
+		<?php if( get_field('service_phone_number') ) field_panel('Phone Number', get_field('service_phone_number') ); ?>
 	</header> <!-- end article header -->
 
 	<section class="post_content">

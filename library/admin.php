@@ -86,7 +86,7 @@ function wp_bootstrap_custom_dashboard_widgets() {
 // removing the dashboard widgets
 add_action('admin_menu', 'disable_default_dashboard_widgets');
 // adding any custom widgets
-add_action('wp_dashboard_setup', 'wp_bootstrap_custom_dashboard_widgets');
+// add_action('wp_dashboard_setup', 'wp_bootstrap_custom_dashboard_widgets');
 
 
 /************* CUSTOM LOGIN PAGE *****************/
@@ -105,8 +105,8 @@ function wp_bootstrap_login_title() { echo get_option('blogname'); }
 
 // calling it only on the login page
 add_action('login_head', 'wp_bootstrap_login_css');
-add_filter('login_headerurl', 'wp_bootstrap_login_url');
-add_filter('login_headertitle', 'wp_bootstrap_login_title');
+//add_filter('login_headerurl', 'wp_bootstrap_login_url');
+//add_filter('login_headertitle', 'wp_bootstrap_login_title');
 
 
 /************* CUSTOMIZE ADMIN *******************/
@@ -117,12 +117,3 @@ as things may get funky if Wordpress updates. Here
 are a few funtions which you can choose to use if 
 you like.
 */
-
-// Custom Backend Footer
-function wp_bootstrap_custom_admin_footer() {
-	echo '<span id="footer-thankyou">Developed by <a href="http://yoursite.com" target="_blank">Your Site Name</a></span>. Built using <a href="http://themble.com/bones" target="_blank">Bones</a>.';
-}
-
-// adding it to the admin area
-add_filter('admin_footer_text', 'wp_bootstrap_custom_admin_footer');
-

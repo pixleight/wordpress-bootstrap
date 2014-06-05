@@ -18,7 +18,7 @@ require_once('library/shortcodes.php');
 require_once('library/widgets.php');
 
 // Admin Functions (commented out by default)
-// require_once('library/admin.php');         // custom admin functions
+require_once('library/admin.php');         // custom admin functions
 
 // Custom Backend Footer
 add_filter('admin_footer_text', 'wp_bootstrap_custom_admin_footer');

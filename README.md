@@ -1,4 +1,4 @@
-WP BOOTSTRAP
+WP-BOOTSTRAP
 ===================
 
 Bootstrap (http://getbootstrap.com) in WordPress theme form. 

@@ -307,3 +307,27 @@ ul.thumbnails {
 		}
 	}
 }
+
+.field-wrap {
+	@extend .form-group;
+
+	&.text-wrap,
+	&.textarea-wrap,
+	&.list-dropdown-wrap,
+	&.span-wrap {
+		.ninja-forms-field {
+			@extend .form-control;
+		}		
+	}
+
+	&.spam-wrap {
+		@extend .form-inline;
+	}
+
+	&.submit-wrap {
+		.ninja-forms-field {
+			@extend .btn;
+			@extend .btn-primary;
+		}
+	}
+}

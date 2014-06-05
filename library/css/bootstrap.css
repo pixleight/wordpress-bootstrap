@@ -289,11 +289,12 @@ th {
     background-color: #fff !important;
   }
 
-  .btn > .caret, a.comment-reply-link > .caret, #cancel-comment-reply-link > .caret, .form-submit input[type='submit'] > .caret,
+  .btn > .caret, a.comment-reply-link > .caret, #cancel-comment-reply-link > .caret, .form-submit input[type='submit'] > .caret, .field-wrap.submit-wrap .ninja-forms-field > .caret,
   .dropup > .btn > .caret,
   .dropup > a.comment-reply-link > .caret,
   .dropup > #cancel-comment-reply-link > .caret,
-  .form-submit .dropup > input[type='submit'] > .caret {
+  .form-submit .dropup > input[type='submit'] > .caret,
+  .field-wrap.submit-wrap .dropup > .ninja-forms-field > .caret {
     border-top-color: #000 !important;
   }
 
@@ -2885,7 +2886,7 @@ output {
 .comment-form-url input,
 .comment-form-url textarea,
 .comment-form-comment input,
-.comment-form-comment textarea {
+.comment-form-comment textarea, .field-wrap.text-wrap .ninja-forms-field, .field-wrap.textarea-wrap .ninja-forms-field, .field-wrap.list-dropdown-wrap .ninja-forms-field, .field-wrap.span-wrap .ninja-forms-field {
   display: block;
   width: 100%;
   height: 34px;
@@ -2910,7 +2911,7 @@ output {
 .comment-form-url input:focus,
 .comment-form-url textarea:focus,
 .comment-form-comment input:focus,
-.comment-form-comment textarea:focus {
+.comment-form-comment textarea:focus, .field-wrap.text-wrap .ninja-forms-field:focus, .field-wrap.textarea-wrap .ninja-forms-field:focus, .field-wrap.list-dropdown-wrap .ninja-forms-field:focus, .field-wrap.span-wrap .ninja-forms-field:focus {
   border-color: #66afe9;
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
@@ -2923,7 +2924,7 @@ output {
 .comment-form-url input::-moz-placeholder,
 .comment-form-url textarea::-moz-placeholder,
 .comment-form-comment input::-moz-placeholder,
-.comment-form-comment textarea::-moz-placeholder {
+.comment-form-comment textarea::-moz-placeholder, .field-wrap.text-wrap .ninja-forms-field::-moz-placeholder, .field-wrap.textarea-wrap .ninja-forms-field::-moz-placeholder, .field-wrap.list-dropdown-wrap .ninja-forms-field::-moz-placeholder, .field-wrap.span-wrap .ninja-forms-field::-moz-placeholder {
   color: #999999;
   opacity: 1;
 }
@@ -2934,7 +2935,7 @@ output {
 .comment-form-url input:-ms-input-placeholder,
 .comment-form-url textarea:-ms-input-placeholder,
 .comment-form-comment input:-ms-input-placeholder,
-.comment-form-comment textarea:-ms-input-placeholder {
+.comment-form-comment textarea:-ms-input-placeholder, .field-wrap.text-wrap .ninja-forms-field:-ms-input-placeholder, .field-wrap.textarea-wrap .ninja-forms-field:-ms-input-placeholder, .field-wrap.list-dropdown-wrap .ninja-forms-field:-ms-input-placeholder, .field-wrap.span-wrap .ninja-forms-field:-ms-input-placeholder {
   color: #999999;
 }
 .form-control::-webkit-input-placeholder, .comment-form-author input::-webkit-input-placeholder,
@@ -2944,7 +2945,7 @@ output {
 .comment-form-url input::-webkit-input-placeholder,
 .comment-form-url textarea::-webkit-input-placeholder,
 .comment-form-comment input::-webkit-input-placeholder,
-.comment-form-comment textarea::-webkit-input-placeholder {
+.comment-form-comment textarea::-webkit-input-placeholder, .field-wrap.text-wrap .ninja-forms-field::-webkit-input-placeholder, .field-wrap.textarea-wrap .ninja-forms-field::-webkit-input-placeholder, .field-wrap.list-dropdown-wrap .ninja-forms-field::-webkit-input-placeholder, .field-wrap.span-wrap .ninja-forms-field::-webkit-input-placeholder {
   color: #999999;
 }
 .form-control[disabled], .comment-form-author input[disabled],
@@ -2954,14 +2955,14 @@ output {
 .comment-form-url input[disabled],
 .comment-form-url textarea[disabled],
 .comment-form-comment input[disabled],
-.comment-form-comment textarea[disabled], .form-control[readonly], .comment-form-author input[readonly],
+.comment-form-comment textarea[disabled], .field-wrap.text-wrap [disabled].ninja-forms-field, .field-wrap.textarea-wrap [disabled].ninja-forms-field, .field-wrap.list-dropdown-wrap [disabled].ninja-forms-field, .field-wrap.span-wrap [disabled].ninja-forms-field, .form-control[readonly], .comment-form-author input[readonly],
 .comment-form-author textarea[readonly],
 .comment-form-email input[readonly],
 .comment-form-email textarea[readonly],
 .comment-form-url input[readonly],
 .comment-form-url textarea[readonly],
 .comment-form-comment input[readonly],
-.comment-form-comment textarea[readonly], fieldset[disabled] .form-control, fieldset[disabled] .comment-form-author input, .comment-form-author fieldset[disabled] input,
+.comment-form-comment textarea[readonly], .field-wrap.text-wrap [readonly].ninja-forms-field, .field-wrap.textarea-wrap [readonly].ninja-forms-field, .field-wrap.list-dropdown-wrap [readonly].ninja-forms-field, .field-wrap.span-wrap [readonly].ninja-forms-field, fieldset[disabled] .form-control, fieldset[disabled] .comment-form-author input, .comment-form-author fieldset[disabled] input,
 fieldset[disabled] .comment-form-author textarea,
 .comment-form-author fieldset[disabled] textarea,
 fieldset[disabled] .comment-form-email input,
@@ -2975,7 +2976,7 @@ fieldset[disabled] .comment-form-url textarea,
 fieldset[disabled] .comment-form-comment input,
 .comment-form-comment fieldset[disabled] input,
 fieldset[disabled] .comment-form-comment textarea,
-.comment-form-comment fieldset[disabled] textarea {
+.comment-form-comment fieldset[disabled] textarea, fieldset[disabled] .field-wrap.text-wrap .ninja-forms-field, .field-wrap.text-wrap fieldset[disabled] .ninja-forms-field, fieldset[disabled] .field-wrap.textarea-wrap .ninja-forms-field, .field-wrap.textarea-wrap fieldset[disabled] .ninja-forms-field, fieldset[disabled] .field-wrap.list-dropdown-wrap .ninja-forms-field, .field-wrap.list-dropdown-wrap fieldset[disabled] .ninja-forms-field, fieldset[disabled] .field-wrap.span-wrap .ninja-forms-field, .field-wrap.span-wrap fieldset[disabled] .ninja-forms-field {
   cursor: not-allowed;
   background-color: #eeeeee;
   opacity: 1;
@@ -2985,7 +2986,7 @@ textarea.form-control,
 .comment-form-author textarea,
 .comment-form-email textarea,
 .comment-form-url textarea,
-.comment-form-comment textarea {
+.comment-form-comment textarea, .field-wrap.text-wrap textarea.ninja-forms-field, .field-wrap.textarea-wrap textarea.ninja-forms-field, .field-wrap.list-dropdown-wrap textarea.ninja-forms-field, .field-wrap.span-wrap textarea.ninja-forms-field {
   height: auto;
 }
 
@@ -3003,88 +3004,120 @@ input[type="month"] {
 input[type="date"].input-sm, .input-group-sm > input[type="date"].form-control, .comment-form-author .input-group-sm > input[type="date"],
 .comment-form-email .input-group-sm > input[type="date"],
 .comment-form-url .input-group-sm > input[type="date"],
-.comment-form-comment .input-group-sm > input[type="date"],
+.comment-form-comment .input-group-sm > input[type="date"], .field-wrap.text-wrap .input-group-sm > input[type="date"].ninja-forms-field, .field-wrap.textarea-wrap .input-group-sm > input[type="date"].ninja-forms-field, .field-wrap.list-dropdown-wrap .input-group-sm > input[type="date"].ninja-forms-field, .field-wrap.span-wrap .input-group-sm > input[type="date"].ninja-forms-field,
 .input-group-sm > input[type="date"].input-group-addon,
 .input-group-sm > .input-group-btn > input[type="date"].btn,
 .input-group-sm > .input-group-btn > input[type="date"]#cancel-comment-reply-link,
 .form-submit .input-group-sm > .input-group-btn > input[type="date"][type='submit'],
+.field-wrap.submit-wrap .input-group-sm > .input-group-btn > input[type="date"].ninja-forms-field,
 input[type="time"].input-sm,
 .input-group-sm > input[type="time"].form-control,
 .comment-form-author .input-group-sm > input[type="time"],
 .comment-form-email .input-group-sm > input[type="time"],
 .comment-form-url .input-group-sm > input[type="time"],
 .comment-form-comment .input-group-sm > input[type="time"],
+.field-wrap.text-wrap .input-group-sm > input[type="time"].ninja-forms-field,
+.field-wrap.textarea-wrap .input-group-sm > input[type="time"].ninja-forms-field,
+.field-wrap.list-dropdown-wrap .input-group-sm > input[type="time"].ninja-forms-field,
+.field-wrap.span-wrap .input-group-sm > input[type="time"].ninja-forms-field,
 .input-group-sm > input[type="time"].input-group-addon,
 .input-group-sm > .input-group-btn > input[type="time"].btn,
 .input-group-sm > .input-group-btn > input[type="time"]#cancel-comment-reply-link,
 .form-submit .input-group-sm > .input-group-btn > input[type="time"][type='submit'],
+.field-wrap.submit-wrap .input-group-sm > .input-group-btn > input[type="time"].ninja-forms-field,
 input[type="datetime-local"].input-sm,
 .input-group-sm > input[type="datetime-local"].form-control,
 .comment-form-author .input-group-sm > input[type="datetime-local"],
 .comment-form-email .input-group-sm > input[type="datetime-local"],
 .comment-form-url .input-group-sm > input[type="datetime-local"],
 .comment-form-comment .input-group-sm > input[type="datetime-local"],
+.field-wrap.text-wrap .input-group-sm > input[type="datetime-local"].ninja-forms-field,
+.field-wrap.textarea-wrap .input-group-sm > input[type="datetime-local"].ninja-forms-field,
+.field-wrap.list-dropdown-wrap .input-group-sm > input[type="datetime-local"].ninja-forms-field,
+.field-wrap.span-wrap .input-group-sm > input[type="datetime-local"].ninja-forms-field,
 .input-group-sm > input[type="datetime-local"].input-group-addon,
 .input-group-sm > .input-group-btn > input[type="datetime-local"].btn,
 .input-group-sm > .input-group-btn > input[type="datetime-local"]#cancel-comment-reply-link,
 .form-submit .input-group-sm > .input-group-btn > input[type="datetime-local"][type='submit'],
+.field-wrap.submit-wrap .input-group-sm > .input-group-btn > input[type="datetime-local"].ninja-forms-field,
 input[type="month"].input-sm,
 .input-group-sm > input[type="month"].form-control,
 .comment-form-author .input-group-sm > input[type="month"],
 .comment-form-email .input-group-sm > input[type="month"],
 .comment-form-url .input-group-sm > input[type="month"],
 .comment-form-comment .input-group-sm > input[type="month"],
+.field-wrap.text-wrap .input-group-sm > input[type="month"].ninja-forms-field,
+.field-wrap.textarea-wrap .input-group-sm > input[type="month"].ninja-forms-field,
+.field-wrap.list-dropdown-wrap .input-group-sm > input[type="month"].ninja-forms-field,
+.field-wrap.span-wrap .input-group-sm > input[type="month"].ninja-forms-field,
 .input-group-sm > input[type="month"].input-group-addon,
 .input-group-sm > .input-group-btn > input[type="month"].btn,
 .input-group-sm > .input-group-btn > input[type="month"]#cancel-comment-reply-link,
-.form-submit .input-group-sm > .input-group-btn > input[type="month"][type='submit'] {
+.form-submit .input-group-sm > .input-group-btn > input[type="month"][type='submit'],
+.field-wrap.submit-wrap .input-group-sm > .input-group-btn > input[type="month"].ninja-forms-field {
   line-height: 30px;
 }
 input[type="date"].input-lg, .input-group-lg > input[type="date"].form-control, .comment-form-author .input-group-lg > input[type="date"],
 .comment-form-email .input-group-lg > input[type="date"],
 .comment-form-url .input-group-lg > input[type="date"],
-.comment-form-comment .input-group-lg > input[type="date"],
+.comment-form-comment .input-group-lg > input[type="date"], .field-wrap.text-wrap .input-group-lg > input[type="date"].ninja-forms-field, .field-wrap.textarea-wrap .input-group-lg > input[type="date"].ninja-forms-field, .field-wrap.list-dropdown-wrap .input-group-lg > input[type="date"].ninja-forms-field, .field-wrap.span-wrap .input-group-lg > input[type="date"].ninja-forms-field,
 .input-group-lg > input[type="date"].input-group-addon,
 .input-group-lg > .input-group-btn > input[type="date"].btn,
 .input-group-lg > .input-group-btn > input[type="date"]#cancel-comment-reply-link,
 .form-submit .input-group-lg > .input-group-btn > input[type="date"][type='submit'],
+.field-wrap.submit-wrap .input-group-lg > .input-group-btn > input[type="date"].ninja-forms-field,
 input[type="time"].input-lg,
 .input-group-lg > input[type="time"].form-control,
 .comment-form-author .input-group-lg > input[type="time"],
 .comment-form-email .input-group-lg > input[type="time"],
 .comment-form-url .input-group-lg > input[type="time"],
 .comment-form-comment .input-group-lg > input[type="time"],
+.field-wrap.text-wrap .input-group-lg > input[type="time"].ninja-forms-field,
+.field-wrap.textarea-wrap .input-group-lg > input[type="time"].ninja-forms-field,
+.field-wrap.list-dropdown-wrap .input-group-lg > input[type="time"].ninja-forms-field,
+.field-wrap.span-wrap .input-group-lg > input[type="time"].ninja-forms-field,
 .input-group-lg > input[type="time"].input-group-addon,
 .input-group-lg > .input-group-btn > input[type="time"].btn,
 .input-group-lg > .input-group-btn > input[type="time"]#cancel-comment-reply-link,
 .form-submit .input-group-lg > .input-group-btn > input[type="time"][type='submit'],
+.field-wrap.submit-wrap .input-group-lg > .input-group-btn > input[type="time"].ninja-forms-field,
 input[type="datetime-local"].input-lg,
 .input-group-lg > input[type="datetime-local"].form-control,
 .comment-form-author .input-group-lg > input[type="datetime-local"],
 .comment-form-email .input-group-lg > input[type="datetime-local"],
 .comment-form-url .input-group-lg > input[type="datetime-local"],
 .comment-form-comment .input-group-lg > input[type="datetime-local"],
+.field-wrap.text-wrap .input-group-lg > input[type="datetime-local"].ninja-forms-field,
+.field-wrap.textarea-wrap .input-group-lg > input[type="datetime-local"].ninja-forms-field,
+.field-wrap.list-dropdown-wrap .input-group-lg > input[type="datetime-local"].ninja-forms-field,
+.field-wrap.span-wrap .input-group-lg > input[type="datetime-local"].ninja-forms-field,
 .input-group-lg > input[type="datetime-local"].input-group-addon,
 .input-group-lg > .input-group-btn > input[type="datetime-local"].btn,
 .input-group-lg > .input-group-btn > input[type="datetime-local"]#cancel-comment-reply-link,
 .form-submit .input-group-lg > .input-group-btn > input[type="datetime-local"][type='submit'],
+.field-wrap.submit-wrap .input-group-lg > .input-group-btn > input[type="datetime-local"].ninja-forms-field,
 input[type="month"].input-lg,
 .input-group-lg > input[type="month"].form-control,
 .comment-form-author .input-group-lg > input[type="month"],
 .comment-form-email .input-group-lg > input[type="month"],
 .comment-form-url .input-group-lg > input[type="month"],
 .comment-form-comment .input-group-lg > input[type="month"],
+.field-wrap.text-wrap .input-group-lg > input[type="month"].ninja-forms-field,
+.field-wrap.textarea-wrap .input-group-lg > input[type="month"].ninja-forms-field,
+.field-wrap.list-dropdown-wrap .input-group-lg > input[type="month"].ninja-forms-field,
+.field-wrap.span-wrap .input-group-lg > input[type="month"].ninja-forms-field,
 .input-group-lg > input[type="month"].input-group-addon,
 .input-group-lg > .input-group-btn > input[type="month"].btn,
 .input-group-lg > .input-group-btn > input[type="month"]#cancel-comment-reply-link,
-.form-submit .input-group-lg > .input-group-btn > input[type="month"][type='submit'] {
+.form-submit .input-group-lg > .input-group-btn > input[type="month"][type='submit'],
+.field-wrap.submit-wrap .input-group-lg > .input-group-btn > input[type="month"].ninja-forms-field {
   line-height: 46px;
 }
 
 .form-group, .comment-form-author,
 .comment-form-email,
 .comment-form-url,
-.comment-form-comment {
+.comment-form-comment, .field-wrap {
   margin-bottom: 15px;
 }
 
@@ -3153,12 +3186,13 @@ input[type="checkbox"],
 .comment-form-url .input-group-sm > input,
 .comment-form-url .input-group-sm > textarea,
 .comment-form-comment .input-group-sm > input,
-.comment-form-comment .input-group-sm > textarea,
+.comment-form-comment .input-group-sm > textarea, .field-wrap.text-wrap .input-group-sm > .ninja-forms-field, .field-wrap.textarea-wrap .input-group-sm > .ninja-forms-field, .field-wrap.list-dropdown-wrap .input-group-sm > .ninja-forms-field, .field-wrap.span-wrap .input-group-sm > .ninja-forms-field,
 .input-group-sm > .input-group-addon,
 .input-group-sm > .input-group-btn > .btn,
 .input-group-sm > .input-group-btn > a.comment-reply-link,
 .input-group-sm > .input-group-btn > #cancel-comment-reply-link,
-.form-submit .input-group-sm > .input-group-btn > input[type='submit'] {
+.form-submit .input-group-sm > .input-group-btn > input[type='submit'],
+.field-wrap.submit-wrap .input-group-sm > .input-group-btn > .ninja-forms-field {
   height: 30px;
   padding: 5px 10px;
   font-size: 12px;
@@ -3166,10 +3200,11 @@ input[type="checkbox"],
   border-radius: 3px;
 }
 
-select.input-sm, .input-group-sm > select.form-control,
+select.input-sm, .input-group-sm > select.form-control, .field-wrap.text-wrap .input-group-sm > select.ninja-forms-field, .field-wrap.textarea-wrap .input-group-sm > select.ninja-forms-field, .field-wrap.list-dropdown-wrap .input-group-sm > select.ninja-forms-field, .field-wrap.span-wrap .input-group-sm > select.ninja-forms-field,
 .input-group-sm > select.input-group-addon,
 .input-group-sm > .input-group-btn > select.btn,
-.input-group-sm > .input-group-btn > select#cancel-comment-reply-link {
+.input-group-sm > .input-group-btn > select#cancel-comment-reply-link,
+.field-wrap.submit-wrap .input-group-sm > .input-group-btn > select.ninja-forms-field {
   height: 30px;
   line-height: 30px;
 }
@@ -3178,15 +3213,21 @@ textarea.input-sm, .input-group-sm > textarea.form-control,
 .comment-form-author .input-group-sm > textarea,
 .comment-form-email .input-group-sm > textarea,
 .comment-form-url .input-group-sm > textarea,
-.comment-form-comment .input-group-sm > textarea,
+.comment-form-comment .input-group-sm > textarea, .field-wrap.text-wrap .input-group-sm > textarea.ninja-forms-field, .field-wrap.textarea-wrap .input-group-sm > textarea.ninja-forms-field, .field-wrap.list-dropdown-wrap .input-group-sm > textarea.ninja-forms-field, .field-wrap.span-wrap .input-group-sm > textarea.ninja-forms-field,
 .input-group-sm > textarea.input-group-addon,
 .input-group-sm > .input-group-btn > textarea.btn,
 .input-group-sm > .input-group-btn > textarea#cancel-comment-reply-link,
+.field-wrap.submit-wrap .input-group-sm > .input-group-btn > textarea.ninja-forms-field,
 select[multiple].input-sm,
 .input-group-sm > select[multiple].form-control,
+.field-wrap.text-wrap .input-group-sm > select[multiple].ninja-forms-field,
+.field-wrap.textarea-wrap .input-group-sm > select[multiple].ninja-forms-field,
+.field-wrap.list-dropdown-wrap .input-group-sm > select[multiple].ninja-forms-field,
+.field-wrap.span-wrap .input-group-sm > select[multiple].ninja-forms-field,
 .input-group-sm > select[multiple].input-group-addon,
 .input-group-sm > .input-group-btn > select[multiple].btn,
-.input-group-sm > .input-group-btn > select[multiple]#cancel-comment-reply-link {
+.input-group-sm > .input-group-btn > select[multiple]#cancel-comment-reply-link,
+.field-wrap.submit-wrap .input-group-sm > .input-group-btn > select[multiple].ninja-forms-field {
   height: auto;
 }
 
@@ -3197,12 +3238,13 @@ select[multiple].input-sm,
 .comment-form-url .input-group-lg > input,
 .comment-form-url .input-group-lg > textarea,
 .comment-form-comment .input-group-lg > input,
-.comment-form-comment .input-group-lg > textarea,
+.comment-form-comment .input-group-lg > textarea, .field-wrap.text-wrap .input-group-lg > .ninja-forms-field, .field-wrap.textarea-wrap .input-group-lg > .ninja-forms-field, .field-wrap.list-dropdown-wrap .input-group-lg > .ninja-forms-field, .field-wrap.span-wrap .input-group-lg > .ninja-forms-field,
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .btn,
 .input-group-lg > .input-group-btn > a.comment-reply-link,
 .input-group-lg > .input-group-btn > #cancel-comment-reply-link,
-.form-submit .input-group-lg > .input-group-btn > input[type='submit'] {
+.form-submit .input-group-lg > .input-group-btn > input[type='submit'],
+.field-wrap.submit-wrap .input-group-lg > .input-group-btn > .ninja-forms-field {
   height: 46px;
   padding: 10px 16px;
   font-size: 18px;
@@ -3210,10 +3252,11 @@ select[multiple].input-sm,
   border-radius: 6px;
 }
 
-select.input-lg, .input-group-lg > select.form-control,
+select.input-lg, .input-group-lg > select.form-control, .field-wrap.text-wrap .input-group-lg > select.ninja-forms-field, .field-wrap.textarea-wrap .input-group-lg > select.ninja-forms-field, .field-wrap.list-dropdown-wrap .input-group-lg > select.ninja-forms-field, .field-wrap.span-wrap .input-group-lg > select.ninja-forms-field,
 .input-group-lg > select.input-group-addon,
 .input-group-lg > .input-group-btn > select.btn,
-.input-group-lg > .input-group-btn > select#cancel-comment-reply-link {
+.input-group-lg > .input-group-btn > select#cancel-comment-reply-link,
+.field-wrap.submit-wrap .input-group-lg > .input-group-btn > select.ninja-forms-field {
   height: 46px;
   line-height: 46px;
 }
@@ -3222,15 +3265,21 @@ textarea.input-lg, .input-group-lg > textarea.form-control,
 .comment-form-author .input-group-lg > textarea,
 .comment-form-email .input-group-lg > textarea,
 .comment-form-url .input-group-lg > textarea,
-.comment-form-comment .input-group-lg > textarea,
+.comment-form-comment .input-group-lg > textarea, .field-wrap.text-wrap .input-group-lg > textarea.ninja-forms-field, .field-wrap.textarea-wrap .input-group-lg > textarea.ninja-forms-field, .field-wrap.list-dropdown-wrap .input-group-lg > textarea.ninja-forms-field, .field-wrap.span-wrap .input-group-lg > textarea.ninja-forms-field,
 .input-group-lg > textarea.input-group-addon,
 .input-group-lg > .input-group-btn > textarea.btn,
 .input-group-lg > .input-group-btn > textarea#cancel-comment-reply-link,
+.field-wrap.submit-wrap .input-group-lg > .input-group-btn > textarea.ninja-forms-field,
 select[multiple].input-lg,
 .input-group-lg > select[multiple].form-control,
+.field-wrap.text-wrap .input-group-lg > select[multiple].ninja-forms-field,
+.field-wrap.textarea-wrap .input-group-lg > select[multiple].ninja-forms-field,
+.field-wrap.list-dropdown-wrap .input-group-lg > select[multiple].ninja-forms-field,
+.field-wrap.span-wrap .input-group-lg > select[multiple].ninja-forms-field,
 .input-group-lg > select[multiple].input-group-addon,
 .input-group-lg > .input-group-btn > select[multiple].btn,
-.input-group-lg > .input-group-btn > select[multiple]#cancel-comment-reply-link {
+.input-group-lg > .input-group-btn > select[multiple]#cancel-comment-reply-link,
+.field-wrap.submit-wrap .input-group-lg > .input-group-btn > select[multiple].ninja-forms-field {
   height: auto;
 }
 
@@ -3251,7 +3300,7 @@ select[multiple].input-lg,
 .has-feedback .comment-form-comment input,
 .comment-form-comment .has-feedback input,
 .has-feedback .comment-form-comment textarea,
-.comment-form-comment .has-feedback textarea {
+.comment-form-comment .has-feedback textarea, .has-feedback .field-wrap.text-wrap .ninja-forms-field, .field-wrap.text-wrap .has-feedback .ninja-forms-field, .has-feedback .field-wrap.textarea-wrap .ninja-forms-field, .field-wrap.textarea-wrap .has-feedback .ninja-forms-field, .has-feedback .field-wrap.list-dropdown-wrap .ninja-forms-field, .field-wrap.list-dropdown-wrap .has-feedback .ninja-forms-field, .has-feedback .field-wrap.span-wrap .ninja-forms-field, .field-wrap.span-wrap .has-feedback .ninja-forms-field {
   padding-right: 42.5px;
 }
 
@@ -3274,12 +3323,13 @@ select[multiple].input-lg,
 .comment-form-url .input-group-lg > input + .form-control-feedback,
 .comment-form-url .input-group-lg > textarea + .form-control-feedback,
 .comment-form-comment .input-group-lg > input + .form-control-feedback,
-.comment-form-comment .input-group-lg > textarea + .form-control-feedback,
+.comment-form-comment .input-group-lg > textarea + .form-control-feedback, .field-wrap.text-wrap .input-group-lg > .ninja-forms-field + .form-control-feedback, .field-wrap.textarea-wrap .input-group-lg > .ninja-forms-field + .form-control-feedback, .field-wrap.list-dropdown-wrap .input-group-lg > .ninja-forms-field + .form-control-feedback, .field-wrap.span-wrap .input-group-lg > .ninja-forms-field + .form-control-feedback,
 .input-group-lg > .input-group-addon + .form-control-feedback,
 .input-group-lg > .input-group-btn > .btn + .form-control-feedback,
 .input-group-lg > .input-group-btn > a.comment-reply-link + .form-control-feedback,
 .input-group-lg > .input-group-btn > #cancel-comment-reply-link + .form-control-feedback,
-.form-submit .input-group-lg > .input-group-btn > input[type='submit'] + .form-control-feedback {
+.form-submit .input-group-lg > .input-group-btn > input[type='submit'] + .form-control-feedback,
+.field-wrap.submit-wrap .input-group-lg > .input-group-btn > .ninja-forms-field + .form-control-feedback {
   width: 46px;
   height: 46px;
   line-height: 46px;
@@ -3292,12 +3342,13 @@ select[multiple].input-lg,
 .comment-form-url .input-group-sm > input + .form-control-feedback,
 .comment-form-url .input-group-sm > textarea + .form-control-feedback,
 .comment-form-comment .input-group-sm > input + .form-control-feedback,
-.comment-form-comment .input-group-sm > textarea + .form-control-feedback,
+.comment-form-comment .input-group-sm > textarea + .form-control-feedback, .field-wrap.text-wrap .input-group-sm > .ninja-forms-field + .form-control-feedback, .field-wrap.textarea-wrap .input-group-sm > .ninja-forms-field + .form-control-feedback, .field-wrap.list-dropdown-wrap .input-group-sm > .ninja-forms-field + .form-control-feedback, .field-wrap.span-wrap .input-group-sm > .ninja-forms-field + .form-control-feedback,
 .input-group-sm > .input-group-addon + .form-control-feedback,
 .input-group-sm > .input-group-btn > .btn + .form-control-feedback,
 .input-group-sm > .input-group-btn > a.comment-reply-link + .form-control-feedback,
 .input-group-sm > .input-group-btn > #cancel-comment-reply-link + .form-control-feedback,
-.form-submit .input-group-sm > .input-group-btn > input[type='submit'] + .form-control-feedback {
+.form-submit .input-group-sm > .input-group-btn > input[type='submit'] + .form-control-feedback,
+.field-wrap.submit-wrap .input-group-sm > .input-group-btn > .ninja-forms-field + .form-control-feedback {
   width: 30px;
   height: 30px;
   line-height: 30px;
@@ -3325,7 +3376,7 @@ select[multiple].input-lg,
 .has-success .comment-form-comment input,
 .comment-form-comment .has-success input,
 .has-success .comment-form-comment textarea,
-.comment-form-comment .has-success textarea {
+.comment-form-comment .has-success textarea, .has-success .field-wrap.text-wrap .ninja-forms-field, .field-wrap.text-wrap .has-success .ninja-forms-field, .has-success .field-wrap.textarea-wrap .ninja-forms-field, .field-wrap.textarea-wrap .has-success .ninja-forms-field, .has-success .field-wrap.list-dropdown-wrap .ninja-forms-field, .field-wrap.list-dropdown-wrap .has-success .ninja-forms-field, .has-success .field-wrap.span-wrap .ninja-forms-field, .field-wrap.span-wrap .has-success .ninja-forms-field {
   border-color: #3c763d;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
@@ -3344,7 +3395,7 @@ select[multiple].input-lg,
 .has-success .comment-form-comment input:focus,
 .comment-form-comment .has-success input:focus,
 .has-success .comment-form-comment textarea:focus,
-.comment-form-comment .has-success textarea:focus {
+.comment-form-comment .has-success textarea:focus, .has-success .field-wrap.text-wrap .ninja-forms-field:focus, .field-wrap.text-wrap .has-success .ninja-forms-field:focus, .has-success .field-wrap.textarea-wrap .ninja-forms-field:focus, .field-wrap.textarea-wrap .has-success .ninja-forms-field:focus, .has-success .field-wrap.list-dropdown-wrap .ninja-forms-field:focus, .field-wrap.list-dropdown-wrap .has-success .ninja-forms-field:focus, .has-success .field-wrap.span-wrap .ninja-forms-field:focus, .field-wrap.span-wrap .has-success .ninja-forms-field:focus {
   border-color: #2b542c;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
@@ -3380,7 +3431,7 @@ select[multiple].input-lg,
 .has-warning .comment-form-comment input,
 .comment-form-comment .has-warning input,
 .has-warning .comment-form-comment textarea,
-.comment-form-comment .has-warning textarea {
+.comment-form-comment .has-warning textarea, .has-warning .field-wrap.text-wrap .ninja-forms-field, .field-wrap.text-wrap .has-warning .ninja-forms-field, .has-warning .field-wrap.textarea-wrap .ninja-forms-field, .field-wrap.textarea-wrap .has-warning .ninja-forms-field, .has-warning .field-wrap.list-dropdown-wrap .ninja-forms-field, .field-wrap.list-dropdown-wrap .has-warning .ninja-forms-field, .has-warning .field-wrap.span-wrap .ninja-forms-field, .field-wrap.span-wrap .has-warning .ninja-forms-field {
   border-color: #8a6d3b;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
@@ -3399,7 +3450,7 @@ select[multiple].input-lg,
 .has-warning .comment-form-comment input:focus,
 .comment-form-comment .has-warning input:focus,
 .has-warning .comment-form-comment textarea:focus,
-.comment-form-comment .has-warning textarea:focus {
+.comment-form-comment .has-warning textarea:focus, .has-warning .field-wrap.text-wrap .ninja-forms-field:focus, .field-wrap.text-wrap .has-warning .ninja-forms-field:focus, .has-warning .field-wrap.textarea-wrap .ninja-forms-field:focus, .field-wrap.textarea-wrap .has-warning .ninja-forms-field:focus, .has-warning .field-wrap.list-dropdown-wrap .ninja-forms-field:focus, .field-wrap.list-dropdown-wrap .has-warning .ninja-forms-field:focus, .has-warning .field-wrap.span-wrap .ninja-forms-field:focus, .field-wrap.span-wrap .has-warning .ninja-forms-field:focus {
   border-color: #66512c;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
@@ -3435,7 +3486,7 @@ select[multiple].input-lg,
 .has-error .comment-form-comment input,
 .comment-form-comment .has-error input,
 .has-error .comment-form-comment textarea,
-.comment-form-comment .has-error textarea {
+.comment-form-comment .has-error textarea, .has-error .field-wrap.text-wrap .ninja-forms-field, .field-wrap.text-wrap .has-error .ninja-forms-field, .has-error .field-wrap.textarea-wrap .ninja-forms-field, .field-wrap.textarea-wrap .has-error .ninja-forms-field, .has-error .field-wrap.list-dropdown-wrap .ninja-forms-field, .field-wrap.list-dropdown-wrap .has-error .ninja-forms-field, .has-error .field-wrap.span-wrap .ninja-forms-field, .field-wrap.span-wrap .has-error .ninja-forms-field {
   border-color: #a94442;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
@@ -3454,7 +3505,7 @@ select[multiple].input-lg,
 .has-error .comment-form-comment input:focus,
 .comment-form-comment .has-error input:focus,
 .has-error .comment-form-comment textarea:focus,
-.comment-form-comment .has-error textarea:focus {
+.comment-form-comment .has-error textarea:focus, .has-error .field-wrap.text-wrap .ninja-forms-field:focus, .field-wrap.text-wrap .has-error .ninja-forms-field:focus, .has-error .field-wrap.textarea-wrap .ninja-forms-field:focus, .field-wrap.textarea-wrap .has-error .ninja-forms-field:focus, .has-error .field-wrap.list-dropdown-wrap .ninja-forms-field:focus, .field-wrap.list-dropdown-wrap .has-error .ninja-forms-field:focus, .has-error .field-wrap.span-wrap .ninja-forms-field:focus, .field-wrap.span-wrap .has-error .ninja-forms-field:focus {
   border-color: #843534;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
@@ -3484,144 +3535,219 @@ select[multiple].input-lg,
 }
 
 @media (min-width: 768px) {
-  .form-inline .form-group, .navbar-form .form-group, .form-inline .comment-form-author, .navbar-form .comment-form-author,
+  .form-inline .form-group, .navbar-form .form-group, .field-wrap.spam-wrap .form-group, .form-inline .comment-form-author, .navbar-form .comment-form-author, .field-wrap.spam-wrap .comment-form-author,
   .form-inline .comment-form-email,
   .navbar-form .comment-form-email,
+  .field-wrap.spam-wrap .comment-form-email,
   .form-inline .comment-form-url,
   .navbar-form .comment-form-url,
+  .field-wrap.spam-wrap .comment-form-url,
   .form-inline .comment-form-comment,
-  .navbar-form .comment-form-comment {
+  .navbar-form .comment-form-comment,
+  .field-wrap.spam-wrap .comment-form-comment, .form-inline .field-wrap, .navbar-form .field-wrap, .field-wrap.spam-wrap .field-wrap {
     display: inline-block;
     margin-bottom: 0;
     vertical-align: middle;
   }
-  .form-inline .form-control, .navbar-form .form-control, .form-inline .comment-form-author input, .comment-form-author .form-inline input, .navbar-form .comment-form-author input, .comment-form-author .navbar-form input,
+  .form-inline .form-control, .navbar-form .form-control, .field-wrap.spam-wrap .form-control, .form-inline .comment-form-author input, .comment-form-author .form-inline input, .navbar-form .comment-form-author input, .comment-form-author .navbar-form input, .field-wrap.spam-wrap .comment-form-author input, .comment-form-author .field-wrap.spam-wrap input,
   .form-inline .comment-form-author textarea,
   .comment-form-author .form-inline textarea,
   .navbar-form .comment-form-author textarea,
   .comment-form-author .navbar-form textarea,
+  .field-wrap.spam-wrap .comment-form-author textarea,
+  .comment-form-author .field-wrap.spam-wrap textarea,
   .form-inline .comment-form-email input,
   .comment-form-email .form-inline input,
   .navbar-form .comment-form-email input,
   .comment-form-email .navbar-form input,
+  .field-wrap.spam-wrap .comment-form-email input,
+  .comment-form-email .field-wrap.spam-wrap input,
   .form-inline .comment-form-email textarea,
   .comment-form-email .form-inline textarea,
   .navbar-form .comment-form-email textarea,
   .comment-form-email .navbar-form textarea,
+  .field-wrap.spam-wrap .comment-form-email textarea,
+  .comment-form-email .field-wrap.spam-wrap textarea,
   .form-inline .comment-form-url input,
   .comment-form-url .form-inline input,
   .navbar-form .comment-form-url input,
   .comment-form-url .navbar-form input,
+  .field-wrap.spam-wrap .comment-form-url input,
+  .comment-form-url .field-wrap.spam-wrap input,
   .form-inline .comment-form-url textarea,
   .comment-form-url .form-inline textarea,
   .navbar-form .comment-form-url textarea,
   .comment-form-url .navbar-form textarea,
+  .field-wrap.spam-wrap .comment-form-url textarea,
+  .comment-form-url .field-wrap.spam-wrap textarea,
   .form-inline .comment-form-comment input,
   .comment-form-comment .form-inline input,
   .navbar-form .comment-form-comment input,
   .comment-form-comment .navbar-form input,
+  .field-wrap.spam-wrap .comment-form-comment input,
+  .comment-form-comment .field-wrap.spam-wrap input,
   .form-inline .comment-form-comment textarea,
   .comment-form-comment .form-inline textarea,
   .navbar-form .comment-form-comment textarea,
-  .comment-form-comment .navbar-form textarea {
+  .comment-form-comment .navbar-form textarea,
+  .field-wrap.spam-wrap .comment-form-comment textarea,
+  .comment-form-comment .field-wrap.spam-wrap textarea, .form-inline .field-wrap.text-wrap .ninja-forms-field, .field-wrap.text-wrap .form-inline .ninja-forms-field, .navbar-form .field-wrap.text-wrap .ninja-forms-field, .field-wrap.text-wrap .navbar-form .ninja-forms-field, .field-wrap.spam-wrap .field-wrap.text-wrap .ninja-forms-field, .field-wrap.text-wrap .field-wrap.spam-wrap .ninja-forms-field, .form-inline .field-wrap.textarea-wrap .ninja-forms-field, .field-wrap.textarea-wrap .form-inline .ninja-forms-field, .navbar-form .field-wrap.textarea-wrap .ninja-forms-field, .field-wrap.textarea-wrap .navbar-form .ninja-forms-field, .field-wrap.spam-wrap .field-wrap.textarea-wrap .ninja-forms-field, .field-wrap.textarea-wrap .field-wrap.spam-wrap .ninja-forms-field, .form-inline .field-wrap.list-dropdown-wrap .ninja-forms-field, .field-wrap.list-dropdown-wrap .form-inline .ninja-forms-field, .navbar-form .field-wrap.list-dropdown-wrap .ninja-forms-field, .field-wrap.list-dropdown-wrap .navbar-form .ninja-forms-field, .field-wrap.spam-wrap .field-wrap.list-dropdown-wrap .ninja-forms-field, .field-wrap.list-dropdown-wrap .field-wrap.spam-wrap .ninja-forms-field, .form-inline .field-wrap.span-wrap .ninja-forms-field, .field-wrap.span-wrap .form-inline .ninja-forms-field, .navbar-form .field-wrap.span-wrap .ninja-forms-field, .field-wrap.span-wrap .navbar-form .ninja-forms-field, .field-wrap.spam-wrap .field-wrap.span-wrap .ninja-forms-field, .field-wrap.span-wrap .field-wrap.spam-wrap .ninja-forms-field {
     display: inline-block;
     width: auto;
     vertical-align: middle;
   }
-  .form-inline .input-group, .navbar-form .input-group {
+  .form-inline .input-group, .navbar-form .input-group, .field-wrap.spam-wrap .input-group {
     display: inline-table;
     vertical-align: middle;
   }
-  .form-inline .input-group .input-group-addon, .navbar-form .input-group .input-group-addon,
+  .form-inline .input-group .input-group-addon, .navbar-form .input-group .input-group-addon, .field-wrap.spam-wrap .input-group .input-group-addon,
   .form-inline .input-group .input-group-btn,
   .navbar-form .input-group .input-group-btn,
+  .field-wrap.spam-wrap .input-group .input-group-btn,
   .form-inline .input-group .form-control,
   .navbar-form .input-group .form-control,
+  .field-wrap.spam-wrap .input-group .form-control,
   .form-inline .input-group .comment-form-author input,
   .comment-form-author .form-inline .input-group input,
   .navbar-form .input-group .comment-form-author input,
   .comment-form-author .navbar-form .input-group input,
+  .field-wrap.spam-wrap .input-group .comment-form-author input,
+  .comment-form-author .field-wrap.spam-wrap .input-group input,
   .form-inline .input-group .comment-form-author textarea,
   .comment-form-author .form-inline .input-group textarea,
   .navbar-form .input-group .comment-form-author textarea,
   .comment-form-author .navbar-form .input-group textarea,
+  .field-wrap.spam-wrap .input-group .comment-form-author textarea,
+  .comment-form-author .field-wrap.spam-wrap .input-group textarea,
   .form-inline .input-group .comment-form-email input,
   .comment-form-email .form-inline .input-group input,
   .navbar-form .input-group .comment-form-email input,
   .comment-form-email .navbar-form .input-group input,
+  .field-wrap.spam-wrap .input-group .comment-form-email input,
+  .comment-form-email .field-wrap.spam-wrap .input-group input,
   .form-inline .input-group .comment-form-email textarea,
   .comment-form-email .form-inline .input-group textarea,
   .navbar-form .input-group .comment-form-email textarea,
   .comment-form-email .navbar-form .input-group textarea,
+  .field-wrap.spam-wrap .input-group .comment-form-email textarea,
+  .comment-form-email .field-wrap.spam-wrap .input-group textarea,
   .form-inline .input-group .comment-form-url input,
   .comment-form-url .form-inline .input-group input,
   .navbar-form .input-group .comment-form-url input,
   .comment-form-url .navbar-form .input-group input,
+  .field-wrap.spam-wrap .input-group .comment-form-url input,
+  .comment-form-url .field-wrap.spam-wrap .input-group input,
   .form-inline .input-group .comment-form-url textarea,
   .comment-form-url .form-inline .input-group textarea,
   .navbar-form .input-group .comment-form-url textarea,
   .comment-form-url .navbar-form .input-group textarea,
+  .field-wrap.spam-wrap .input-group .comment-form-url textarea,
+  .comment-form-url .field-wrap.spam-wrap .input-group textarea,
   .form-inline .input-group .comment-form-comment input,
   .comment-form-comment .form-inline .input-group input,
   .navbar-form .input-group .comment-form-comment input,
   .comment-form-comment .navbar-form .input-group input,
+  .field-wrap.spam-wrap .input-group .comment-form-comment input,
+  .comment-form-comment .field-wrap.spam-wrap .input-group input,
   .form-inline .input-group .comment-form-comment textarea,
   .comment-form-comment .form-inline .input-group textarea,
   .navbar-form .input-group .comment-form-comment textarea,
-  .comment-form-comment .navbar-form .input-group textarea {
+  .comment-form-comment .navbar-form .input-group textarea,
+  .field-wrap.spam-wrap .input-group .comment-form-comment textarea,
+  .comment-form-comment .field-wrap.spam-wrap .input-group textarea,
+  .form-inline .input-group .field-wrap.text-wrap .ninja-forms-field,
+  .field-wrap.text-wrap .form-inline .input-group .ninja-forms-field,
+  .navbar-form .input-group .field-wrap.text-wrap .ninja-forms-field,
+  .field-wrap.text-wrap .navbar-form .input-group .ninja-forms-field,
+  .field-wrap.spam-wrap .input-group .field-wrap.text-wrap .ninja-forms-field,
+  .field-wrap.text-wrap .field-wrap.spam-wrap .input-group .ninja-forms-field,
+  .form-inline .input-group .field-wrap.textarea-wrap .ninja-forms-field,
+  .field-wrap.textarea-wrap .form-inline .input-group .ninja-forms-field,
+  .navbar-form .input-group .field-wrap.textarea-wrap .ninja-forms-field,
+  .field-wrap.textarea-wrap .navbar-form .input-group .ninja-forms-field,
+  .field-wrap.spam-wrap .input-group .field-wrap.textarea-wrap .ninja-forms-field,
+  .field-wrap.textarea-wrap .field-wrap.spam-wrap .input-group .ninja-forms-field,
+  .form-inline .input-group .field-wrap.list-dropdown-wrap .ninja-forms-field,
+  .field-wrap.list-dropdown-wrap .form-inline .input-group .ninja-forms-field,
+  .navbar-form .input-group .field-wrap.list-dropdown-wrap .ninja-forms-field,
+  .field-wrap.list-dropdown-wrap .navbar-form .input-group .ninja-forms-field,
+  .field-wrap.spam-wrap .input-group .field-wrap.list-dropdown-wrap .ninja-forms-field,
+  .field-wrap.list-dropdown-wrap .field-wrap.spam-wrap .input-group .ninja-forms-field,
+  .form-inline .input-group .field-wrap.span-wrap .ninja-forms-field,
+  .field-wrap.span-wrap .form-inline .input-group .ninja-forms-field,
+  .navbar-form .input-group .field-wrap.span-wrap .ninja-forms-field,
+  .field-wrap.span-wrap .navbar-form .input-group .ninja-forms-field,
+  .field-wrap.spam-wrap .input-group .field-wrap.span-wrap .ninja-forms-field,
+  .field-wrap.span-wrap .field-wrap.spam-wrap .input-group .ninja-forms-field {
     width: auto;
   }
-  .form-inline .input-group > .form-control, .navbar-form .input-group > .form-control, .form-inline .comment-form-author .input-group > input, .comment-form-author .form-inline .input-group > input, .navbar-form .comment-form-author .input-group > input, .comment-form-author .navbar-form .input-group > input,
+  .form-inline .input-group > .form-control, .navbar-form .input-group > .form-control, .field-wrap.spam-wrap .input-group > .form-control, .form-inline .comment-form-author .input-group > input, .comment-form-author .form-inline .input-group > input, .navbar-form .comment-form-author .input-group > input, .comment-form-author .navbar-form .input-group > input, .field-wrap.spam-wrap .comment-form-author .input-group > input, .comment-form-author .field-wrap.spam-wrap .input-group > input,
   .form-inline .comment-form-author .input-group > textarea,
   .comment-form-author .form-inline .input-group > textarea,
   .navbar-form .comment-form-author .input-group > textarea,
   .comment-form-author .navbar-form .input-group > textarea,
+  .field-wrap.spam-wrap .comment-form-author .input-group > textarea,
+  .comment-form-author .field-wrap.spam-wrap .input-group > textarea,
   .form-inline .comment-form-email .input-group > input,
   .comment-form-email .form-inline .input-group > input,
   .navbar-form .comment-form-email .input-group > input,
   .comment-form-email .navbar-form .input-group > input,
+  .field-wrap.spam-wrap .comment-form-email .input-group > input,
+  .comment-form-email .field-wrap.spam-wrap .input-group > input,
   .form-inline .comment-form-email .input-group > textarea,
   .comment-form-email .form-inline .input-group > textarea,
   .navbar-form .comment-form-email .input-group > textarea,
   .comment-form-email .navbar-form .input-group > textarea,
+  .field-wrap.spam-wrap .comment-form-email .input-group > textarea,
+  .comment-form-email .field-wrap.spam-wrap .input-group > textarea,
   .form-inline .comment-form-url .input-group > input,
   .comment-form-url .form-inline .input-group > input,
   .navbar-form .comment-form-url .input-group > input,
   .comment-form-url .navbar-form .input-group > input,
+  .field-wrap.spam-wrap .comment-form-url .input-group > input,
+  .comment-form-url .field-wrap.spam-wrap .input-group > input,
   .form-inline .comment-form-url .input-group > textarea,
   .comment-form-url .form-inline .input-group > textarea,
   .navbar-form .comment-form-url .input-group > textarea,
   .comment-form-url .navbar-form .input-group > textarea,
+  .field-wrap.spam-wrap .comment-form-url .input-group > textarea,
+  .comment-form-url .field-wrap.spam-wrap .input-group > textarea,
   .form-inline .comment-form-comment .input-group > input,
   .comment-form-comment .form-inline .input-group > input,
   .navbar-form .comment-form-comment .input-group > input,
   .comment-form-comment .navbar-form .input-group > input,
+  .field-wrap.spam-wrap .comment-form-comment .input-group > input,
+  .comment-form-comment .field-wrap.spam-wrap .input-group > input,
   .form-inline .comment-form-comment .input-group > textarea,
   .comment-form-comment .form-inline .input-group > textarea,
   .navbar-form .comment-form-comment .input-group > textarea,
-  .comment-form-comment .navbar-form .input-group > textarea {
+  .comment-form-comment .navbar-form .input-group > textarea,
+  .field-wrap.spam-wrap .comment-form-comment .input-group > textarea,
+  .comment-form-comment .field-wrap.spam-wrap .input-group > textarea, .form-inline .field-wrap.text-wrap .input-group > .ninja-forms-field, .field-wrap.text-wrap .form-inline .input-group > .ninja-forms-field, .navbar-form .field-wrap.text-wrap .input-group > .ninja-forms-field, .field-wrap.text-wrap .navbar-form .input-group > .ninja-forms-field, .field-wrap.spam-wrap .field-wrap.text-wrap .input-group > .ninja-forms-field, .field-wrap.text-wrap .field-wrap.spam-wrap .input-group > .ninja-forms-field, .form-inline .field-wrap.textarea-wrap .input-group > .ninja-forms-field, .field-wrap.textarea-wrap .form-inline .input-group > .ninja-forms-field, .navbar-form .field-wrap.textarea-wrap .input-group > .ninja-forms-field, .field-wrap.textarea-wrap .navbar-form .input-group > .ninja-forms-field, .field-wrap.spam-wrap .field-wrap.textarea-wrap .input-group > .ninja-forms-field, .field-wrap.textarea-wrap .field-wrap.spam-wrap .input-group > .ninja-forms-field, .form-inline .field-wrap.list-dropdown-wrap .input-group > .ninja-forms-field, .field-wrap.list-dropdown-wrap .form-inline .input-group > .ninja-forms-field, .navbar-form .field-wrap.list-dropdown-wrap .input-group > .ninja-forms-field, .field-wrap.list-dropdown-wrap .navbar-form .input-group > .ninja-forms-field, .field-wrap.spam-wrap .field-wrap.list-dropdown-wrap .input-group > .ninja-forms-field, .field-wrap.list-dropdown-wrap .field-wrap.spam-wrap .input-group > .ninja-forms-field, .form-inline .field-wrap.span-wrap .input-group > .ninja-forms-field, .field-wrap.span-wrap .form-inline .input-group > .ninja-forms-field, .navbar-form .field-wrap.span-wrap .input-group > .ninja-forms-field, .field-wrap.span-wrap .navbar-form .input-group > .ninja-forms-field, .field-wrap.spam-wrap .field-wrap.span-wrap .input-group > .ninja-forms-field, .field-wrap.span-wrap .field-wrap.spam-wrap .input-group > .ninja-forms-field {
     width: 100%;
   }
-  .form-inline .control-label, .navbar-form .control-label {
+  .form-inline .control-label, .navbar-form .control-label, .field-wrap.spam-wrap .control-label {
     margin-bottom: 0;
     vertical-align: middle;
   }
-  .form-inline .radio, .navbar-form .radio,
+  .form-inline .radio, .navbar-form .radio, .field-wrap.spam-wrap .radio,
   .form-inline .checkbox,
-  .navbar-form .checkbox {
+  .navbar-form .checkbox,
+  .field-wrap.spam-wrap .checkbox {
     display: inline-block;
     margin-top: 0;
     margin-bottom: 0;
     padding-left: 0;
     vertical-align: middle;
   }
-  .form-inline .radio input[type="radio"], .navbar-form .radio input[type="radio"],
+  .form-inline .radio input[type="radio"], .navbar-form .radio input[type="radio"], .field-wrap.spam-wrap .radio input[type="radio"],
   .form-inline .checkbox input[type="checkbox"],
-  .navbar-form .checkbox input[type="checkbox"] {
+  .navbar-form .checkbox input[type="checkbox"],
+  .field-wrap.spam-wrap .checkbox input[type="checkbox"] {
     float: none;
     margin-left: 0;
   }
-  .form-inline .has-feedback .form-control-feedback, .navbar-form .has-feedback .form-control-feedback {
+  .form-inline .has-feedback .form-control-feedback, .navbar-form .has-feedback .form-control-feedback, .field-wrap.spam-wrap .has-feedback .form-control-feedback {
     top: 0;
   }
 }
@@ -3641,24 +3767,24 @@ select[multiple].input-lg,
 .form-horizontal .form-group, .form-horizontal .comment-form-author,
 .form-horizontal .comment-form-email,
 .form-horizontal .comment-form-url,
-.form-horizontal .comment-form-comment {
+.form-horizontal .comment-form-comment, .form-horizontal .field-wrap {
   margin-left: -15px;
   margin-right: -15px;
 }
 .form-horizontal .form-group:before, .form-horizontal .comment-form-author:before,
 .form-horizontal .comment-form-email:before,
 .form-horizontal .comment-form-url:before,
-.form-horizontal .comment-form-comment:before, .form-horizontal .form-group:after, .form-horizontal .comment-form-author:after,
+.form-horizontal .comment-form-comment:before, .form-horizontal .field-wrap:before, .form-horizontal .form-group:after, .form-horizontal .comment-form-author:after,
 .form-horizontal .comment-form-email:after,
 .form-horizontal .comment-form-url:after,
-.form-horizontal .comment-form-comment:after {
+.form-horizontal .comment-form-comment:after, .form-horizontal .field-wrap:after {
   content: " ";
   display: table;
 }
 .form-horizontal .form-group:after, .form-horizontal .comment-form-author:after,
 .form-horizontal .comment-form-email:after,
 .form-horizontal .comment-form-url:after,
-.form-horizontal .comment-form-comment:after {
+.form-horizontal .comment-form-comment:after, .form-horizontal .field-wrap:after {
   clear: both;
 }
 .form-horizontal .form-control-static {
@@ -3677,7 +3803,7 @@ select[multiple].input-lg,
   right: 15px;
 }
 
-.btn, a.comment-reply-link, #cancel-comment-reply-link, .form-submit input[type='submit'] {
+.btn, a.comment-reply-link, #cancel-comment-reply-link, .form-submit input[type='submit'], .field-wrap.submit-wrap .ninja-forms-field {
   display: inline-block;
   margin-bottom: 0;
   font-weight: normal;
@@ -3696,22 +3822,22 @@ select[multiple].input-lg,
   -ms-user-select: none;
   user-select: none;
 }
-.btn:focus, a.comment-reply-link:focus, #cancel-comment-reply-link:focus, .form-submit input[type='submit']:focus, .btn:active:focus, a.comment-reply-link:active:focus, #cancel-comment-reply-link:active:focus, .form-submit input[type='submit']:active:focus, .btn.active:focus, a.active.comment-reply-link:focus, .active#cancel-comment-reply-link:focus, .form-submit input.active[type='submit']:focus {
+.btn:focus, a.comment-reply-link:focus, #cancel-comment-reply-link:focus, .form-submit input[type='submit']:focus, .field-wrap.submit-wrap .ninja-forms-field:focus, .btn:active:focus, a.comment-reply-link:active:focus, #cancel-comment-reply-link:active:focus, .form-submit input[type='submit']:active:focus, .field-wrap.submit-wrap .ninja-forms-field:active:focus, .btn.active:focus, a.active.comment-reply-link:focus, .active#cancel-comment-reply-link:focus, .form-submit input.active[type='submit']:focus, .field-wrap.submit-wrap .active.ninja-forms-field:focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-.btn:hover, a.comment-reply-link:hover, #cancel-comment-reply-link:hover, .form-submit input[type='submit']:hover, .btn:focus, a.comment-reply-link:focus, #cancel-comment-reply-link:focus, .form-submit input[type='submit']:focus {
+.btn:hover, a.comment-reply-link:hover, #cancel-comment-reply-link:hover, .form-submit input[type='submit']:hover, .field-wrap.submit-wrap .ninja-forms-field:hover, .btn:focus, a.comment-reply-link:focus, #cancel-comment-reply-link:focus, .form-submit input[type='submit']:focus, .field-wrap.submit-wrap .ninja-forms-field:focus {
   color: #333333;
   text-decoration: none;
 }
-.btn:active, a.comment-reply-link:active, #cancel-comment-reply-link:active, .form-submit input[type='submit']:active, .btn.active, a.active.comment-reply-link, .active#cancel-comment-reply-link, .form-submit input.active[type='submit'] {
+.btn:active, a.comment-reply-link:active, #cancel-comment-reply-link:active, .form-submit input[type='submit']:active, .field-wrap.submit-wrap .ninja-forms-field:active, .btn.active, a.active.comment-reply-link, .active#cancel-comment-reply-link, .form-submit input.active[type='submit'], .field-wrap.submit-wrap .active.ninja-forms-field {
   outline: 0;
   background-image: none;
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
-.btn.disabled, a.disabled.comment-reply-link, .disabled#cancel-comment-reply-link, .form-submit input.disabled[type='submit'], .btn[disabled], a[disabled].comment-reply-link, [disabled]#cancel-comment-reply-link, .form-submit input[disabled][type='submit'], fieldset[disabled] .btn, fieldset[disabled] a.comment-reply-link, fieldset[disabled] #cancel-comment-reply-link, fieldset[disabled] .form-submit input[type='submit'], .form-submit fieldset[disabled] input[type='submit'] {
+.btn.disabled, a.disabled.comment-reply-link, .disabled#cancel-comment-reply-link, .form-submit input.disabled[type='submit'], .field-wrap.submit-wrap .disabled.ninja-forms-field, .btn[disabled], a[disabled].comment-reply-link, [disabled]#cancel-comment-reply-link, .form-submit input[disabled][type='submit'], .field-wrap.submit-wrap [disabled].ninja-forms-field, fieldset[disabled] .btn, fieldset[disabled] a.comment-reply-link, fieldset[disabled] #cancel-comment-reply-link, fieldset[disabled] .form-submit input[type='submit'], .form-submit fieldset[disabled] input[type='submit'], fieldset[disabled] .field-wrap.submit-wrap .ninja-forms-field, .field-wrap.submit-wrap fieldset[disabled] .ninja-forms-field {
   cursor: not-allowed;
   pointer-events: none;
   opacity: 0.65;
@@ -3742,24 +3868,24 @@ select[multiple].input-lg,
   background-color: #333333;
 }
 
-.btn-primary, .form-submit input[type='submit'] {
+.btn-primary, .form-submit input[type='submit'], .field-wrap.submit-wrap .ninja-forms-field {
   color: white;
   background-color: #2f3485;
   border-color: #282d72;
 }
-.btn-primary:hover, .form-submit input[type='submit']:hover, .btn-primary:focus, .form-submit input[type='submit']:focus, .btn-primary:active, .form-submit input[type='submit']:active, .btn-primary.active, .form-submit input.active[type='submit'], .open > .btn-primary.dropdown-toggle, .form-submit .open > input.dropdown-toggle[type='submit'] {
+.btn-primary:hover, .form-submit input[type='submit']:hover, .field-wrap.submit-wrap .ninja-forms-field:hover, .btn-primary:focus, .form-submit input[type='submit']:focus, .field-wrap.submit-wrap .ninja-forms-field:focus, .btn-primary:active, .form-submit input[type='submit']:active, .field-wrap.submit-wrap .ninja-forms-field:active, .btn-primary.active, .form-submit input.active[type='submit'], .field-wrap.submit-wrap .active.ninja-forms-field, .open > .btn-primary.dropdown-toggle, .form-submit .open > input.dropdown-toggle[type='submit'], .field-wrap.submit-wrap .open > .dropdown-toggle.ninja-forms-field {
   color: white;
   background-color: #22255f;
   border-color: #181b45;
 }
-.btn-primary:active, .form-submit input[type='submit']:active, .btn-primary.active, .form-submit input.active[type='submit'], .open > .btn-primary.dropdown-toggle, .form-submit .open > input.dropdown-toggle[type='submit'] {
+.btn-primary:active, .form-submit input[type='submit']:active, .field-wrap.submit-wrap .ninja-forms-field:active, .btn-primary.active, .form-submit input.active[type='submit'], .field-wrap.submit-wrap .active.ninja-forms-field, .open > .btn-primary.dropdown-toggle, .form-submit .open > input.dropdown-toggle[type='submit'], .field-wrap.submit-wrap .open > .dropdown-toggle.ninja-forms-field {
   background-image: none;
 }
-.btn-primary.disabled, .form-submit input.disabled[type='submit'], .btn-primary.disabled:hover, .form-submit input.disabled[type='submit']:hover, .btn-primary.disabled:focus, .form-submit input.disabled[type='submit']:focus, .btn-primary.disabled:active, .form-submit input.disabled[type='submit']:active, .btn-primary.disabled.active, .form-submit input.disabled.active[type='submit'], .btn-primary[disabled], .form-submit input[disabled][type='submit'], .btn-primary[disabled]:hover, .form-submit input[disabled][type='submit']:hover, .btn-primary[disabled]:focus, .form-submit input[disabled][type='submit']:focus, .btn-primary[disabled]:active, .form-submit input[disabled][type='submit']:active, .btn-primary[disabled].active, .form-submit input[disabled].active[type='submit'], fieldset[disabled] .btn-primary, fieldset[disabled] .form-submit input[type='submit'], .form-submit fieldset[disabled] input[type='submit'], fieldset[disabled] .btn-primary:hover, fieldset[disabled] .form-submit input[type='submit']:hover, .form-submit fieldset[disabled] input[type='submit']:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .form-submit input[type='submit']:focus, .form-submit fieldset[disabled] input[type='submit']:focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] .form-submit input[type='submit']:active, .form-submit fieldset[disabled] input[type='submit']:active, fieldset[disabled] .btn-primary.active, fieldset[disabled] .form-submit input.active[type='submit'], .form-submit fieldset[disabled] input.active[type='submit'] {
+.btn-primary.disabled, .form-submit input.disabled[type='submit'], .field-wrap.submit-wrap .disabled.ninja-forms-field, .btn-primary.disabled:hover, .form-submit input.disabled[type='submit']:hover, .field-wrap.submit-wrap .disabled.ninja-forms-field:hover, .btn-primary.disabled:focus, .form-submit input.disabled[type='submit']:focus, .field-wrap.submit-wrap .disabled.ninja-forms-field:focus, .btn-primary.disabled:active, .form-submit input.disabled[type='submit']:active, .field-wrap.submit-wrap .disabled.ninja-forms-field:active, .btn-primary.disabled.active, .form-submit input.disabled.active[type='submit'], .field-wrap.submit-wrap .disabled.active.ninja-forms-field, .btn-primary[disabled], .form-submit input[disabled][type='submit'], .field-wrap.submit-wrap [disabled].ninja-forms-field, .btn-primary[disabled]:hover, .form-submit input[disabled][type='submit']:hover, .field-wrap.submit-wrap [disabled].ninja-forms-field:hover, .btn-primary[disabled]:focus, .form-submit input[disabled][type='submit']:focus, .field-wrap.submit-wrap [disabled].ninja-forms-field:focus, .btn-primary[disabled]:active, .form-submit input[disabled][type='submit']:active, .field-wrap.submit-wrap [disabled].ninja-forms-field:active, .btn-primary[disabled].active, .form-submit input[disabled].active[type='submit'], .field-wrap.submit-wrap [disabled].active.ninja-forms-field, fieldset[disabled] .btn-primary, fieldset[disabled] .form-submit input[type='submit'], .form-submit fieldset[disabled] input[type='submit'], fieldset[disabled] .field-wrap.submit-wrap .ninja-forms-field, .field-wrap.submit-wrap fieldset[disabled] .ninja-forms-field, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .form-submit input[type='submit']:hover, .form-submit fieldset[disabled] input[type='submit']:hover, fieldset[disabled] .field-wrap.submit-wrap .ninja-forms-field:hover, .field-wrap.submit-wrap fieldset[disabled] .ninja-forms-field:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .form-submit input[type='submit']:focus, .form-submit fieldset[disabled] input[type='submit']:focus, fieldset[disabled] .field-wrap.submit-wrap .ninja-forms-field:focus, .field-wrap.submit-wrap fieldset[disabled] .ninja-forms-field:focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] .form-submit input[type='submit']:active, .form-submit fieldset[disabled] input[type='submit']:active, fieldset[disabled] .field-wrap.submit-wrap .ninja-forms-field:active, .field-wrap.submit-wrap fieldset[disabled] .ninja-forms-field:active, fieldset[disabled] .btn-primary.active, fieldset[disabled] .form-submit input.active[type='submit'], .form-submit fieldset[disabled] input.active[type='submit'], fieldset[disabled] .field-wrap.submit-wrap .active.ninja-forms-field, .field-wrap.submit-wrap fieldset[disabled] .active.ninja-forms-field {
   background-color: #2f3485;
   border-color: #282d72;
 }
-.btn-primary .badge, .form-submit input[type='submit'] .badge {
+.btn-primary .badge, .form-submit input[type='submit'] .badge, .field-wrap.submit-wrap .ninja-forms-field .badge {
   color: #2f3485;
   background-color: white;
 }
@@ -3876,21 +4002,21 @@ select[multiple].input-lg,
   text-decoration: none;
 }
 
-.btn-lg, .btn-group-lg > .btn, .btn-group-lg > a.comment-reply-link, .btn-group-lg > #cancel-comment-reply-link, .form-submit .btn-group-lg > input[type='submit'] {
+.btn-lg, .btn-group-lg > .btn, .btn-group-lg > a.comment-reply-link, .btn-group-lg > #cancel-comment-reply-link, .form-submit .btn-group-lg > input[type='submit'], .field-wrap.submit-wrap .btn-group-lg > .ninja-forms-field {
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.33;
   border-radius: 6px;
 }
 
-.btn-sm, .btn-group-sm > .btn, .btn-group-sm > a.comment-reply-link, .btn-group-sm > #cancel-comment-reply-link, .form-submit .btn-group-sm > input[type='submit'], a.comment-reply-link {
+.btn-sm, .btn-group-sm > .btn, .btn-group-sm > a.comment-reply-link, .btn-group-sm > #cancel-comment-reply-link, .form-submit .btn-group-sm > input[type='submit'], .field-wrap.submit-wrap .btn-group-sm > .ninja-forms-field, a.comment-reply-link {
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
   border-radius: 3px;
 }
 
-.btn-xs, .btn-group-xs > .btn, .btn-group-xs > a.comment-reply-link, .form-submit .btn-group-xs > input[type='submit'], #cancel-comment-reply-link {
+.btn-xs, .btn-group-xs > .btn, .btn-group-xs > a.comment-reply-link, .form-submit .btn-group-xs > input[type='submit'], .field-wrap.submit-wrap .btn-group-xs > .ninja-forms-field, #cancel-comment-reply-link {
   padding: 1px 5px;
   font-size: 12px;
   line-height: 1.5;
@@ -4101,52 +4227,62 @@ tbody.collapse.in {
   display: inline-block;
   vertical-align: middle;
 }
-.btn-group > .btn, .btn-group > a.comment-reply-link, .btn-group > #cancel-comment-reply-link, .form-submit .btn-group > input[type='submit'],
+.btn-group > .btn, .btn-group > a.comment-reply-link, .btn-group > #cancel-comment-reply-link, .form-submit .btn-group > input[type='submit'], .field-wrap.submit-wrap .btn-group > .ninja-forms-field,
 .btn-group-vertical > .btn,
 .btn-group-vertical > a.comment-reply-link,
 .btn-group-vertical > #cancel-comment-reply-link,
-.form-submit .btn-group-vertical > input[type='submit'] {
+.form-submit .btn-group-vertical > input[type='submit'],
+.field-wrap.submit-wrap .btn-group-vertical > .ninja-forms-field {
   position: relative;
   float: left;
 }
-.btn-group > .btn:hover, .btn-group > a.comment-reply-link:hover, .btn-group > #cancel-comment-reply-link:hover, .form-submit .btn-group > input[type='submit']:hover, .btn-group > .btn:focus, .btn-group > a.comment-reply-link:focus, .btn-group > #cancel-comment-reply-link:focus, .form-submit .btn-group > input[type='submit']:focus, .btn-group > .btn:active, .btn-group > a.comment-reply-link:active, .btn-group > #cancel-comment-reply-link:active, .form-submit .btn-group > input[type='submit']:active, .btn-group > .btn.active, .btn-group > a.active.comment-reply-link, .btn-group > .active#cancel-comment-reply-link, .form-submit .btn-group > input.active[type='submit'],
+.btn-group > .btn:hover, .btn-group > a.comment-reply-link:hover, .btn-group > #cancel-comment-reply-link:hover, .form-submit .btn-group > input[type='submit']:hover, .field-wrap.submit-wrap .btn-group > .ninja-forms-field:hover, .btn-group > .btn:focus, .btn-group > a.comment-reply-link:focus, .btn-group > #cancel-comment-reply-link:focus, .form-submit .btn-group > input[type='submit']:focus, .field-wrap.submit-wrap .btn-group > .ninja-forms-field:focus, .btn-group > .btn:active, .btn-group > a.comment-reply-link:active, .btn-group > #cancel-comment-reply-link:active, .form-submit .btn-group > input[type='submit']:active, .field-wrap.submit-wrap .btn-group > .ninja-forms-field:active, .btn-group > .btn.active, .btn-group > a.active.comment-reply-link, .btn-group > .active#cancel-comment-reply-link, .form-submit .btn-group > input.active[type='submit'], .field-wrap.submit-wrap .btn-group > .active.ninja-forms-field,
 .btn-group-vertical > .btn:hover,
 .btn-group-vertical > a.comment-reply-link:hover,
 .btn-group-vertical > #cancel-comment-reply-link:hover,
 .form-submit .btn-group-vertical > input[type='submit']:hover,
+.field-wrap.submit-wrap .btn-group-vertical > .ninja-forms-field:hover,
 .btn-group-vertical > .btn:focus,
 .btn-group-vertical > a.comment-reply-link:focus,
 .btn-group-vertical > #cancel-comment-reply-link:focus,
 .form-submit .btn-group-vertical > input[type='submit']:focus,
+.field-wrap.submit-wrap .btn-group-vertical > .ninja-forms-field:focus,
 .btn-group-vertical > .btn:active,
 .btn-group-vertical > a.comment-reply-link:active,
 .btn-group-vertical > #cancel-comment-reply-link:active,
 .form-submit .btn-group-vertical > input[type='submit']:active,
+.field-wrap.submit-wrap .btn-group-vertical > .ninja-forms-field:active,
 .btn-group-vertical > .btn.active,
 .btn-group-vertical > a.active.comment-reply-link,
 .btn-group-vertical > .active#cancel-comment-reply-link,
-.form-submit .btn-group-vertical > input.active[type='submit'] {
+.form-submit .btn-group-vertical > input.active[type='submit'],
+.field-wrap.submit-wrap .btn-group-vertical > .active.ninja-forms-field {
   z-index: 2;
 }
-.btn-group > .btn:focus, .btn-group > a.comment-reply-link:focus, .btn-group > #cancel-comment-reply-link:focus, .form-submit .btn-group > input[type='submit']:focus,
+.btn-group > .btn:focus, .btn-group > a.comment-reply-link:focus, .btn-group > #cancel-comment-reply-link:focus, .form-submit .btn-group > input[type='submit']:focus, .field-wrap.submit-wrap .btn-group > .ninja-forms-field:focus,
 .btn-group-vertical > .btn:focus,
 .btn-group-vertical > a.comment-reply-link:focus,
 .btn-group-vertical > #cancel-comment-reply-link:focus,
-.form-submit .btn-group-vertical > input[type='submit']:focus {
+.form-submit .btn-group-vertical > input[type='submit']:focus,
+.field-wrap.submit-wrap .btn-group-vertical > .ninja-forms-field:focus {
   outline: 0;
 }
 
-.btn-group .btn + .btn, .btn-group a.comment-reply-link + .btn, .btn-group #cancel-comment-reply-link + .btn, .btn-group .form-submit input[type='submit'] + .btn, .form-submit .btn-group input[type='submit'] + .btn, .btn-group .btn + a.comment-reply-link, .btn-group a.comment-reply-link + a.comment-reply-link, .btn-group #cancel-comment-reply-link + a.comment-reply-link, .btn-group .form-submit input[type='submit'] + a.comment-reply-link, .form-submit .btn-group input[type='submit'] + a.comment-reply-link, .btn-group .btn + #cancel-comment-reply-link, .btn-group a.comment-reply-link + #cancel-comment-reply-link, .btn-group #cancel-comment-reply-link + #cancel-comment-reply-link, .btn-group .form-submit input[type='submit'] + #cancel-comment-reply-link, .form-submit .btn-group input[type='submit'] + #cancel-comment-reply-link, .btn-group .form-submit .btn + input[type='submit'], .form-submit .btn-group .btn + input[type='submit'], .btn-group .form-submit a.comment-reply-link + input[type='submit'], .form-submit .btn-group a.comment-reply-link + input[type='submit'], .btn-group .form-submit #cancel-comment-reply-link + input[type='submit'], .form-submit .btn-group #cancel-comment-reply-link + input[type='submit'], .btn-group .form-submit input[type='submit'] + input[type='submit'], .form-submit .btn-group input[type='submit'] + input[type='submit'],
+.btn-group .btn + .btn, .btn-group a.comment-reply-link + .btn, .btn-group #cancel-comment-reply-link + .btn, .btn-group .form-submit input[type='submit'] + .btn, .form-submit .btn-group input[type='submit'] + .btn, .btn-group .field-wrap.submit-wrap .ninja-forms-field + .btn, .field-wrap.submit-wrap .btn-group .ninja-forms-field + .btn, .btn-group .btn + a.comment-reply-link, .btn-group a.comment-reply-link + a.comment-reply-link, .btn-group #cancel-comment-reply-link + a.comment-reply-link, .btn-group .form-submit input[type='submit'] + a.comment-reply-link, .form-submit .btn-group input[type='submit'] + a.comment-reply-link, .btn-group .field-wrap.submit-wrap .ninja-forms-field + a.comment-reply-link, .field-wrap.submit-wrap .btn-group .ninja-forms-field + a.comment-reply-link, .btn-group .btn + #cancel-comment-reply-link, .btn-group a.comment-reply-link + #cancel-comment-reply-link, .btn-group #cancel-comment-reply-link + #cancel-comment-reply-link, .btn-group .form-submit input[type='submit'] + #cancel-comment-reply-link, .form-submit .btn-group input[type='submit'] + #cancel-comment-reply-link, .btn-group .field-wrap.submit-wrap .ninja-forms-field + #cancel-comment-reply-link, .field-wrap.submit-wrap .btn-group .ninja-forms-field + #cancel-comment-reply-link, .btn-group .form-submit .btn + input[type='submit'], .form-submit .btn-group .btn + input[type='submit'], .btn-group .form-submit a.comment-reply-link + input[type='submit'], .form-submit .btn-group a.comment-reply-link + input[type='submit'], .btn-group .form-submit #cancel-comment-reply-link + input[type='submit'], .form-submit .btn-group #cancel-comment-reply-link + input[type='submit'], .btn-group .form-submit input[type='submit'] + input[type='submit'], .form-submit .btn-group input[type='submit'] + input[type='submit'], .btn-group .field-wrap.submit-wrap .form-submit .ninja-forms-field + input[type='submit'], .form-submit .btn-group .field-wrap.submit-wrap .ninja-forms-field + input[type='submit'], .field-wrap.submit-wrap .btn-group .form-submit .ninja-forms-field + input[type='submit'], .form-submit .field-wrap.submit-wrap .btn-group .ninja-forms-field + input[type='submit'], .btn-group .field-wrap.submit-wrap .btn + .ninja-forms-field, .field-wrap.submit-wrap .btn-group .btn + .ninja-forms-field, .btn-group .field-wrap.submit-wrap a.comment-reply-link + .ninja-forms-field, .field-wrap.submit-wrap .btn-group a.comment-reply-link + .ninja-forms-field, .btn-group .field-wrap.submit-wrap #cancel-comment-reply-link + .ninja-forms-field, .field-wrap.submit-wrap .btn-group #cancel-comment-reply-link + .ninja-forms-field, .btn-group .form-submit .field-wrap.submit-wrap input[type='submit'] + .ninja-forms-field, .field-wrap.submit-wrap .btn-group .form-submit input[type='submit'] + .ninja-forms-field, .form-submit .btn-group .field-wrap.submit-wrap input[type='submit'] + .ninja-forms-field, .field-wrap.submit-wrap .form-submit .btn-group input[type='submit'] + .ninja-forms-field, .btn-group .field-wrap.submit-wrap .ninja-forms-field + .ninja-forms-field, .field-wrap.submit-wrap .btn-group .ninja-forms-field + .ninja-forms-field,
 .btn-group .btn + .btn-group,
 .btn-group a.comment-reply-link + .btn-group,
 .btn-group #cancel-comment-reply-link + .btn-group,
 .btn-group .form-submit input[type='submit'] + .btn-group,
 .form-submit .btn-group input[type='submit'] + .btn-group,
+.btn-group .field-wrap.submit-wrap .ninja-forms-field + .btn-group,
+.field-wrap.submit-wrap .btn-group .ninja-forms-field + .btn-group,
 .btn-group .btn-group + .btn,
 .btn-group .btn-group + a.comment-reply-link,
 .btn-group .btn-group + #cancel-comment-reply-link,
 .btn-group .form-submit .btn-group + input[type='submit'],
 .form-submit .btn-group .btn-group + input[type='submit'],
+.btn-group .field-wrap.submit-wrap .btn-group + .ninja-forms-field,
+.field-wrap.submit-wrap .btn-group .btn-group + .ninja-forms-field,
 .btn-group .btn-group + .btn-group {
   margin-left: -1px;
 }
@@ -4165,25 +4301,25 @@ tbody.collapse.in {
 .btn-toolbar .input-group {
   float: left;
 }
-.btn-toolbar > .btn, .btn-toolbar > a.comment-reply-link, .btn-toolbar > #cancel-comment-reply-link, .form-submit .btn-toolbar > input[type='submit'],
+.btn-toolbar > .btn, .btn-toolbar > a.comment-reply-link, .btn-toolbar > #cancel-comment-reply-link, .form-submit .btn-toolbar > input[type='submit'], .field-wrap.submit-wrap .btn-toolbar > .ninja-forms-field,
 .btn-toolbar > .btn-group,
 .btn-toolbar > .input-group {
   margin-left: 5px;
 }
 
-.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > a.comment-reply-link:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > #cancel-comment-reply-link:not(:first-child):not(:last-child):not(.dropdown-toggle), .form-submit .btn-group > input[type='submit']:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > a.comment-reply-link:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > #cancel-comment-reply-link:not(:first-child):not(:last-child):not(.dropdown-toggle), .form-submit .btn-group > input[type='submit']:not(:first-child):not(:last-child):not(.dropdown-toggle), .field-wrap.submit-wrap .btn-group > .ninja-forms-field:not(:first-child):not(:last-child):not(.dropdown-toggle) {
   border-radius: 0;
 }
 
-.btn-group > .btn:first-child, .btn-group > a.comment-reply-link:first-child, .btn-group > #cancel-comment-reply-link:first-child, .form-submit .btn-group > input[type='submit']:first-child {
+.btn-group > .btn:first-child, .btn-group > a.comment-reply-link:first-child, .btn-group > #cancel-comment-reply-link:first-child, .form-submit .btn-group > input[type='submit']:first-child, .field-wrap.submit-wrap .btn-group > .ninja-forms-field:first-child {
   margin-left: 0;
 }
-.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > a.comment-reply-link:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > #cancel-comment-reply-link:first-child:not(:last-child):not(.dropdown-toggle), .form-submit .btn-group > input[type='submit']:first-child:not(:last-child):not(.dropdown-toggle) {
+.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > a.comment-reply-link:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > #cancel-comment-reply-link:first-child:not(:last-child):not(.dropdown-toggle), .form-submit .btn-group > input[type='submit']:first-child:not(:last-child):not(.dropdown-toggle), .field-wrap.submit-wrap .btn-group > .ninja-forms-field:first-child:not(:last-child):not(.dropdown-toggle) {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
 
-.btn-group > .btn:last-child:not(:first-child), .btn-group > a.comment-reply-link:last-child:not(:first-child), .btn-group > #cancel-comment-reply-link:last-child:not(:first-child), .form-submit .btn-group > input[type='submit']:last-child:not(:first-child),
+.btn-group > .btn:last-child:not(:first-child), .btn-group > a.comment-reply-link:last-child:not(:first-child), .btn-group > #cancel-comment-reply-link:last-child:not(:first-child), .form-submit .btn-group > input[type='submit']:last-child:not(:first-child), .field-wrap.submit-wrap .btn-group > .ninja-forms-field:last-child:not(:first-child),
 .btn-group > .dropdown-toggle:not(:first-child) {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
@@ -4193,17 +4329,17 @@ tbody.collapse.in {
   float: left;
 }
 
-.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn, .btn-group > .btn-group:not(:first-child):not(:last-child) > a.comment-reply-link, .btn-group > .btn-group:not(:first-child):not(:last-child) > #cancel-comment-reply-link, .form-submit .btn-group > .btn-group:not(:first-child):not(:last-child) > input[type='submit'] {
+.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn, .btn-group > .btn-group:not(:first-child):not(:last-child) > a.comment-reply-link, .btn-group > .btn-group:not(:first-child):not(:last-child) > #cancel-comment-reply-link, .form-submit .btn-group > .btn-group:not(:first-child):not(:last-child) > input[type='submit'], .field-wrap.submit-wrap .btn-group > .btn-group:not(:first-child):not(:last-child) > .ninja-forms-field {
   border-radius: 0;
 }
 
-.btn-group > .btn-group:first-child > .btn:last-child, .btn-group > .btn-group:first-child > a.comment-reply-link:last-child, .btn-group > .btn-group:first-child > #cancel-comment-reply-link:last-child, .form-submit .btn-group > .btn-group:first-child > input[type='submit']:last-child,
+.btn-group > .btn-group:first-child > .btn:last-child, .btn-group > .btn-group:first-child > a.comment-reply-link:last-child, .btn-group > .btn-group:first-child > #cancel-comment-reply-link:last-child, .form-submit .btn-group > .btn-group:first-child > input[type='submit']:last-child, .field-wrap.submit-wrap .btn-group > .btn-group:first-child > .ninja-forms-field:last-child,
 .btn-group > .btn-group:first-child > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
 
-.btn-group > .btn-group:last-child > .btn:first-child, .btn-group > .btn-group:last-child > a.comment-reply-link:first-child, .btn-group > .btn-group:last-child > #cancel-comment-reply-link:first-child, .form-submit .btn-group > .btn-group:last-child > input[type='submit']:first-child {
+.btn-group > .btn-group:last-child > .btn:first-child, .btn-group > .btn-group:last-child > a.comment-reply-link:first-child, .btn-group > .btn-group:last-child > #cancel-comment-reply-link:first-child, .form-submit .btn-group > .btn-group:last-child > input[type='submit']:first-child, .field-wrap.submit-wrap .btn-group > .btn-group:last-child > .ninja-forms-field:first-child {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
@@ -4213,12 +4349,12 @@ tbody.collapse.in {
   outline: 0;
 }
 
-.btn-group > .btn + .dropdown-toggle, .btn-group > a.comment-reply-link + .dropdown-toggle, .btn-group > #cancel-comment-reply-link + .dropdown-toggle, .form-submit .btn-group > input[type='submit'] + .dropdown-toggle {
+.btn-group > .btn + .dropdown-toggle, .btn-group > a.comment-reply-link + .dropdown-toggle, .btn-group > #cancel-comment-reply-link + .dropdown-toggle, .form-submit .btn-group > input[type='submit'] + .dropdown-toggle, .field-wrap.submit-wrap .btn-group > .ninja-forms-field + .dropdown-toggle {
   padding-left: 8px;
   padding-right: 8px;
 }
 
-.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle, .btn-group-lg.btn-group > a.comment-reply-link + .dropdown-toggle, .btn-group-lg.btn-group > #cancel-comment-reply-link + .dropdown-toggle, .form-submit .btn-group-lg.btn-group > input[type='submit'] + .dropdown-toggle {
+.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle, .btn-group-lg.btn-group > a.comment-reply-link + .dropdown-toggle, .btn-group-lg.btn-group > #cancel-comment-reply-link + .dropdown-toggle, .form-submit .btn-group-lg.btn-group > input[type='submit'] + .dropdown-toggle, .field-wrap.submit-wrap .btn-group-lg.btn-group > .ninja-forms-field + .dropdown-toggle {
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -4232,25 +4368,26 @@ tbody.collapse.in {
   box-shadow: none;
 }
 
-.btn .caret, a.comment-reply-link .caret, #cancel-comment-reply-link .caret, .form-submit input[type='submit'] .caret {
+.btn .caret, a.comment-reply-link .caret, #cancel-comment-reply-link .caret, .form-submit input[type='submit'] .caret, .field-wrap.submit-wrap .ninja-forms-field .caret {
   margin-left: 0;
 }
 
-.btn-lg .caret, .btn-group-lg > .btn .caret, .btn-group-lg > a.comment-reply-link .caret, .btn-group-lg > #cancel-comment-reply-link .caret, .form-submit .btn-group-lg > input[type='submit'] .caret {
+.btn-lg .caret, .btn-group-lg > .btn .caret, .btn-group-lg > a.comment-reply-link .caret, .btn-group-lg > #cancel-comment-reply-link .caret, .form-submit .btn-group-lg > input[type='submit'] .caret, .field-wrap.submit-wrap .btn-group-lg > .ninja-forms-field .caret {
   border-width: 5px 5px 0;
   border-bottom-width: 0;
 }
 
-.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret, .dropup .btn-group-lg > a.comment-reply-link .caret, .dropup .btn-group-lg > #cancel-comment-reply-link .caret, .dropup .form-submit .btn-group-lg > input[type='submit'] .caret, .form-submit .dropup .btn-group-lg > input[type='submit'] .caret {
+.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret, .dropup .btn-group-lg > a.comment-reply-link .caret, .dropup .btn-group-lg > #cancel-comment-reply-link .caret, .dropup .form-submit .btn-group-lg > input[type='submit'] .caret, .form-submit .dropup .btn-group-lg > input[type='submit'] .caret, .dropup .field-wrap.submit-wrap .btn-group-lg > .ninja-forms-field .caret, .field-wrap.submit-wrap .dropup .btn-group-lg > .ninja-forms-field .caret {
   border-width: 0 5px 5px;
 }
 
-.btn-group-vertical > .btn, .btn-group-vertical > a.comment-reply-link, .btn-group-vertical > #cancel-comment-reply-link, .form-submit .btn-group-vertical > input[type='submit'],
+.btn-group-vertical > .btn, .btn-group-vertical > a.comment-reply-link, .btn-group-vertical > #cancel-comment-reply-link, .form-submit .btn-group-vertical > input[type='submit'], .field-wrap.submit-wrap .btn-group-vertical > .ninja-forms-field,
 .btn-group-vertical > .btn-group,
 .btn-group-vertical > .btn-group > .btn,
 .btn-group-vertical > .btn-group > a.comment-reply-link,
 .btn-group-vertical > .btn-group > #cancel-comment-reply-link,
-.form-submit .btn-group-vertical > .btn-group > input[type='submit'] {
+.form-submit .btn-group-vertical > .btn-group > input[type='submit'],
+.field-wrap.submit-wrap .btn-group-vertical > .btn-group > .ninja-forms-field {
   display: block;
   float: none;
   width: 100%;
@@ -4263,48 +4400,50 @@ tbody.collapse.in {
 .btn-group-vertical > .btn-group:after {
   clear: both;
 }
-.btn-group-vertical > .btn-group > .btn, .btn-group-vertical > .btn-group > a.comment-reply-link, .btn-group-vertical > .btn-group > #cancel-comment-reply-link, .form-submit .btn-group-vertical > .btn-group > input[type='submit'] {
+.btn-group-vertical > .btn-group > .btn, .btn-group-vertical > .btn-group > a.comment-reply-link, .btn-group-vertical > .btn-group > #cancel-comment-reply-link, .form-submit .btn-group-vertical > .btn-group > input[type='submit'], .field-wrap.submit-wrap .btn-group-vertical > .btn-group > .ninja-forms-field {
   float: none;
 }
-.btn-group-vertical > .btn + .btn, .btn-group-vertical > a.comment-reply-link + .btn, .btn-group-vertical > #cancel-comment-reply-link + .btn, .form-submit .btn-group-vertical > input[type='submit'] + .btn, .btn-group-vertical > .btn + a.comment-reply-link, .btn-group-vertical > a.comment-reply-link + a.comment-reply-link, .btn-group-vertical > #cancel-comment-reply-link + a.comment-reply-link, .form-submit .btn-group-vertical > input[type='submit'] + a.comment-reply-link, .btn-group-vertical > .btn + #cancel-comment-reply-link, .btn-group-vertical > a.comment-reply-link + #cancel-comment-reply-link, .btn-group-vertical > #cancel-comment-reply-link + #cancel-comment-reply-link, .form-submit .btn-group-vertical > input[type='submit'] + #cancel-comment-reply-link, .form-submit .btn-group-vertical > .btn + input[type='submit'], .form-submit .btn-group-vertical > a.comment-reply-link + input[type='submit'], .form-submit .btn-group-vertical > #cancel-comment-reply-link + input[type='submit'], .form-submit .btn-group-vertical > input[type='submit'] + input[type='submit'],
+.btn-group-vertical > .btn + .btn, .btn-group-vertical > a.comment-reply-link + .btn, .btn-group-vertical > #cancel-comment-reply-link + .btn, .form-submit .btn-group-vertical > input[type='submit'] + .btn, .field-wrap.submit-wrap .btn-group-vertical > .ninja-forms-field + .btn, .btn-group-vertical > .btn + a.comment-reply-link, .btn-group-vertical > a.comment-reply-link + a.comment-reply-link, .btn-group-vertical > #cancel-comment-reply-link + a.comment-reply-link, .form-submit .btn-group-vertical > input[type='submit'] + a.comment-reply-link, .field-wrap.submit-wrap .btn-group-vertical > .ninja-forms-field + a.comment-reply-link, .btn-group-vertical > .btn + #cancel-comment-reply-link, .btn-group-vertical > a.comment-reply-link + #cancel-comment-reply-link, .btn-group-vertical > #cancel-comment-reply-link + #cancel-comment-reply-link, .form-submit .btn-group-vertical > input[type='submit'] + #cancel-comment-reply-link, .field-wrap.submit-wrap .btn-group-vertical > .ninja-forms-field + #cancel-comment-reply-link, .form-submit .btn-group-vertical > .btn + input[type='submit'], .form-submit .btn-group-vertical > a.comment-reply-link + input[type='submit'], .form-submit .btn-group-vertical > #cancel-comment-reply-link + input[type='submit'], .form-submit .btn-group-vertical > input[type='submit'] + input[type='submit'], .field-wrap.submit-wrap .form-submit .btn-group-vertical > .ninja-forms-field + input[type='submit'], .form-submit .field-wrap.submit-wrap .btn-group-vertical > .ninja-forms-field + input[type='submit'], .field-wrap.submit-wrap .btn-group-vertical > .btn + .ninja-forms-field, .field-wrap.submit-wrap .btn-group-vertical > a.comment-reply-link + .ninja-forms-field, .field-wrap.submit-wrap .btn-group-vertical > #cancel-comment-reply-link + .ninja-forms-field, .form-submit .field-wrap.submit-wrap .btn-group-vertical > input[type='submit'] + .ninja-forms-field, .field-wrap.submit-wrap .form-submit .btn-group-vertical > input[type='submit'] + .ninja-forms-field, .field-wrap.submit-wrap .btn-group-vertical > .ninja-forms-field + .ninja-forms-field,
 .btn-group-vertical > .btn + .btn-group,
 .btn-group-vertical > a.comment-reply-link + .btn-group,
 .btn-group-vertical > #cancel-comment-reply-link + .btn-group,
 .form-submit .btn-group-vertical > input[type='submit'] + .btn-group,
+.field-wrap.submit-wrap .btn-group-vertical > .ninja-forms-field + .btn-group,
 .btn-group-vertical > .btn-group + .btn,
 .btn-group-vertical > .btn-group + a.comment-reply-link,
 .btn-group-vertical > .btn-group + #cancel-comment-reply-link,
 .form-submit .btn-group-vertical > .btn-group + input[type='submit'],
+.field-wrap.submit-wrap .btn-group-vertical > .btn-group + .ninja-forms-field,
 .btn-group-vertical > .btn-group + .btn-group {
   margin-top: -1px;
   margin-left: 0;
 }
 
-.btn-group-vertical > .btn:not(:first-child):not(:last-child), .btn-group-vertical > a.comment-reply-link:not(:first-child):not(:last-child), .btn-group-vertical > #cancel-comment-reply-link:not(:first-child):not(:last-child), .form-submit .btn-group-vertical > input[type='submit']:not(:first-child):not(:last-child) {
+.btn-group-vertical > .btn:not(:first-child):not(:last-child), .btn-group-vertical > a.comment-reply-link:not(:first-child):not(:last-child), .btn-group-vertical > #cancel-comment-reply-link:not(:first-child):not(:last-child), .form-submit .btn-group-vertical > input[type='submit']:not(:first-child):not(:last-child), .field-wrap.submit-wrap .btn-group-vertical > .ninja-forms-field:not(:first-child):not(:last-child) {
   border-radius: 0;
 }
-.btn-group-vertical > .btn:first-child:not(:last-child), .btn-group-vertical > a.comment-reply-link:first-child:not(:last-child), .btn-group-vertical > #cancel-comment-reply-link:first-child:not(:last-child), .form-submit .btn-group-vertical > input[type='submit']:first-child:not(:last-child) {
+.btn-group-vertical > .btn:first-child:not(:last-child), .btn-group-vertical > a.comment-reply-link:first-child:not(:last-child), .btn-group-vertical > #cancel-comment-reply-link:first-child:not(:last-child), .form-submit .btn-group-vertical > input[type='submit']:first-child:not(:last-child), .field-wrap.submit-wrap .btn-group-vertical > .ninja-forms-field:first-child:not(:last-child) {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-.btn-group-vertical > .btn:last-child:not(:first-child), .btn-group-vertical > a.comment-reply-link:last-child:not(:first-child), .btn-group-vertical > #cancel-comment-reply-link:last-child:not(:first-child), .form-submit .btn-group-vertical > input[type='submit']:last-child:not(:first-child) {
+.btn-group-vertical > .btn:last-child:not(:first-child), .btn-group-vertical > a.comment-reply-link:last-child:not(:first-child), .btn-group-vertical > #cancel-comment-reply-link:last-child:not(:first-child), .form-submit .btn-group-vertical > input[type='submit']:last-child:not(:first-child), .field-wrap.submit-wrap .btn-group-vertical > .ninja-forms-field:last-child:not(:first-child) {
   border-bottom-left-radius: 4px;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
 
-.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a.comment-reply-link, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > #cancel-comment-reply-link, .form-submit .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > input[type='submit'] {
+.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a.comment-reply-link, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > #cancel-comment-reply-link, .form-submit .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > input[type='submit'], .field-wrap.submit-wrap .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .ninja-forms-field {
   border-radius: 0;
 }
 
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > a.comment-reply-link:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > #cancel-comment-reply-link:last-child, .form-submit .btn-group-vertical > .btn-group:first-child:not(:last-child) > input[type='submit']:last-child,
+.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > a.comment-reply-link:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > #cancel-comment-reply-link:last-child, .form-submit .btn-group-vertical > .btn-group:first-child:not(:last-child) > input[type='submit']:last-child, .field-wrap.submit-wrap .btn-group-vertical > .btn-group:first-child:not(:last-child) > .ninja-forms-field:last-child,
 .btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 
-.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > a.comment-reply-link:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > #cancel-comment-reply-link:first-child, .form-submit .btn-group-vertical > .btn-group:last-child:not(:first-child) > input[type='submit']:first-child {
+.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > a.comment-reply-link:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > #cancel-comment-reply-link:first-child, .form-submit .btn-group-vertical > .btn-group:last-child:not(:first-child) > input[type='submit']:first-child, .field-wrap.submit-wrap .btn-group-vertical > .btn-group:last-child:not(:first-child) > .ninja-forms-field:first-child {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
@@ -4315,24 +4454,25 @@ tbody.collapse.in {
   table-layout: fixed;
   border-collapse: separate;
 }
-.btn-group-justified > .btn, .btn-group-justified > a.comment-reply-link, .btn-group-justified > #cancel-comment-reply-link, .form-submit .btn-group-justified > input[type='submit'],
+.btn-group-justified > .btn, .btn-group-justified > a.comment-reply-link, .btn-group-justified > #cancel-comment-reply-link, .form-submit .btn-group-justified > input[type='submit'], .field-wrap.submit-wrap .btn-group-justified > .ninja-forms-field,
 .btn-group-justified > .btn-group {
   float: none;
   display: table-cell;
   width: 1%;
 }
-.btn-group-justified > .btn-group .btn, .btn-group-justified > .btn-group a.comment-reply-link, .btn-group-justified > .btn-group #cancel-comment-reply-link, .btn-group-justified > .btn-group .form-submit input[type='submit'], .form-submit .btn-group-justified > .btn-group input[type='submit'] {
+.btn-group-justified > .btn-group .btn, .btn-group-justified > .btn-group a.comment-reply-link, .btn-group-justified > .btn-group #cancel-comment-reply-link, .btn-group-justified > .btn-group .form-submit input[type='submit'], .form-submit .btn-group-justified > .btn-group input[type='submit'], .btn-group-justified > .btn-group .field-wrap.submit-wrap .ninja-forms-field, .field-wrap.submit-wrap .btn-group-justified > .btn-group .ninja-forms-field {
   width: 100%;
 }
 .btn-group-justified > .btn-group .dropdown-menu {
   left: auto;
 }
 
-[data-toggle="buttons"] > .btn > input[type="radio"], [data-toggle="buttons"] > a.comment-reply-link > input[type="radio"], [data-toggle="buttons"] > #cancel-comment-reply-link > input[type="radio"], .form-submit [data-toggle="buttons"] > input[type='submit'] > input[type="radio"],
+[data-toggle="buttons"] > .btn > input[type="radio"], [data-toggle="buttons"] > a.comment-reply-link > input[type="radio"], [data-toggle="buttons"] > #cancel-comment-reply-link > input[type="radio"], .form-submit [data-toggle="buttons"] > input[type='submit'] > input[type="radio"], .field-wrap.submit-wrap [data-toggle="buttons"] > .ninja-forms-field > input[type="radio"],
 [data-toggle="buttons"] > .btn > input[type="checkbox"],
 [data-toggle="buttons"] > a.comment-reply-link > input[type="checkbox"],
 [data-toggle="buttons"] > #cancel-comment-reply-link > input[type="checkbox"],
-.form-submit [data-toggle="buttons"] > input[type='submit'] > input[type="checkbox"] {
+.form-submit [data-toggle="buttons"] > input[type='submit'] > input[type="checkbox"],
+.field-wrap.submit-wrap [data-toggle="buttons"] > .ninja-forms-field > input[type="checkbox"] {
   position: absolute;
   z-index: -1;
   opacity: 0;
@@ -4363,7 +4503,7 @@ tbody.collapse.in {
 .input-group .comment-form-comment input,
 .comment-form-comment .input-group input,
 .input-group .comment-form-comment textarea,
-.comment-form-comment .input-group textarea {
+.comment-form-comment .input-group textarea, .input-group .field-wrap.text-wrap .ninja-forms-field, .field-wrap.text-wrap .input-group .ninja-forms-field, .input-group .field-wrap.textarea-wrap .ninja-forms-field, .field-wrap.textarea-wrap .input-group .ninja-forms-field, .input-group .field-wrap.list-dropdown-wrap .ninja-forms-field, .field-wrap.list-dropdown-wrap .input-group .ninja-forms-field, .input-group .field-wrap.span-wrap .ninja-forms-field, .field-wrap.span-wrap .input-group .ninja-forms-field {
   position: relative;
   z-index: 2;
   float: left;
@@ -4389,7 +4529,15 @@ tbody.collapse.in {
 .input-group .comment-form-comment input,
 .comment-form-comment .input-group input,
 .input-group .comment-form-comment textarea,
-.comment-form-comment .input-group textarea {
+.comment-form-comment .input-group textarea,
+.input-group .field-wrap.text-wrap .ninja-forms-field,
+.field-wrap.text-wrap .input-group .ninja-forms-field,
+.input-group .field-wrap.textarea-wrap .ninja-forms-field,
+.field-wrap.textarea-wrap .input-group .ninja-forms-field,
+.input-group .field-wrap.list-dropdown-wrap .ninja-forms-field,
+.field-wrap.list-dropdown-wrap .input-group .ninja-forms-field,
+.input-group .field-wrap.span-wrap .ninja-forms-field,
+.field-wrap.span-wrap .input-group .ninja-forms-field {
   display: table-cell;
 }
 .input-group-addon:not(:first-child):not(:last-child),
@@ -4410,7 +4558,15 @@ tbody.collapse.in {
 .input-group .comment-form-comment input:not(:first-child):not(:last-child),
 .comment-form-comment .input-group input:not(:first-child):not(:last-child),
 .input-group .comment-form-comment textarea:not(:first-child):not(:last-child),
-.comment-form-comment .input-group textarea:not(:first-child):not(:last-child) {
+.comment-form-comment .input-group textarea:not(:first-child):not(:last-child),
+.input-group .field-wrap.text-wrap .ninja-forms-field:not(:first-child):not(:last-child),
+.field-wrap.text-wrap .input-group .ninja-forms-field:not(:first-child):not(:last-child),
+.input-group .field-wrap.textarea-wrap .ninja-forms-field:not(:first-child):not(:last-child),
+.field-wrap.textarea-wrap .input-group .ninja-forms-field:not(:first-child):not(:last-child),
+.input-group .field-wrap.list-dropdown-wrap .ninja-forms-field:not(:first-child):not(:last-child),
+.field-wrap.list-dropdown-wrap .input-group .ninja-forms-field:not(:first-child):not(:last-child),
+.input-group .field-wrap.span-wrap .ninja-forms-field:not(:first-child):not(:last-child),
+.field-wrap.span-wrap .input-group .ninja-forms-field:not(:first-child):not(:last-child) {
   border-radius: 0;
 }
 
@@ -4432,22 +4588,24 @@ tbody.collapse.in {
   border: 1px solid #cccccc;
   border-radius: 4px;
 }
-.input-group-addon.input-sm,
+.input-group-addon.input-sm, .field-wrap.text-wrap .input-group-sm > .input-group-addon.ninja-forms-field, .field-wrap.textarea-wrap .input-group-sm > .input-group-addon.ninja-forms-field, .field-wrap.list-dropdown-wrap .input-group-sm > .input-group-addon.ninja-forms-field, .field-wrap.span-wrap .input-group-sm > .input-group-addon.ninja-forms-field,
 .input-group-sm > .input-group-addon,
 .input-group-sm > .input-group-btn > .input-group-addon.btn,
 .input-group-sm > .input-group-btn > a.input-group-addon.comment-reply-link,
 .input-group-sm > .input-group-btn > .input-group-addon#cancel-comment-reply-link,
-.form-submit .input-group-sm > .input-group-btn > input.input-group-addon[type='submit'] {
+.form-submit .input-group-sm > .input-group-btn > input.input-group-addon[type='submit'],
+.field-wrap.submit-wrap .input-group-sm > .input-group-btn > .input-group-addon.ninja-forms-field {
   padding: 5px 10px;
   font-size: 12px;
   border-radius: 3px;
 }
-.input-group-addon.input-lg,
+.input-group-addon.input-lg, .field-wrap.text-wrap .input-group-lg > .input-group-addon.ninja-forms-field, .field-wrap.textarea-wrap .input-group-lg > .input-group-addon.ninja-forms-field, .field-wrap.list-dropdown-wrap .input-group-lg > .input-group-addon.ninja-forms-field, .field-wrap.span-wrap .input-group-lg > .input-group-addon.ninja-forms-field,
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .input-group-addon.btn,
 .input-group-lg > .input-group-btn > a.input-group-addon.comment-reply-link,
 .input-group-lg > .input-group-btn > .input-group-addon#cancel-comment-reply-link,
-.form-submit .input-group-lg > .input-group-btn > input.input-group-addon[type='submit'] {
+.form-submit .input-group-lg > .input-group-btn > input.input-group-addon[type='submit'],
+.field-wrap.submit-wrap .input-group-lg > .input-group-btn > .input-group-addon.ninja-forms-field {
   padding: 10px 16px;
   font-size: 18px;
   border-radius: 6px;
@@ -4471,25 +4629,29 @@ tbody.collapse.in {
 .input-group .comment-form-comment input:first-child,
 .comment-form-comment .input-group input:first-child,
 .input-group .comment-form-comment textarea:first-child,
-.comment-form-comment .input-group textarea:first-child,
+.comment-form-comment .input-group textarea:first-child, .input-group .field-wrap.text-wrap .ninja-forms-field:first-child, .field-wrap.text-wrap .input-group .ninja-forms-field:first-child, .input-group .field-wrap.textarea-wrap .ninja-forms-field:first-child, .field-wrap.textarea-wrap .input-group .ninja-forms-field:first-child, .input-group .field-wrap.list-dropdown-wrap .ninja-forms-field:first-child, .field-wrap.list-dropdown-wrap .input-group .ninja-forms-field:first-child, .input-group .field-wrap.span-wrap .ninja-forms-field:first-child, .field-wrap.span-wrap .input-group .ninja-forms-field:first-child,
 .input-group-addon:first-child,
 .input-group-btn:first-child > .btn,
 .input-group-btn:first-child > a.comment-reply-link,
 .input-group-btn:first-child > #cancel-comment-reply-link,
 .form-submit .input-group-btn:first-child > input[type='submit'],
+.field-wrap.submit-wrap .input-group-btn:first-child > .ninja-forms-field,
 .input-group-btn:first-child > .btn-group > .btn,
 .input-group-btn:first-child > .btn-group > a.comment-reply-link,
 .input-group-btn:first-child > .btn-group > #cancel-comment-reply-link,
 .form-submit .input-group-btn:first-child > .btn-group > input[type='submit'],
+.field-wrap.submit-wrap .input-group-btn:first-child > .btn-group > .ninja-forms-field,
 .input-group-btn:first-child > .dropdown-toggle,
 .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
 .input-group-btn:last-child > a.comment-reply-link:not(:last-child):not(.dropdown-toggle),
 .input-group-btn:last-child > #cancel-comment-reply-link:not(:last-child):not(.dropdown-toggle),
 .form-submit .input-group-btn:last-child > input[type='submit']:not(:last-child):not(.dropdown-toggle),
+.field-wrap.submit-wrap .input-group-btn:last-child > .ninja-forms-field:not(:last-child):not(.dropdown-toggle),
 .input-group-btn:last-child > .btn-group:not(:last-child) > .btn,
 .input-group-btn:last-child > .btn-group:not(:last-child) > a.comment-reply-link,
 .input-group-btn:last-child > .btn-group:not(:last-child) > #cancel-comment-reply-link,
-.form-submit .input-group-btn:last-child > .btn-group:not(:last-child) > input[type='submit'] {
+.form-submit .input-group-btn:last-child > .btn-group:not(:last-child) > input[type='submit'],
+.field-wrap.submit-wrap .input-group-btn:last-child > .btn-group:not(:last-child) > .ninja-forms-field {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
@@ -4512,25 +4674,29 @@ tbody.collapse.in {
 .input-group .comment-form-comment input:last-child,
 .comment-form-comment .input-group input:last-child,
 .input-group .comment-form-comment textarea:last-child,
-.comment-form-comment .input-group textarea:last-child,
+.comment-form-comment .input-group textarea:last-child, .input-group .field-wrap.text-wrap .ninja-forms-field:last-child, .field-wrap.text-wrap .input-group .ninja-forms-field:last-child, .input-group .field-wrap.textarea-wrap .ninja-forms-field:last-child, .field-wrap.textarea-wrap .input-group .ninja-forms-field:last-child, .input-group .field-wrap.list-dropdown-wrap .ninja-forms-field:last-child, .field-wrap.list-dropdown-wrap .input-group .ninja-forms-field:last-child, .input-group .field-wrap.span-wrap .ninja-forms-field:last-child, .field-wrap.span-wrap .input-group .ninja-forms-field:last-child,
 .input-group-addon:last-child,
 .input-group-btn:last-child > .btn,
 .input-group-btn:last-child > a.comment-reply-link,
 .input-group-btn:last-child > #cancel-comment-reply-link,
 .form-submit .input-group-btn:last-child > input[type='submit'],
+.field-wrap.submit-wrap .input-group-btn:last-child > .ninja-forms-field,
 .input-group-btn:last-child > .btn-group > .btn,
 .input-group-btn:last-child > .btn-group > a.comment-reply-link,
 .input-group-btn:last-child > .btn-group > #cancel-comment-reply-link,
 .form-submit .input-group-btn:last-child > .btn-group > input[type='submit'],
+.field-wrap.submit-wrap .input-group-btn:last-child > .btn-group > .ninja-forms-field,
 .input-group-btn:last-child > .dropdown-toggle,
 .input-group-btn:first-child > .btn:not(:first-child),
 .input-group-btn:first-child > a.comment-reply-link:not(:first-child),
 .input-group-btn:first-child > #cancel-comment-reply-link:not(:first-child),
 .form-submit .input-group-btn:first-child > input[type='submit']:not(:first-child),
+.field-wrap.submit-wrap .input-group-btn:first-child > .ninja-forms-field:not(:first-child),
 .input-group-btn:first-child > .btn-group:not(:first-child) > .btn,
 .input-group-btn:first-child > .btn-group:not(:first-child) > a.comment-reply-link,
 .input-group-btn:first-child > .btn-group:not(:first-child) > #cancel-comment-reply-link,
-.form-submit .input-group-btn:first-child > .btn-group:not(:first-child) > input[type='submit'] {
+.form-submit .input-group-btn:first-child > .btn-group:not(:first-child) > input[type='submit'],
+.field-wrap.submit-wrap .input-group-btn:first-child > .btn-group:not(:first-child) > .ninja-forms-field {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
@@ -4544,20 +4710,20 @@ tbody.collapse.in {
   font-size: 0;
   white-space: nowrap;
 }
-.input-group-btn > .btn, .input-group-btn > a.comment-reply-link, .input-group-btn > #cancel-comment-reply-link, .form-submit .input-group-btn > input[type='submit'] {
+.input-group-btn > .btn, .input-group-btn > a.comment-reply-link, .input-group-btn > #cancel-comment-reply-link, .form-submit .input-group-btn > input[type='submit'], .field-wrap.submit-wrap .input-group-btn > .ninja-forms-field {
   position: relative;
 }
-.input-group-btn > .btn + .btn, .input-group-btn > a.comment-reply-link + .btn, .input-group-btn > #cancel-comment-reply-link + .btn, .form-submit .input-group-btn > input[type='submit'] + .btn, .input-group-btn > .btn + a.comment-reply-link, .input-group-btn > a.comment-reply-link + a.comment-reply-link, .input-group-btn > #cancel-comment-reply-link + a.comment-reply-link, .form-submit .input-group-btn > input[type='submit'] + a.comment-reply-link, .input-group-btn > .btn + #cancel-comment-reply-link, .input-group-btn > a.comment-reply-link + #cancel-comment-reply-link, .input-group-btn > #cancel-comment-reply-link + #cancel-comment-reply-link, .form-submit .input-group-btn > input[type='submit'] + #cancel-comment-reply-link, .form-submit .input-group-btn > .btn + input[type='submit'], .form-submit .input-group-btn > a.comment-reply-link + input[type='submit'], .form-submit .input-group-btn > #cancel-comment-reply-link + input[type='submit'], .form-submit .input-group-btn > input[type='submit'] + input[type='submit'] {
+.input-group-btn > .btn + .btn, .input-group-btn > a.comment-reply-link + .btn, .input-group-btn > #cancel-comment-reply-link + .btn, .form-submit .input-group-btn > input[type='submit'] + .btn, .field-wrap.submit-wrap .input-group-btn > .ninja-forms-field + .btn, .input-group-btn > .btn + a.comment-reply-link, .input-group-btn > a.comment-reply-link + a.comment-reply-link, .input-group-btn > #cancel-comment-reply-link + a.comment-reply-link, .form-submit .input-group-btn > input[type='submit'] + a.comment-reply-link, .field-wrap.submit-wrap .input-group-btn > .ninja-forms-field + a.comment-reply-link, .input-group-btn > .btn + #cancel-comment-reply-link, .input-group-btn > a.comment-reply-link + #cancel-comment-reply-link, .input-group-btn > #cancel-comment-reply-link + #cancel-comment-reply-link, .form-submit .input-group-btn > input[type='submit'] + #cancel-comment-reply-link, .field-wrap.submit-wrap .input-group-btn > .ninja-forms-field + #cancel-comment-reply-link, .form-submit .input-group-btn > .btn + input[type='submit'], .form-submit .input-group-btn > a.comment-reply-link + input[type='submit'], .form-submit .input-group-btn > #cancel-comment-reply-link + input[type='submit'], .form-submit .input-group-btn > input[type='submit'] + input[type='submit'], .field-wrap.submit-wrap .form-submit .input-group-btn > .ninja-forms-field + input[type='submit'], .form-submit .field-wrap.submit-wrap .input-group-btn > .ninja-forms-field + input[type='submit'], .field-wrap.submit-wrap .input-group-btn > .btn + .ninja-forms-field, .field-wrap.submit-wrap .input-group-btn > a.comment-reply-link + .ninja-forms-field, .field-wrap.submit-wrap .input-group-btn > #cancel-comment-reply-link + .ninja-forms-field, .form-submit .field-wrap.submit-wrap .input-group-btn > input[type='submit'] + .ninja-forms-field, .field-wrap.submit-wrap .form-submit .input-group-btn > input[type='submit'] + .ninja-forms-field, .field-wrap.submit-wrap .input-group-btn > .ninja-forms-field + .ninja-forms-field {
   margin-left: -1px;
 }
-.input-group-btn > .btn:hover, .input-group-btn > a.comment-reply-link:hover, .input-group-btn > #cancel-comment-reply-link:hover, .form-submit .input-group-btn > input[type='submit']:hover, .input-group-btn > .btn:focus, .input-group-btn > a.comment-reply-link:focus, .input-group-btn > #cancel-comment-reply-link:focus, .form-submit .input-group-btn > input[type='submit']:focus, .input-group-btn > .btn:active, .input-group-btn > a.comment-reply-link:active, .input-group-btn > #cancel-comment-reply-link:active, .form-submit .input-group-btn > input[type='submit']:active {
+.input-group-btn > .btn:hover, .input-group-btn > a.comment-reply-link:hover, .input-group-btn > #cancel-comment-reply-link:hover, .form-submit .input-group-btn > input[type='submit']:hover, .field-wrap.submit-wrap .input-group-btn > .ninja-forms-field:hover, .input-group-btn > .btn:focus, .input-group-btn > a.comment-reply-link:focus, .input-group-btn > #cancel-comment-reply-link:focus, .form-submit .input-group-btn > input[type='submit']:focus, .field-wrap.submit-wrap .input-group-btn > .ninja-forms-field:focus, .input-group-btn > .btn:active, .input-group-btn > a.comment-reply-link:active, .input-group-btn > #cancel-comment-reply-link:active, .form-submit .input-group-btn > input[type='submit']:active, .field-wrap.submit-wrap .input-group-btn > .ninja-forms-field:active {
   z-index: 2;
 }
-.input-group-btn:first-child > .btn, .input-group-btn:first-child > a.comment-reply-link, .input-group-btn:first-child > #cancel-comment-reply-link, .form-submit .input-group-btn:first-child > input[type='submit'],
+.input-group-btn:first-child > .btn, .input-group-btn:first-child > a.comment-reply-link, .input-group-btn:first-child > #cancel-comment-reply-link, .form-submit .input-group-btn:first-child > input[type='submit'], .field-wrap.submit-wrap .input-group-btn:first-child > .ninja-forms-field,
 .input-group-btn:first-child > .btn-group {
   margin-right: -1px;
 }
-.input-group-btn:last-child > .btn, .input-group-btn:last-child > a.comment-reply-link, .input-group-btn:last-child > #cancel-comment-reply-link, .form-submit .input-group-btn:last-child > input[type='submit'],
+.input-group-btn:last-child > .btn, .input-group-btn:last-child > a.comment-reply-link, .input-group-btn:last-child > #cancel-comment-reply-link, .form-submit .input-group-btn:last-child > input[type='submit'], .field-wrap.submit-wrap .input-group-btn:last-child > .ninja-forms-field,
 .input-group-btn:last-child > .btn-group {
   margin-left: -1px;
 }
@@ -4971,7 +5137,7 @@ tbody.collapse.in {
   .navbar-form .form-group, .navbar-form .comment-form-author,
   .navbar-form .comment-form-email,
   .navbar-form .comment-form-url,
-  .navbar-form .comment-form-comment {
+  .navbar-form .comment-form-comment, .navbar-form .field-wrap {
     margin-bottom: 5px;
   }
 }
@@ -5006,11 +5172,11 @@ tbody.collapse.in {
   margin-top: 8px;
   margin-bottom: 8px;
 }
-.navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn, .btn-group-sm > .navbar-btn#cancel-comment-reply-link, .form-submit .btn-group-sm > input.navbar-btn[type='submit'], a.navbar-btn.comment-reply-link {
+.navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn, .btn-group-sm > .navbar-btn#cancel-comment-reply-link, .form-submit .btn-group-sm > input.navbar-btn[type='submit'], .field-wrap.submit-wrap .btn-group-sm > .navbar-btn.ninja-forms-field, a.navbar-btn.comment-reply-link {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn, .btn-group-xs > a.navbar-btn.comment-reply-link, .form-submit .btn-group-xs > input.navbar-btn[type='submit'], .navbar-btn#cancel-comment-reply-link {
+.navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn, .btn-group-xs > a.navbar-btn.comment-reply-link, .form-submit .btn-group-xs > input.navbar-btn[type='submit'], .field-wrap.submit-wrap .btn-group-xs > .navbar-btn.ninja-forms-field, .navbar-btn#cancel-comment-reply-link {
   margin-top: 14px;
   margin-bottom: 14px;
 }
@@ -5367,7 +5533,7 @@ tbody.collapse.in {
 .label:empty, .tags a:empty {
   display: none;
 }
-.btn .label, a.comment-reply-link .label, #cancel-comment-reply-link .label, .form-submit input[type='submit'] .label, .btn .tags a, .tags .btn a, a.comment-reply-link .tags a, .tags a.comment-reply-link a, #cancel-comment-reply-link .tags a, .tags #cancel-comment-reply-link a, .form-submit input[type='submit'] .tags a, .tags .form-submit input[type='submit'] a {
+.btn .label, a.comment-reply-link .label, #cancel-comment-reply-link .label, .form-submit input[type='submit'] .label, .field-wrap.submit-wrap .ninja-forms-field .label, .btn .tags a, .tags .btn a, a.comment-reply-link .tags a, .tags a.comment-reply-link a, #cancel-comment-reply-link .tags a, .tags #cancel-comment-reply-link a, .form-submit input[type='submit'] .tags a, .tags .form-submit input[type='submit'] a, .field-wrap.submit-wrap .ninja-forms-field .tags a, .tags .field-wrap.submit-wrap .ninja-forms-field a {
   position: relative;
   top: -1px;
 }
@@ -5437,11 +5603,11 @@ a.label:hover, .tags a:hover, a.label:focus, .tags a:focus {
 .badge:empty {
   display: none;
 }
-.btn .badge, a.comment-reply-link .badge, #cancel-comment-reply-link .badge, .form-submit input[type='submit'] .badge {
+.btn .badge, a.comment-reply-link .badge, #cancel-comment-reply-link .badge, .form-submit input[type='submit'] .badge, .field-wrap.submit-wrap .ninja-forms-field .badge {
   position: relative;
   top: -1px;
 }
-.btn-xs .badge, .btn-group-xs > .btn .badge, .btn-group-xs > a.comment-reply-link .badge, .form-submit .btn-group-xs > input[type='submit'] .badge, #cancel-comment-reply-link .badge {
+.btn-xs .badge, .btn-group-xs > .btn .badge, .btn-group-xs > a.comment-reply-link .badge, .form-submit .btn-group-xs > input[type='submit'] .badge, .field-wrap.submit-wrap .btn-group-xs > .ninja-forms-field .badge, #cancel-comment-reply-link .badge {
   top: 0;
   padding: 1px 5px;
 }
@@ -6378,11 +6544,11 @@ button.close {
 .modal-footer:after {
   clear: both;
 }
-.modal-footer .btn + .btn, .modal-footer a.comment-reply-link + .btn, .modal-footer #cancel-comment-reply-link + .btn, .modal-footer .form-submit input[type='submit'] + .btn, .form-submit .modal-footer input[type='submit'] + .btn, .modal-footer .btn + a.comment-reply-link, .modal-footer a.comment-reply-link + a.comment-reply-link, .modal-footer #cancel-comment-reply-link + a.comment-reply-link, .modal-footer .form-submit input[type='submit'] + a.comment-reply-link, .form-submit .modal-footer input[type='submit'] + a.comment-reply-link, .modal-footer .btn + #cancel-comment-reply-link, .modal-footer a.comment-reply-link + #cancel-comment-reply-link, .modal-footer #cancel-comment-reply-link + #cancel-comment-reply-link, .modal-footer .form-submit input[type='submit'] + #cancel-comment-reply-link, .form-submit .modal-footer input[type='submit'] + #cancel-comment-reply-link, .modal-footer .form-submit .btn + input[type='submit'], .form-submit .modal-footer .btn + input[type='submit'], .modal-footer .form-submit a.comment-reply-link + input[type='submit'], .form-submit .modal-footer a.comment-reply-link + input[type='submit'], .modal-footer .form-submit #cancel-comment-reply-link + input[type='submit'], .form-submit .modal-footer #cancel-comment-reply-link + input[type='submit'], .modal-footer .form-submit input[type='submit'] + input[type='submit'], .form-submit .modal-footer input[type='submit'] + input[type='submit'] {
+.modal-footer .btn + .btn, .modal-footer a.comment-reply-link + .btn, .modal-footer #cancel-comment-reply-link + .btn, .modal-footer .form-submit input[type='submit'] + .btn, .form-submit .modal-footer input[type='submit'] + .btn, .modal-footer .field-wrap.submit-wrap .ninja-forms-field + .btn, .field-wrap.submit-wrap .modal-footer .ninja-forms-field + .btn, .modal-footer .btn + a.comment-reply-link, .modal-footer a.comment-reply-link + a.comment-reply-link, .modal-footer #cancel-comment-reply-link + a.comment-reply-link, .modal-footer .form-submit input[type='submit'] + a.comment-reply-link, .form-submit .modal-footer input[type='submit'] + a.comment-reply-link, .modal-footer .field-wrap.submit-wrap .ninja-forms-field + a.comment-reply-link, .field-wrap.submit-wrap .modal-footer .ninja-forms-field + a.comment-reply-link, .modal-footer .btn + #cancel-comment-reply-link, .modal-footer a.comment-reply-link + #cancel-comment-reply-link, .modal-footer #cancel-comment-reply-link + #cancel-comment-reply-link, .modal-footer .form-submit input[type='submit'] + #cancel-comment-reply-link, .form-submit .modal-footer input[type='submit'] + #cancel-comment-reply-link, .modal-footer .field-wrap.submit-wrap .ninja-forms-field + #cancel-comment-reply-link, .field-wrap.submit-wrap .modal-footer .ninja-forms-field + #cancel-comment-reply-link, .modal-footer .form-submit .btn + input[type='submit'], .form-submit .modal-footer .btn + input[type='submit'], .modal-footer .form-submit a.comment-reply-link + input[type='submit'], .form-submit .modal-footer a.comment-reply-link + input[type='submit'], .modal-footer .form-submit #cancel-comment-reply-link + input[type='submit'], .form-submit .modal-footer #cancel-comment-reply-link + input[type='submit'], .modal-footer .form-submit input[type='submit'] + input[type='submit'], .form-submit .modal-footer input[type='submit'] + input[type='submit'], .modal-footer .field-wrap.submit-wrap .form-submit .ninja-forms-field + input[type='submit'], .form-submit .modal-footer .field-wrap.submit-wrap .ninja-forms-field + input[type='submit'], .field-wrap.submit-wrap .modal-footer .form-submit .ninja-forms-field + input[type='submit'], .form-submit .field-wrap.submit-wrap .modal-footer .ninja-forms-field + input[type='submit'], .modal-footer .field-wrap.submit-wrap .btn + .ninja-forms-field, .field-wrap.submit-wrap .modal-footer .btn + .ninja-forms-field, .modal-footer .field-wrap.submit-wrap a.comment-reply-link + .ninja-forms-field, .field-wrap.submit-wrap .modal-footer a.comment-reply-link + .ninja-forms-field, .modal-footer .field-wrap.submit-wrap #cancel-comment-reply-link + .ninja-forms-field, .field-wrap.submit-wrap .modal-footer #cancel-comment-reply-link + .ninja-forms-field, .modal-footer .form-submit .field-wrap.submit-wrap input[type='submit'] + .ninja-forms-field, .field-wrap.submit-wrap .modal-footer .form-submit input[type='submit'] + .ninja-forms-field, .form-submit .modal-footer .field-wrap.submit-wrap input[type='submit'] + .ninja-forms-field, .field-wrap.submit-wrap .form-submit .modal-footer input[type='submit'] + .ninja-forms-field, .modal-footer .field-wrap.submit-wrap .ninja-forms-field + .ninja-forms-field, .field-wrap.submit-wrap .modal-footer .ninja-forms-field + .ninja-forms-field {
   margin-left: 5px;
   margin-bottom: 0;
 }
-.modal-footer .btn-group .btn + .btn, .modal-footer .btn-group a.comment-reply-link + .btn, .modal-footer .btn-group #cancel-comment-reply-link + .btn, .modal-footer .btn-group .form-submit input[type='submit'] + .btn, .form-submit .modal-footer .btn-group input[type='submit'] + .btn, .modal-footer .btn-group .btn + a.comment-reply-link, .modal-footer .btn-group a.comment-reply-link + a.comment-reply-link, .modal-footer .btn-group #cancel-comment-reply-link + a.comment-reply-link, .modal-footer .btn-group .form-submit input[type='submit'] + a.comment-reply-link, .form-submit .modal-footer .btn-group input[type='submit'] + a.comment-reply-link, .modal-footer .btn-group .btn + #cancel-comment-reply-link, .modal-footer .btn-group a.comment-reply-link + #cancel-comment-reply-link, .modal-footer .btn-group #cancel-comment-reply-link + #cancel-comment-reply-link, .modal-footer .btn-group .form-submit input[type='submit'] + #cancel-comment-reply-link, .form-submit .modal-footer .btn-group input[type='submit'] + #cancel-comment-reply-link, .modal-footer .btn-group .form-submit .btn + input[type='submit'], .form-submit .modal-footer .btn-group .btn + input[type='submit'], .modal-footer .btn-group .form-submit a.comment-reply-link + input[type='submit'], .form-submit .modal-footer .btn-group a.comment-reply-link + input[type='submit'], .modal-footer .btn-group .form-submit #cancel-comment-reply-link + input[type='submit'], .form-submit .modal-footer .btn-group #cancel-comment-reply-link + input[type='submit'], .modal-footer .btn-group .form-submit input[type='submit'] + input[type='submit'], .form-submit .modal-footer .btn-group input[type='submit'] + input[type='submit'] {
+.modal-footer .btn-group .btn + .btn, .modal-footer .btn-group a.comment-reply-link + .btn, .modal-footer .btn-group #cancel-comment-reply-link + .btn, .modal-footer .btn-group .form-submit input[type='submit'] + .btn, .form-submit .modal-footer .btn-group input[type='submit'] + .btn, .modal-footer .btn-group .field-wrap.submit-wrap .ninja-forms-field + .btn, .field-wrap.submit-wrap .modal-footer .btn-group .ninja-forms-field + .btn, .modal-footer .btn-group .btn + a.comment-reply-link, .modal-footer .btn-group a.comment-reply-link + a.comment-reply-link, .modal-footer .btn-group #cancel-comment-reply-link + a.comment-reply-link, .modal-footer .btn-group .form-submit input[type='submit'] + a.comment-reply-link, .form-submit .modal-footer .btn-group input[type='submit'] + a.comment-reply-link, .modal-footer .btn-group .field-wrap.submit-wrap .ninja-forms-field + a.comment-reply-link, .field-wrap.submit-wrap .modal-footer .btn-group .ninja-forms-field + a.comment-reply-link, .modal-footer .btn-group .btn + #cancel-comment-reply-link, .modal-footer .btn-group a.comment-reply-link + #cancel-comment-reply-link, .modal-footer .btn-group #cancel-comment-reply-link + #cancel-comment-reply-link, .modal-footer .btn-group .form-submit input[type='submit'] + #cancel-comment-reply-link, .form-submit .modal-footer .btn-group input[type='submit'] + #cancel-comment-reply-link, .modal-footer .btn-group .field-wrap.submit-wrap .ninja-forms-field + #cancel-comment-reply-link, .field-wrap.submit-wrap .modal-footer .btn-group .ninja-forms-field + #cancel-comment-reply-link, .modal-footer .btn-group .form-submit .btn + input[type='submit'], .form-submit .modal-footer .btn-group .btn + input[type='submit'], .modal-footer .btn-group .form-submit a.comment-reply-link + input[type='submit'], .form-submit .modal-footer .btn-group a.comment-reply-link + input[type='submit'], .modal-footer .btn-group .form-submit #cancel-comment-reply-link + input[type='submit'], .form-submit .modal-footer .btn-group #cancel-comment-reply-link + input[type='submit'], .modal-footer .btn-group .form-submit input[type='submit'] + input[type='submit'], .form-submit .modal-footer .btn-group input[type='submit'] + input[type='submit'], .modal-footer .btn-group .field-wrap.submit-wrap .form-submit .ninja-forms-field + input[type='submit'], .form-submit .modal-footer .btn-group .field-wrap.submit-wrap .ninja-forms-field + input[type='submit'], .field-wrap.submit-wrap .modal-footer .btn-group .form-submit .ninja-forms-field + input[type='submit'], .form-submit .field-wrap.submit-wrap .modal-footer .btn-group .ninja-forms-field + input[type='submit'], .modal-footer .btn-group .field-wrap.submit-wrap .btn + .ninja-forms-field, .field-wrap.submit-wrap .modal-footer .btn-group .btn + .ninja-forms-field, .modal-footer .btn-group .field-wrap.submit-wrap a.comment-reply-link + .ninja-forms-field, .field-wrap.submit-wrap .modal-footer .btn-group a.comment-reply-link + .ninja-forms-field, .modal-footer .btn-group .field-wrap.submit-wrap #cancel-comment-reply-link + .ninja-forms-field, .field-wrap.submit-wrap .modal-footer .btn-group #cancel-comment-reply-link + .ninja-forms-field, .modal-footer .btn-group .form-submit .field-wrap.submit-wrap input[type='submit'] + .ninja-forms-field, .field-wrap.submit-wrap .modal-footer .btn-group .form-submit input[type='submit'] + .ninja-forms-field, .form-submit .modal-footer .btn-group .field-wrap.submit-wrap input[type='submit'] + .ninja-forms-field, .field-wrap.submit-wrap .form-submit .modal-footer .btn-group input[type='submit'] + .ninja-forms-field, .modal-footer .btn-group .field-wrap.submit-wrap .ninja-forms-field + .ninja-forms-field, .field-wrap.submit-wrap .modal-footer .btn-group .ninja-forms-field + .ninja-forms-field {
   margin-left: -1px;
 }
 .modal-footer .btn-block + .btn-block {
@@ -6809,7 +6975,7 @@ button.close {
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
-.carousel-caption .btn, .carousel-caption a.comment-reply-link, .carousel-caption #cancel-comment-reply-link, .carousel-caption .form-submit input[type='submit'], .form-submit .carousel-caption input[type='submit'] {
+.carousel-caption .btn, .carousel-caption a.comment-reply-link, .carousel-caption #cancel-comment-reply-link, .carousel-caption .form-submit input[type='submit'], .form-submit .carousel-caption input[type='submit'], .carousel-caption .field-wrap.submit-wrap .ninja-forms-field, .field-wrap.submit-wrap .carousel-caption .ninja-forms-field {
   text-shadow: none;
 }
 

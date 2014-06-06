@@ -126,6 +126,17 @@ header{
 	}
 }
 
+.frontpage-top-widgets {
+	.well {
+		margin-bottom: 36px;
+		background: lighten($brand-primary, 63%);
+
+		p:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
 .treeview {
 	img {
 		height: 18px;

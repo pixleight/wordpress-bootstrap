@@ -74,16 +74,6 @@ function wp_bootstrap_register_sidebars() {
     ));
     
     register_sidebar(array(
-    	'id' => 'sidebar2',
-    	'name' => 'Homepage Sidebar',
-    	'description' => 'Used only on the homepage page template.',
-    	'before_widget' => '<div id="%1$s" class="widget %2$s">',
-    	'after_widget' => '</div>',
-    	'before_title' => '<h4 class="widgettitle">',
-    	'after_title' => '</h4>',
-    ));
-    
-    register_sidebar(array(
       'id' => 'footer1',
       'name' => 'Footer 1',
       'before_widget' => '<div id="%1$s" class="widget col-sm-4 %2$s">',
@@ -105,6 +95,16 @@ function wp_bootstrap_register_sidebars() {
       'id' => 'footer3',
       'name' => 'Footer 3',
       'before_widget' => '<div id="%1$s" class="widget col-sm-4 %2$s">',
+      'after_widget' => '</div>',
+      'before_title' => '<h4 class="widgettitle">',
+      'after_title' => '</h4>',
+    ));
+
+    register_sidebar(array(
+      'id' => 'fptop',
+      'name' => 'Frontpage Top',
+      'description' => 'Used as a static announcement area for the homepage.',
+      'before_widget' => '<div id="%1$s" class="well well-lg widget %2$s">',
       'after_widget' => '</div>',
       'before_title' => '<h4 class="widgettitle">',
       'after_title' => '</h4>',
@@ -458,7 +458,7 @@ function add_active_class($classes, $item) {
 if( !function_exists("theme_styles") ) {  
     function theme_styles() { 
         // This is the compiled css file from LESS - this means you compile the LESS file locally and put it in the appropriate directory if you want to make any changes to the master bootstrap.css.
-        wp_register_style( 'bootstrap', get_template_directory_uri() . '/library/css/bootstrap.css', array(), '1.0', 'all' );
+        wp_register_style( 'bootstrap', get_template_directory_uri() . '/library/css/bootstrap.css', array(), '1.1', 'all' );
         wp_enqueue_style( 'bootstrap' );
 
         // For child themes
@@ -468,6 +468,9 @@ if( !function_exists("theme_styles") ) {
         wp_register_style( 'bootstrap-ie7', get_template_directory_uri() . '/library/css/bootstrap-ie7.css', array(), '1.0', 'all' );
         $GLOBALS['wp_styles']->add_data( 'bootstrap-ie7', 'conditional', 'lt IE 8' );
         wp_enqueue_style( 'bootstrap-ie7' );
+
+        wp_register_style( 'fontawesome', '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', array(), '4.0.1', 'all' );
+        wp_enqueue_style( 'fontawesome' );
     }
 }
 add_action( 'wp_enqueue_scripts', 'theme_styles' );

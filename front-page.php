@@ -4,6 +4,14 @@
 			
 				<div id="main" class="col-sm-8 clearfix" role="main">
 
+					<?php if ( is_active_sidebar( 'fptop' ) ) : ?>
+						<div class="clearfix row">
+							<div class="col-sm-12 frontpage-top-widgets clearfix">
+								<?php dynamic_sidebar( 'fptop' ); ?>
+							</div>
+						</div>
+					<?php endif; ?>
+
 					<?php 
 						/**
 						 * The WordPress Query class.

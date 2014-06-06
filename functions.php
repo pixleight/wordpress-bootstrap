@@ -561,4 +561,10 @@ function add_attachments_shortcode( $content ){
 }
 add_filter('the_content', 'add_attachments_shortcode');
 
+function my_custom_change_ninja_forms_capabilities_filter( $capabilities ) {
+    $capabilities = "edit_pages";
+    return $capabilities;
+}
+add_filter( 'ninja_forms_admin_menu_capabilities', 'my_custom_change_ninja_forms_capabilities_filter' );
+
 ?>

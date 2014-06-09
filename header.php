@@ -5,6 +5,10 @@
 		<meta charset="utf-8">
 		<title><?php wp_title( '|', true, 'right' ); ?></title>	
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
+		<!--[if IE]>
+			<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
+		<![endif]-->
 				
 		<!-- media-queries.js (fallback) -->
 		<!--[if lt IE 9]>

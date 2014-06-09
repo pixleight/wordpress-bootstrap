@@ -151,6 +151,10 @@ $(document).ready(function(){
 		render_map( $(this) );
  
 	});
+
+	if( !$.cookie('ie-notice-hide') ) {
+		$.cookie('ie-notice-hide', 1, { expires: 90 });
+	}
  
 });
  

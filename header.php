@@ -52,6 +52,17 @@
 		
 		<div class="container">
 
+		<!--[if lte IE 8]>
+		<?php if( !isset($_COOKIE['ie-notice-hide']) ) : ?>
+			<div class="alert alert-danger alert-dismissable">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+				<strong>Welcome!</strong> It appears you are using an older version of Internet Explorer. The new Intranet should work perfectly fine for you, but as with any new technology, there are bound to be a few bugs to work out.<br>
+				If you are experiencing any problems or things don't look right, <a href="<?php echo get_site_url(1, '?page_id=693'); ?>">click here</a> for help.<br>
+				<em>This notice will not appear again for 90 days.</em>
+			</div>
+		<?php endif; ?>
+		<![endif]-->
+
 		<?php if ( function_exists('yoast_breadcrumb') ) { ?>
 			<div class="row clearfix"><div class="col-sm-12 clearfix">
 				<?php $breadcrumbs = yoast_breadcrumb('<ol class="breadcrumb"><li>','</li></ol>',false);

@@ -7,6 +7,22 @@
 					<div class="page-header">
 						<h1><span><?php _e("Search Results for","wpbootstrap"); ?>:</span> <?php echo esc_attr(get_search_query()); ?></h1>
 						<?php get_template_part( 'searchform' ); ?>
+						<hr>
+						<div class="well">
+						<h4>Looking for Forms &amp; Documents? Try the following search:</h4>
+						<form action="<?php echo post_permalink( 88 ); ?>" method="get" class="form-inline">
+							<fieldset>
+								<div class="input-group col-sm-12">
+									<input type="text" name="wpfb_s" id="wpfb_search" placeholder="Search" value="<?php echo esc_attr(get_search_query()); ?>" class="form-control input-sm">
+									<span class="input-group-btn">
+										<button class="btn btn-primary btn-sm" type="submit">
+											<span class="glyphicon glyphicon-search"> Search</span>
+										</button>
+									</span>
+								</div>
+							</fieldset>
+						</form>
+						</div>
 					</div>
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>

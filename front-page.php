@@ -80,8 +80,12 @@
 						<?php endif; ?>
 
 						<?php if( has_post_thumbnail() ) : ?>
-							<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-								<?php the_post_thumbnail( 'intranet-featured-carousel' ); ?>
+							<?php if( get_field('featured_image_link') ) : ?>
+								<a href="<?php echo get_permalink( get_field('featured_image_link') ); ?>"
+							<?php else: ?>
+								<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+							<?php endif; ?>
+									<?php the_post_thumbnail( 'intranet-featured-carousel' ); ?>
 							</a>
 						<?php endif; ?>
 

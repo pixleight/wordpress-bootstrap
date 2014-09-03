@@ -81,7 +81,8 @@
 
 						<?php if( has_post_thumbnail() ) : ?>
 							<?php if( get_field('featured_image_link') ) : ?>
-								<a href="<?php echo get_permalink( get_field('featured_image_link') ); ?>">
+								<?php $link_ids = get_field('featured_image_link'); ?>
+								<a href="<?php echo get_permalink( $link_ids[0] ); ?>">
 							<?php else: ?>
 								<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
 							<?php endif; ?>

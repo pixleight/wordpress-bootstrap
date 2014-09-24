@@ -18,8 +18,7 @@
 						 * @link http://codex.wordpress.org/Function_Reference/WP_Query
 						 *
 						 */
-						global $wp_query;
-						$args = array_merge( $wp_query->query_vars, array(
+						$args = array(
 							//Category Parameters
 							'tag_id'              => 10,
 							//'category_name'    => 'front-page',
@@ -38,15 +37,15 @@
 							'posts_per_page'         => 10,
 							'nopaging'               => false,
 							
-						) );
-					query_posts( $args );
+						);
+					$fp_query = new WP_Query( $args );
 					
-					if (have_posts()) : $active = true; $indicator_active = true; ?>
+					if ($fp_query->have_posts()) : $active = true; $indicator_active = true; ?>
 
 					<div id="carousel-frontpage" class="carousel slide" data-ride="carousel" data-interval="5000">
 
 						<ol class="carousel-indicators">
-						<?php $indicator_query = $wp_query;
+						<?php $indicator_query = $fp_query;
 						$i = 0;
 						while( $indicator_query->have_posts()) : $indicator_query->the_post(); ?>
 							<li data-target="#carousel-frontpage" data-slide-to="<?php echo $i; $i++; ?>" class="<?php echo $indicator_active ? 'active' : ''; $indicator_active = false; ?>"></li>
@@ -55,7 +54,7 @@
 
 						<div class="carousel-inner">
 
-					<?php while (have_posts()) : the_post(); ?>
+					<?php while ($fp_query->have_posts()) : $fp_query->the_post(); ?>
 
 					<div class="item<?php echo $active ? ' active' : ''; $active = false; ?>">
 
@@ -114,6 +113,7 @@
 					    </header>
 					    <section class="post_content">
 					    	<p><?php _e("Sorry, but the requested resource was not found on this site.", "wpbootstrap"); ?></p>
+					    	<pre><?php print_r($wp_query); ?></pre>
 					    </section>
 					    <footer>
 					    </footer>

@@ -120,6 +120,7 @@
 					</article>
 					
 					<?php endif; ?>
+					<?php wp_reset_query(); ?>
 			
 				</div> <!-- end #main -->
     

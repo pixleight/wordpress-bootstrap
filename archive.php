@@ -32,6 +32,14 @@
 					<?php } ?>
 					</div>
 
+					<?php if ( is_active_sidebar( 'announce' ) ) : ?>
+						<div class="clearfix row">
+							<div class="col-sm-12 clearfix">
+								<?php dynamic_sidebar( 'announce' ); ?>
+							</div>
+						</div>
+					<?php endif; ?>
+
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
 						<?php get_template_part( 'content-archive', get_post_type() ); ?>

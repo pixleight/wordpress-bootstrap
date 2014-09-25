@@ -109,6 +109,16 @@ function wp_bootstrap_register_sidebars() {
       'before_title' => '<h4 class="widgettitle">',
       'after_title' => '</h4>',
     ));
+
+    register_sidebar(array(
+      'id' => 'announce',
+      'name' => 'Announcement',
+      'description' => 'Used as a static announcement area on internal pages.',
+      'before_widget' => '<div id="%1$s" class="panel panel-danger %2$s">',
+      'after_widget' => '</div></div>',
+      'before_title' => '<div class="panel-heading"><h4 class="panel-title">',
+      'after_title' => '</h4></div><div class="panel-body">',
+    ));
     
     
     /* 

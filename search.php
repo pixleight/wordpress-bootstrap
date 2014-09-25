@@ -3,6 +3,14 @@
 			<div id="content" class="clearfix row">
 			
 				<div id="main" class="col col-lg-8 clearfix" role="main">
+
+					<?php if ( is_active_sidebar( 'announce' ) ) : ?>
+						<div class="clearfix row">
+							<div class="col-sm-12 clearfix">
+								<?php dynamic_sidebar( 'announce' ); ?>
+							</div>
+						</div>
+					<?php endif; ?>
 				
 					<div class="page-header">
 						<h1><span><?php _e("Search Results for","wpbootstrap"); ?>:</span> <?php echo esc_attr(get_search_query()); ?></h1>

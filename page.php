@@ -4,6 +4,14 @@
 			
 				<div id="main" class="col-sm-8 clearfix" role="main">
 
+					<?php if ( is_active_sidebar( 'announce' ) ) : ?>
+						<div class="clearfix row">
+							<div class="col-sm-12 clearfix">
+								<?php dynamic_sidebar( 'announce' ); ?>
+							</div>
+						</div>
+					<?php endif; ?>
+
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
 					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">

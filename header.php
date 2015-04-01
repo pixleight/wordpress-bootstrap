@@ -25,20 +25,6 @@
 		<!-- wordpress head functions -->
 		<?php wp_head(); ?>
 		<!-- end of wordpress head -->
-
-		<?php if( date('Ymd') == date('Ymd', strtotime('20150401')) ) { ?>
-		<!-- April Fools! -->
-		<style type="text/css">
-			body {
-				font-family: "Comic Sans MS", "Comic Sans" !important; 
-			}
-
-			h1, h2, h3, h4, h5, h6 {
-				font-family: "Papyrus", "Comic Sans MS", "Comic Sans" !important;
-			}
-		</style>
-		<!-- April Fools! -->
-		<?php }?>
 				
 	</head>
 	

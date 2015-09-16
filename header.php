@@ -25,8 +25,8 @@
 		<!-- wordpress head functions -->
 		<?php wp_head(); ?>
 		<!-- end of wordpress head -->
-		
-				<?php if( date('Ymd') == date('Ymd', strtotime('20150401')) ) { ?>
+
+		<?php if( date('Ymd') == date('Ymd', strtotime('20150401')) ) { ?>
 		<!-- April Fools! -->
 		<style type="text/css">
 			body {
@@ -39,7 +39,7 @@
 		</style>
 		<!-- April Fools! -->
 		<?php }?>
-		
+				
 	</head>
 	
 	<body <?php body_class(); ?>>

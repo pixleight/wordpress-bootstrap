@@ -26,7 +26,8 @@
 		<?php wp_head(); ?>
 		<!-- end of wordpress head -->
 
-		<?php if( date('Ymd') == date('Ymd', strtotime('20150401')) ) { ?>
+		<?php if( date('Ymd') == date('Ymd', 
+strtotime('20160401')) ) { ?>
 		<!-- April Fools! -->
 		<style type="text/css">
 			body {
@@ -34,7 +35,8 @@
 			}
 
 			h1, h2, h3, h4, h5, h6 {
-				font-family: "Papyrus", "Comic Sans MS", "Comic Sans" !important;
+				font-family: "Comic Sans MS", "Comic Sans" !important;
+				color: #F0F !important;
 			}
 		</style>
 		<!-- April Fools! -->

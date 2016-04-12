@@ -26,8 +26,12 @@
 		<?php wp_head(); ?>
 		<!-- end of wordpress head -->
 
+<<<<<<< HEAD
 		<?php if( date('Ymd') == date('Ymd', 
 strtotime('20160401')) ) { ?>
+=======
+		<?php if( date('Ymd') == date('Ymd', strtotime('20150401')) ) { ?>
+>>>>>>> baff54e96d77ab631a89ce2ad6c123f70415ca6a
 		<!-- April Fools! -->
 		<style type="text/css">
 			body {
@@ -35,8 +39,12 @@ strtotime('20160401')) ) { ?>
 			}
 
 			h1, h2, h3, h4, h5, h6 {
+<<<<<<< HEAD
 				font-family: "Comic Sans MS", "Comic Sans" !important;
 				color: #F0F !important;
+=======
+				font-family: "Papyrus", "Comic Sans MS", "Comic Sans" !important;
+>>>>>>> baff54e96d77ab631a89ce2ad6c123f70415ca6a
 			}
 		</style>
 		<!-- April Fools! -->

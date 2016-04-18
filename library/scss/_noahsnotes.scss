@@ -32,7 +32,7 @@
 		.avatar-thumbnail {
 			max-width: 25%;
 			margin-bottom: 3%;
-			
+
 			&.pull-left {
 				margin-right: 5%;
 			}
@@ -53,4 +53,27 @@
 	margin: 10px;
 	height: 30px;
 	line-height: 30px;
+}
+
+.alignleft, .alignright {
+    margin: 1em;
+}
+
+	.alignleft {
+		margin-left: 0;
+		float: left;
+	}
+
+	.alignright {
+		margin-right: 0;
+		float: right;
+	}
+
+.wp-caption {
+  padding: 0.5em;
+  border: 1px solid #e3e3e3;
+  background: #F5F5F5;
+  font-size: 0.8em;
+  text-align: center;
+  font-style: italic;
 }

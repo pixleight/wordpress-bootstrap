@@ -348,7 +348,7 @@ ul.thumbnails {
 }
 
 .widget_newsletter_widget {
-	.wpfb_link {
+	a, .wpfb_link {
 		display: block;
 		height: 130px;
 		overflow: hidden;
@@ -392,11 +392,11 @@ ul.thumbnails {
 		background: none;
 		border-top: none;
 		border-left: none;
-		border-right: none; 
+		border-right: none;
 		&:hover {
 			background: #FFF;
 		}
-		
+
 		.rsswidget {
 			font-family: $headings-font-family;
 			font-weight: $headings-font-weight;
@@ -465,7 +465,7 @@ ul.thumbnails {
 			  }
 
 			  // [converter] extracted textarea& to textarea.form-control
-		}		
+		}
 	}
 
 	&.spam-wrap {

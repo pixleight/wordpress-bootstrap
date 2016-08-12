@@ -1,17 +1,17 @@
 <?php
-// Creating the widget 
+// Creating the widget
 class newsletter_widget extends WP_Widget {
 
 	function __construct() {
 		parent::__construct(
 		// Base ID of your widget
-		'newsletter_widget', 
+		'newsletter_widget',
 
 		// Widget name will appear in UI
-		__('Latest PCHC Newsletter', 'newsletter_widget_domain'), 
+		__('Latest PCHC Newsletter', 'newsletter_widget_domain'),
 
 		// Widget description
-		array( 'description' => __( 'Displays a link to download the latest newsletter.', 'newsletter_widget_domain' ), ) 
+		array( 'description' => __( 'Displays a link to download the latest newsletter.', 'newsletter_widget_domain' ), )
 		);
 	}
 
@@ -33,7 +33,7 @@ class newsletter_widget extends WP_Widget {
 		$news_args = array(
 			//Category Parameters
 			'cat'              => 12,
-			
+
 			//Type & Status Parameters
 			'post_type'   => 'post',
 			'post_status' => 'publish',
@@ -41,20 +41,20 @@ class newsletter_widget extends WP_Widget {
 			//Order & Orderby Parameters
 			'order'               => 'DESC',
 			'orderby'             => 'date',
-			
+
 			//Pagination Parameters
 			'posts_per_page'         => 1,
 			//'posts_per_archive_page' => 1,
 			//'nopaging'               => false,
 		);
-		
+
 		$news_query = new WP_Query( $news_args );
-		
+
 		if( $news_query->have_posts() ) : while( $news_query->have_posts() ) : $news_query->the_post(); ?>
 			<article>
-				<?php 
+				<?php
 				if( shortcode_exists( 'wpfilebase') ) {
-					echo do_shortcode( '[wpfilebase tag=attachments tpl=link /]' );
+					//echo do_shortcode( '[wpfilebase tag=attachments tpl=link /]' );
 				} ?>
 				<p><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a><br/>
 				<small><?php the_date('F Y'); ?></small></p>
@@ -63,8 +63,8 @@ class newsletter_widget extends WP_Widget {
 
 		echo $args['after_widget'];
 	}
-		
-	// Widget Backend 
+
+	// Widget Backend
 	public function form( $instance ) {
 		if ( isset( $instance[ 'title' ] ) ) {
 			$title = $instance[ 'title' ];
@@ -75,12 +75,12 @@ class newsletter_widget extends WP_Widget {
 		// Widget admin form
 		?>
 			<p>
-				<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
+				<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
 				<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 			</p>
-		<?php 
+		<?php
 	}
-	
+
 	// Updating widget replacing old instances with new
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();

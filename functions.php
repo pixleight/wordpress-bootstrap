@@ -258,7 +258,7 @@ function remove_thumbnail_dimensions( $html ) {
 }
 
 // Add the Meta Box to the homepage template
-function add_homepage_meta_box() {  
+function add_homepage_meta_box() {
 	global $post;
 
 	// Only add homepage meta box if template being used is the homepage template
@@ -267,71 +267,71 @@ function add_homepage_meta_box() {
 	$template_file = get_post_meta($post_id,'_wp_page_template',TRUE);
 
 	if ( $template_file == 'page-homepage.php' ){
-	    add_meta_box(  
-	        'homepage_meta_box', // $id  
-	        'Optional Homepage Tagline', // $title  
-	        'show_homepage_meta_box', // $callback  
-	        'page', // $page  
-	        'normal', // $context  
-	        'high'); // $priority  
+	    add_meta_box(
+	        'homepage_meta_box', // $id
+	        'Optional Homepage Tagline', // $title
+	        'show_homepage_meta_box', // $callback
+	        'page', // $page
+	        'normal', // $context
+	        'high'); // $priority
     }
 }
 
 add_action( 'add_meta_boxes', 'add_homepage_meta_box' );
 
-// Field Array  
-$prefix = 'custom_';  
-$custom_meta_fields = array(  
-    array(  
-        'label'=> 'Homepage tagline area',  
-        'desc'  => 'Displayed underneath page title. Only used on homepage template. HTML can be used.',  
-        'id'    => $prefix.'tagline',  
-        'type'  => 'textarea' 
-    )  
-);  
+// Field Array
+$prefix = 'custom_';
+$custom_meta_fields = array(
+    array(
+        'label'=> 'Homepage tagline area',
+        'desc'  => 'Displayed underneath page title. Only used on homepage template. HTML can be used.',
+        'id'    => $prefix.'tagline',
+        'type'  => 'textarea'
+    )
+);
 
-// The Homepage Meta Box Callback  
-function show_homepage_meta_box() {  
+// The Homepage Meta Box Callback
+function show_homepage_meta_box() {
   global $custom_meta_fields, $post;
 
   // Use nonce for verification
   wp_nonce_field( basename( __FILE__ ), 'wpbs_nonce' );
-    
+
   // Begin the field table and loop
   echo '<table class="form-table">';
 
   foreach ( $custom_meta_fields as $field ) {
-      // get value of this field if it exists for this post  
-      $meta = get_post_meta($post->ID, $field['id'], true);  
-      // begin a table row with  
-      echo '<tr> 
-              <th><label for="'.$field['id'].'">'.$field['label'].'</label></th> 
-              <td>';  
-              switch($field['type']) {  
-                  // text  
-                  case 'text':  
-                      echo '<input type="text" name="'.$field['id'].'" id="'.$field['id'].'" value="'.$meta.'" size="60" /> 
-                          <br /><span class="description">'.$field['desc'].'</span>';  
+      // get value of this field if it exists for this post
+      $meta = get_post_meta($post->ID, $field['id'], true);
+      // begin a table row with
+      echo '<tr>
+              <th><label for="'.$field['id'].'">'.$field['label'].'</label></th>
+              <td>';
+              switch($field['type']) {
+                  // text
+                  case 'text':
+                      echo '<input type="text" name="'.$field['id'].'" id="'.$field['id'].'" value="'.$meta.'" size="60" />
+                          <br /><span class="description">'.$field['desc'].'</span>';
                   break;
-                  
-                  // textarea  
-                  case 'textarea':  
-                      echo '<textarea name="'.$field['id'].'" id="'.$field['id'].'" cols="80" rows="4">'.$meta.'</textarea> 
-                          <br /><span class="description">'.$field['desc'].'</span>';  
-                  break;  
-              } //end switch  
-      echo '</td></tr>';  
-  } // end foreach  
-  echo '</table>'; // end table  
-}  
 
-// Save the Data  
-function save_homepage_meta( $post_id ) {  
+                  // textarea
+                  case 'textarea':
+                      echo '<textarea name="'.$field['id'].'" id="'.$field['id'].'" cols="80" rows="4">'.$meta.'</textarea>
+                          <br /><span class="description">'.$field['desc'].'</span>';
+                  break;
+              } //end switch
+      echo '</td></tr>';
+  } // end foreach
+  echo '</table>'; // end table
+}
 
-    global $custom_meta_fields;  
-  
-    // verify nonce  
-    if ( !isset( $_POST['wpbs_nonce'] ) || !wp_verify_nonce($_POST['wpbs_nonce'], basename(__FILE__)) )  
+// Save the Data
+function save_homepage_meta( $post_id ) {
+
+    global $custom_meta_fields;
+
+    // verify nonce
+    if ( !isset( $_POST['wpbs_nonce'] ) || !wp_verify_nonce($_POST['wpbs_nonce'], basename(__FILE__)) )
         return $post_id;
 
     // check autosave
@@ -345,8 +345,8 @@ function save_homepage_meta( $post_id ) {
         } elseif ( !current_user_can( 'edit_post', $post_id ) ) {
             return $post_id;
     }
-  
-    // loop through fields and save the data  
+
+    // loop through fields and save the data
     foreach ( $custom_meta_fields as $field ) {
         $old = get_post_meta( $post_id, $field['id'], true );
         $new = $_POST[$field['id']];
@@ -394,19 +394,19 @@ class Bootstrap_walker extends Walker_Nav_Menu{
 
 	 global $wp_query;
 	 $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
-	
+
 	 $class_names = $value = '';
-	
+
 		// If the item has children, add the dropdown class for bootstrap
 		if ( $args->has_children ) {
 			$class_names = "dropdown ";
 		}
-	
+
 		$classes = empty( $object->classes ) ? array() : (array) $object->classes;
-		
+
 		$class_names .= join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $object ) );
 		$class_names = ' class="'. esc_attr( $class_names ) . '"';
-       
+
    	$output .= $indent . '<li id="menu-item-'. $object->ID . '"' . $value . $class_names .'>';
 
    	$attributes  = ! empty( $object->attr_title ) ? ' title="'  . esc_attr( $object->attr_title ) .'"' : '';
@@ -436,19 +436,19 @@ class Bootstrap_walker extends Walker_Nav_Menu{
 
     $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $object, $depth, $args );
   } // end start_el function
-        
+
   function start_lvl(&$output, $depth = 0, $args = Array()) {
     $indent = str_repeat("\t", $depth);
     $output .= "\n$indent<ul class=\"dropdown-menu\">\n";
   }
-      
+
 	function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ){
     $id_field = $this->db_fields['id'];
     if ( is_object( $args[0] ) ) {
         $args[0]->has_children = ! empty( $children_elements[$element->$id_field] );
     }
     return parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
-  }        
+  }
 }
 
 add_editor_style('editor-style.css');
@@ -460,13 +460,13 @@ function add_active_class($classes, $item) {
 	if( $item->menu_item_parent == 0 && in_array('current-menu-item', $classes) ) {
     $classes[] = "active";
 	}
-  
+
   return $classes;
 }
 
 // enqueue styles
-if( !function_exists("theme_styles") ) {  
-    function theme_styles() { 
+if( !function_exists("theme_styles") ) {
+    function theme_styles() {
         // This is the compiled css file from LESS - this means you compile the LESS file locally and put it in the appropriate directory if you want to make any changes to the master bootstrap.css.
         wp_register_style( 'bootstrap', get_template_directory_uri() . '/library/css/bootstrap.css', array(), '1.1', 'all' );
         wp_enqueue_style( 'bootstrap' );
@@ -489,45 +489,45 @@ if( !function_exists("theme_styles") ) {
 add_action( 'wp_enqueue_scripts', 'theme_styles' );
 
 // enqueue javascript
-if( !function_exists( "theme_js" ) ) {  
+if( !function_exists( "theme_js" ) ) {
   function theme_js(){
-  
-    wp_register_script( 'bootstrap', 
-      get_template_directory_uri() . '/library/js/bootstrap.min.js', 
-      array('jquery'), 
+
+    wp_register_script( 'bootstrap',
+      get_template_directory_uri() . '/library/js/bootstrap.min.js',
+      array('jquery'),
       '1.2' );
-  
-    wp_register_script( 'wpbs-scripts', 
-      get_template_directory_uri() . '/library/js/scripts.js', 
-      array('jquery'), 
+
+    wp_register_script( 'wpbs-scripts',
+      get_template_directory_uri() . '/library/js/scripts.js',
+      array('jquery'),
       '1.2' );
-  
-    wp_register_script(  'modernizr', 
-      get_template_directory_uri() . '/library/js/modernizr.full.min.js', 
-      array('jquery'), 
+
+    wp_register_script(  'modernizr',
+      get_template_directory_uri() . '/library/js/modernizr.full.min.js',
+      array('jquery'),
       '1.2' );
 
     wp_register_script( 'google-maps-js',
     	'https://maps.googleapis.com/maps/api/js?v=3.14&sensor=false',
-    	array( 'jquery' ), 
+    	array( 'jquery' ),
     	'',
     	true );
 
-    wp_register_script( 'intranet-scripts', 
-      get_template_directory_uri() . '/library/js/intranet.js', 
-      array('jquery'), 
+    wp_register_script( 'intranet-scripts',
+      get_template_directory_uri() . '/library/js/intranet.js',
+      array('jquery'),
       '1.0' );
 
-    wp_register_script( 'respond-js', 
-      get_template_directory_uri() . '/library/js/libs/respond.min.js', 
-      array('jquery'), 
+    wp_register_script( 'respond-js',
+      get_template_directory_uri() . '/library/js/libs/respond.min.js',
+      array('jquery'),
       '1.4.2' );
 
-    wp_register_script( 'jquery-cookie', 
-      get_template_directory_uri() . '/library/js/libs/jquery.cookie.min.js', 
-      array('jquery'), 
+    wp_register_script( 'jquery-cookie',
+      get_template_directory_uri() . '/library/js/libs/jquery.cookie.min.js',
+      array('jquery'),
       '1.4.1' );
-  
+
     wp_enqueue_script('bootstrap');
     wp_enqueue_script('wpbs-scripts');
     wp_enqueue_script('modernizr');
@@ -535,7 +535,7 @@ if( !function_exists( "theme_js" ) ) {
     wp_enqueue_script('intranet-scripts');
     wp_enqueue_script('respond-js');
     wp_enqueue_script('jquery-cookie');
-    
+
   }
 }
 add_action( 'wp_enqueue_scripts', 'theme_js' );
@@ -547,20 +547,20 @@ function intranet_pre_get_posts( $query )
   {
     return $query;
   }
- 
+
     // project example
     if( isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'staff' )
     {
       $order = $_GET['order'] ? $_GET['order'] : 'ASC';
       $sortby = $_GET['sortby'] ? $_GET['sortby'] : 'last_name';
-      $query->set('orderby', 'meta_value');  
-      $query->set('meta_key', $sortby);  
+      $query->set('orderby', 'meta_value');
+      $query->set('meta_key', $sortby);
       $query->set('order', $order);
-    }   
- 
+    }
+
   // always return
   return $query;
- 
+
 }
 add_action('pre_get_posts', 'intranet_pre_get_posts');
 
@@ -590,9 +590,6 @@ function my_custom_change_ninja_forms_capabilities_filter( $capabilities ) {
 add_filter( 'ninja_forms_admin_menu_capabilities', 'my_custom_change_ninja_forms_capabilities_filter' );
 
 add_action( 'wp_footer', function() {
-  if( !defined('ELEMENTOR_VERSION') ){
-    return;
-  }
   ?>
   <script>
     jQuery( function( $ ) {

@@ -156,13 +156,6 @@ $(document).ready(function(){
 		$.cookie('ie-notice-hide', 1, { expires: 90 });
 	}
 
-  // Add space for Elementor Menu Anchor link
-  if ( undefined !== window.elementorFrontend ) {
-    elementorFrontend.hooks.addFilter( 'frontend/handlers/menu_anchor/scroll_top_distance', function( scrollTop ) {
-      return scrollTop - 130;
-    } );
-  }
-
 });
 
 })(jQuery);

@@ -589,4 +589,22 @@ function my_custom_change_ninja_forms_capabilities_filter( $capabilities ) {
 }
 add_filter( 'ninja_forms_admin_menu_capabilities', 'my_custom_change_ninja_forms_capabilities_filter' );
 
+add_action( 'wp_footer', function() {
+  if( !defined('ELEMENTOR_VERSION') ){
+    return;
+  }
+  ?>
+  <script>
+    jQuery( function( $ ) {
+    	// Add space for Elementor Menu Anchor link
+    	if ( undefined !== window.elementorFrontend ) {
+    		elementorFrontend.hooks.addFilter( 'frontend/handlers/menu_anchor/scroll_top_distance', function( scrollTop ) {
+    			return scrollTop - 130;
+    		} );
+    	}
+    } );
+  </script>
+  <?php
+}, 99);
+
 ?>

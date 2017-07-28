@@ -4,7 +4,7 @@ Author: Eddie Machado
 URL: htp://themble.com/bones/
 
 This is where you can drop your custom functions or
-just edit things like thumbnail sizes, header images, 
+just edit things like thumbnail sizes, header images,
 sidebars, comments, ect.
 */
 
@@ -39,8 +39,8 @@ add_image_size( 'wpbs-featured', 780, 300, true );
 add_image_size( 'intranet-featured-carousel', 800);
 add_image_size( 'intranet-featured-excerpt', 200);
 
-/* 
-to add more sizes, simply copy a line from above 
+/*
+to add more sizes, simply copy a line from above
 and change the dimensions & name. As long as you
 upload a "featured image" as large as the biggest
 set width or height, all the other sizes will be
@@ -49,7 +49,7 @@ auto-cropped.
 To call a different size, simply change the text
 inside the thumbnail function.
 
-For example, to call the 300 x 300 sized image, 
+For example, to call the 300 x 300 sized image,
 we would use the function:
 <?php the_post_thumbnail( 'bones-thumb-300' ); ?>
 for the 600 x 100 image:
@@ -72,7 +72,7 @@ function wp_bootstrap_register_sidebars() {
     	'before_title' => '<h4 class="widgettitle">',
     	'after_title' => '</h4>',
     ));
-    
+
     register_sidebar(array(
       'id' => 'footer1',
       'name' => 'Footer 1',
@@ -119,27 +119,27 @@ function wp_bootstrap_register_sidebars() {
       'before_title' => '<div class="panel-heading"><h4 class="panel-title">',
       'after_title' => '</h4></div><div class="panel-body">',
     ));
-    
-    
-    /* 
+
+
+    /*
     to add more sidebars or widgetized areas, just copy
-    and edit the above sidebar code. In order to call 
+    and edit the above sidebar code. In order to call
     your new sidebar just use the following code:
-    
+
     Just change the name to whatever your new
     sidebar's id is, for example:
-    
+
     To call the sidebar in your template, you can just copy
     the sidebar.php file and rename it to your sidebar's name.
     So using the above example, it would be:
     sidebar-sidebar2.php
-    
+
     */
 } // don't remove this bracket!
 
 
 /************* COMMENT LAYOUT *********************/
-		
+
 // Comment Layout
 function wp_bootstrap_comments($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment; ?>
@@ -152,17 +152,17 @@ function wp_bootstrap_comments($comment, $args, $depth) {
 				<div class="col-sm-9 comment-text">
 					<?php printf('<h4>%s</h4>', get_comment_author_link()) ?>
 					<?php edit_comment_link(__('Edit','wpbootstrap'),'<span class="edit-comment btn btn-sm btn-info"><i class="glyphicon-white glyphicon-pencil"></i>','</span>') ?>
-                    
+
                     <?php if ($comment->comment_approved == '0') : ?>
        					<div class="alert-message success">
           				<p><?php _e('Your comment is awaiting moderation.','wpbootstrap') ?></p>
           				</div>
 					<?php endif; ?>
-                    
+
                     <?php comment_text() ?>
-                    
+
                     <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time('F jS, Y'); ?> </a></time>
-                    
+
 					<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
                 </div>
 			</div>
@@ -176,7 +176,7 @@ function list_pings($comment, $args, $depth) {
        $GLOBALS['comment'] = $comment;
 ?>
         <li id="comment-<?php comment_ID(); ?>"><i class="icon icon-share-alt"></i>&nbsp;<?php comment_author_link(); ?>
-<?php 
+<?php
 
 }
 
@@ -588,20 +588,5 @@ function my_custom_change_ninja_forms_capabilities_filter( $capabilities ) {
     return $capabilities;
 }
 add_filter( 'ninja_forms_admin_menu_capabilities', 'my_custom_change_ninja_forms_capabilities_filter' );
-
-add_action( 'wp_footer', function() {
-  ?>
-  <script>
-    jQuery( function( $ ) {
-    	// Add space for Elementor Menu Anchor link
-    	if ( undefined !== window.elementorFrontend ) {
-    		elementorFrontend.hooks.addFilter( 'frontend/handlers/menu_anchor/scroll_top_distance', function( scrollTop ) {
-    			return scrollTop - 130;
-    		} );
-    	}
-    } );
-  </script>
-  <?php
-});
 
 ?>

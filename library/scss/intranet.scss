@@ -540,3 +540,50 @@ ul.thumbnails {
 		}
 	}
 }
+
+
+// Elementor
+
+#elementor-form-ken {
+  color: #FFF;
+  font-size: 1.3em;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+
+  textarea {
+    background: rgba(#000,0);
+    color: rgba(#FFF,0.9);
+    border: 1px solid rgba(#FFF,0.75);
+    border-radius: 15px;
+    font-size: 1em;
+    transition: all 0.1s ease-out;
+
+    &:focus {
+      background: rgba(#000,0.25);
+      color: #FFF;
+      border-color: #FFF;
+    }
+  }
+
+  .submit-wrap {
+    .ninja-forms-field {
+      color: #FFF;
+      background: rgba(#000,0);
+      border: 1px solid rgba(#FFF, 0.75);
+      width: 50%;
+      border-radius: 2em;
+      margin: 0 auto;
+      display: block;
+      padding: 0.5em;
+      font-size: 1.25em;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      transition: all 0.1s ease-out;
+
+      &:hover, &:focus {
+        background: rgba(#000,0.25);
+        border-color: #FFF;
+      }
+    }
+  }
+}

@@ -471,7 +471,7 @@ if( !function_exists("theme_styles") ) {
         wp_register_style( 'bootstrap', get_template_directory_uri() . '/library/css/bootstrap.css', array(), '1.1', 'all' );
         wp_enqueue_style( 'bootstrap' );
 
-        wp_register_style( 'intranet', get_template_directory_uri() . '/library/css/intranet.css', array(), '1.0', 'all' );
+        wp_register_style( 'intranet', get_template_directory_uri() . '/library/css/intranet.css', array(), '1.1', 'all' );
         wp_enqueue_style( 'intranet' );
 
         // For child themes

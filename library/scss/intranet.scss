@@ -550,20 +550,23 @@ ul.thumbnails {
   font-weight: 300;
   letter-spacing: 0.05em;
 
-  textarea {
+  input[type="text"], select, textarea {
     background: rgba(#000,0);
     color: rgba(#FFF,0.9);
     border: 1px solid rgba(#FFF,0.75);
     border-radius: 15px;
     font-size: 1em;
     transition: all 0.1s ease-out;
-    height: 10em;
 
     &:focus {
       background: rgba(#000,0.25);
       color: #FFF;
       border-color: #FFF;
     }
+  }
+
+  textarea {
+    height: 10em;
   }
 
   .submit-wrap {
